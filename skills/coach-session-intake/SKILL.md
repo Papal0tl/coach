@@ -39,7 +39,6 @@ Prepare:
 - `current/agent_solution.<ext>`
 - `current/tests.<ext>`
 - `current/notes.md`
-- `current/coaching_log.md`
 - `current/rubric.md`
 - `current/blog_review.md`
 

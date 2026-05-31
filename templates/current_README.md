@@ -27,6 +27,5 @@
 - Agent solution: `agent_solution.{{ext}}`
 - Tests: `tests.{{ext}}`
 - Notes: `notes.md`
-- Coaching log: `coaching_log.md`
 - Rubric: `rubric.md`
 - Blog review: `blog_review.md`

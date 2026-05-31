@@ -20,7 +20,7 @@ Use `docs/implementation-plan.md` when implementing or changing repository struc
 - Keep one root Git repository; never create nested Git repositories.
 - Keep active work in `current/`.
 - Archive completed work to `archives/YYYY-MM-DD-problem-slug/`.
-- Ensure every completed problem has a user-written blog and agent review.
+- Ensure every completed problem has a concise user-written blog and agent review.
 - Ensure long-term memory references the dated archive path after closeout.
 - Keep user-facing profile constructive and evidence-backed.
 - Keep candid longitudinal notes in `agent_only/`.
@@ -31,7 +31,7 @@ Use or delegate to these node skills:
 
 - `coach-session-intake`: start or resume a session and prepare `current/`.
 - `coach-agent-solve`: solve independently, write reference solution, tests, notes, and rubric.
-- `coach-feedback-commit`: inspect user changes, commit checkpoints, update coaching log, and guide with hints.
+- `coach-feedback-commit`: inspect user changes, commit checkpoints, update notes, and guide with hints.
 - `coach-blog-review`: review required user blog and request revisions if needed.
 - `coach-closeout-archive`: update memory, archive `current/`, and finalize references.
 
@@ -43,7 +43,7 @@ When delegating to a subagent, provide only the node-specific goal and relevant 
 2. Load only the relevant node skill and files.
 3. Execute the node.
 4. Commit meaningful changes with actor-labeled messages.
-5. Update `current/coaching_log.md` or memory files as appropriate.
+5. Update `current/notes.md` or memory files as appropriate.
 6. Move to the next node only when its acceptance criteria are met.
 
 ## Commit Convention
@@ -60,7 +60,7 @@ Actors:
 - `agent`
 - `coach`
 
-Keep detailed reasoning out of commit messages. Put coaching evidence in `coaching_log.md`, `profile/`, and `agent_only/`.
+Keep detailed reasoning out of commit messages. Put coaching evidence in `current/notes.md`, `profile/`, and `agent_only/`.
 
 ## Stop Conditions
 

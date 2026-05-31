@@ -1,6 +1,6 @@
 ---
 name: coach-feedback-commit
-description: Use during Coach feedback loops when reading user changes, committing meaningful checkpoints with actor-labeled messages, updating coaching_log.md, and responding with questions or hints.
+description: Use during Coach feedback loops when reading user changes, committing meaningful checkpoints with actor-labeled messages, updating notes, and responding with questions or hints.
 ---
 
 # Coach Feedback Commit
@@ -40,7 +40,7 @@ coach(two-sum): update session status
 1. Read `git diff`.
 2. Read relevant files in `current/`.
 3. Commit the meaningful state with an actor-labeled message.
-4. Update `current/coaching_log.md`.
+4. Update `current/notes.md` with any meaningful coaching observation.
 5. Choose the least-direct useful intervention:
    - Clarifying question.
    - Concrete trace request.
@@ -53,5 +53,5 @@ coach(two-sum): update session status
 ## Done When
 
 - Git history records the checkpoint.
-- Coaching log records the observation and intervention.
+- Notes record meaningful observations and interventions.
 - The response guides the user's thinking instead of taking over by default.

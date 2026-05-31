@@ -60,7 +60,6 @@ Add templates for:
 - `templates/agent_solution.py`
 - `templates/tests.py`
 - `templates/notes.md`
-- `templates/coaching_log.md`
 - `templates/rubric.md`
 - `templates/blog.md`
 - `templates/blog_review.md`
@@ -79,7 +78,7 @@ Template rules:
 Acceptance criteria:
 
 - A new session can be created by copying templates into `current/`.
-- The blog template makes the required sections obvious.
+- The blog template makes the required sections obvious while encouraging concise writing.
 - Profile and agent-only templates separate evidence from interpretation.
 
 ## Phase 3: Session Setup Workflow
@@ -138,7 +137,7 @@ For each user checkpoint:
 user(problem-slug): concise description
 ```
 
-4. Update `current/coaching_log.md`.
+4. Update `current/notes.md` with any meaningful coaching observation.
 5. Give the least-direct useful guidance.
 6. If the agent edits notes, tests, or review files, commit separately or as a mixed `coach(...)` commit when appropriate.
 
@@ -153,28 +152,31 @@ Commit guidance:
 Acceptance criteria:
 
 - Git history shows the user's progression.
-- `coaching_log.md` explains the coaching context.
+- `current/notes.md` captures meaningful coaching context.
 - The user remains responsible for their own attempt unless mode allows direct editing.
 
-## Phase 6: Blog and Review Workflow
+## Phase 6: Concise Blog and Review Workflow
 
 After the problem is solved or walked through:
 
-1. Ask the user to write `blogs/problem-slug.md`.
-2. Commit the blog draft:
+1. Have the agent create a concise `blogs/problem-slug.md` draft with self-explanatory sections pre-filled.
+2. Ask the user to complete or revise the learning-heavy sections in their own words.
+3. Commit the blog draft:
 
 ```text
 user(problem-slug): draft solution blog
 ```
 
-3. Review it in `current/blog_review.md`.
-4. Request revisions if needed.
-5. Commit revisions and final review.
+4. Review it in `current/blog_review.md`.
+5. Request revisions if needed.
+6. Commit revisions and final review.
 
 Acceptance criteria:
 
 - Blog is in English.
-- Blog explains the key insight, invariant, complexity, and edge cases.
+- Blog is concise while still explaining the key insight, invariant, complexity, and edge cases.
+- Agent-filled sections are limited to self-explanatory or copyable content.
+- User-filled sections show the user's own understanding.
 - Blog review identifies transfer readiness.
 - Session does not close before the blog is accepted or unresolved gaps are recorded.
 

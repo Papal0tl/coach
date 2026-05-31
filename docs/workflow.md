@@ -9,7 +9,7 @@ This document defines how the coaching agent should run a problem-solving sessio
 - Do not create nested Git repositories inside `current/` or `archives/`.
 - Use `current/` for the active session.
 - Archive completed sessions to `archives/YYYY-MM-DD-problem-slug/`.
-- Require one user-written blog post per completed problem.
+- Require one concise user-written blog post per completed problem.
 - Review the blog before closing the session.
 - Keep candid long-term coaching notes in `agent_only/`.
 - Refer to the dated archive path in blogs, profile notes, and agent-only memory after closeout.
@@ -25,7 +25,6 @@ coach/
     agent_solution.<ext>
     tests.<ext>
     notes.md
-    coaching_log.md
     rubric.md
     blog_review.md
   archives/
@@ -72,7 +71,7 @@ agent(two-sum): review blog and update algorithm progress
 coach(two-sum): archive completed session
 ```
 
-Commit messages should be scannable. Detailed coaching evidence belongs in `coaching_log.md`, `profile/`, and `agent_only/`.
+Commit messages should be scannable. Detailed coaching evidence belongs in `current/notes.md`, `profile/`, and `agent_only/`.
 
 ## Workflow Nodes
 
@@ -116,7 +115,6 @@ Then the agent creates or updates:
 - `current/agent_solution.<ext>`
 - `current/tests.<ext>`
 - `current/notes.md`
-- `current/coaching_log.md`
 - `current/rubric.md`
 - `current/blog_review.md`
 
@@ -155,7 +153,7 @@ At every feedback checkpoint, the agent:
 2. Reads the changed files.
 3. Classifies the change as user, agent, or mixed.
 4. Commits the meaningful state with an actor-labeled message.
-5. Updates `current/coaching_log.md`.
+5. Updates `current/notes.md` with any meaningful coaching observation.
 6. Responds with the least-direct useful intervention.
 
 Default intervention order:
@@ -168,7 +166,7 @@ Default intervention order:
 6. Direct explanation.
 7. Full reveal only when explicitly requested or allowed by mode.
 
-### 5. Blog Requirement
+### 5. Concise Blog Requirement
 
 After the user reaches a solution or completes a walkthrough, the agent asks the user to write:
 
@@ -176,7 +174,7 @@ After the user reaches a solution or completes a walkthrough, the agent asks the
 blogs/problem-slug.md
 ```
 
-The blog must be in English and cover:
+The blog should be concise, but it must still cover:
 
 - Problem summary.
 - Initial intuition.
@@ -189,7 +187,9 @@ The blog must be in English and cover:
 - Mistakes made.
 - How to recognize the pattern next time.
 
-The session cannot close until this blog exists and has been reviewed.
+The agent should pre-fill self-explanatory or copyable sections before handing the blog to the user. Agent-filled sections include problem summary, final algorithm outline, complexity, and edge-case checklist. The user must still write or revise the learning-heavy sections in their own words: initial intuition, brute force, key insight, correctness argument, mistakes, and how to recognize the pattern next time.
+
+The user can write short bullets or compact paragraphs. The session cannot close until this blog exists and has been reviewed.
 
 ### 6. Blog Review
 
@@ -258,7 +258,7 @@ coach(problem-slug): archive completed session
 - Reference solution exists.
 - Tests exist or validation reason is recorded.
 - User attempt history is committed.
-- Coaching log is up to date.
+- Session notes are up to date.
 - Blog exists in English.
 - Blog review exists in English.
 - Profile updates include evidence.

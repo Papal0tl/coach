@@ -22,7 +22,6 @@ Use this skill only after the user attempt, blog, and blog review are complete.
    - `current/attempt.<ext>`
    - `current/agent_solution.<ext>`
    - `current/tests.<ext>` or validation note
-   - `current/coaching_log.md`
    - `current/blog_review.md`
    - `blogs/problem-slug.md`
 2. Update:

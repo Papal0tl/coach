@@ -10,7 +10,7 @@ The goal is not to receive answers directly. The goal is to build problem-solvin
 2. Work in `current/attempt.<ext>`.
 3. The agent reviews your changes with `git diff` and commits meaningful checkpoints.
 4. The agent guides you with questions and hints.
-5. After the problem, write a blog post in `blogs/`.
+5. After the problem, complete a concise blog post in `blogs/`; the agent can pre-fill the obvious sections.
 6. The agent reviews the blog.
 7. The session is archived to `archives/YYYY-MM-DD-problem-slug/`.
 
@@ -28,8 +28,7 @@ The goal is not to receive answers directly. The goal is to build problem-solvin
 ## Rules
 
 - Everything should be written in English.
-- Every completed problem needs a blog post.
+- Every completed problem needs a concise blog post that covers the key points.
 - The agent must review the blog before closing the session.
 - The workspace uses one root Git repository.
 - No nested Git repositories should be created inside `current/` or `archives/`.
-
