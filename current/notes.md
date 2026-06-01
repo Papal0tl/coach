@@ -34,4 +34,11 @@ A window `[left, right]` is valid when `have[c] >= need[c]` for every `c` in `ne
 
 ## Coaching Log
 
-<!-- Agent appends observations here after each feedback checkpoint. -->
+### Turn 1 — 2026-06-01
+User immediately chose the sliding window approach and independently landed on the `formed`/`v` counter pattern. That is the hardest conceptual leap in this problem — it suggests strong pattern recognition or prior exposure. Structure is almost complete: need-map, window-map, left pointer, min_len, outer expand loop, inner shrink while-loop skeleton, and the final return.
+
+Two structural issues to address:
+1. The outer loop iterates over `range(len(t))` — should be `range(len(s))`.
+2. The `while v == len(x)` body and `return s[]` are empty/incomplete — still thinking through the shrink step.
+
+The user's answer ("move left") to the shrink-direction question was correct and minimal. Intervention: hint to trace through the while-loop body concretely.
