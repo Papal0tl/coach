@@ -18,7 +18,7 @@ def min_window(s: str, t: str) -> str:
 
         first = 0
 
-        for r in range(len(t)):
+        for r in range(len(s)):
             c = s[r]
             if c in x:
                 window[c] = window.get(c, 0) + 1
