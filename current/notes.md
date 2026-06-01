@@ -42,3 +42,12 @@ Two structural issues to address:
 2. The `while v == len(x)` body and `return s[]` are empty/incomplete — still thinking through the shrink step.
 
 The user's answer ("move left") to the shrink-direction question was correct and minimal. Intervention: hint to trace through the while-loop body concretely.
+
+### Turn 2 — 2026-06-01
+User completed the while-loop body. Logic is correct: record window, remove s[l], check coverage drop BEFORE decrementing window count, increment l, return slice. Order of operations on v vs window[d] is right.
+
+Two remaining issues:
+1. `for r in range(len(t))` — loop range still uses len(t) instead of len(s). The right pointer never visits characters beyond index n-1.
+2. `class Solution(object):` nesting inside `min_window` is a syntax error — likely a LeetCode paste artifact.
+
+Intervention: ask user to run Example 1 mentally to discover the range bug themselves.
