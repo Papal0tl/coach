@@ -51,3 +51,6 @@ Two remaining issues:
 2. `class Solution(object):` nesting inside `min_window` is a syntax error — likely a LeetCode paste artifact.
 
 Intervention: ask user to run Example 1 mentally to discover the range bug themselves.
+
+### Turn 3 — 2026-06-01
+User fixed `range(len(t))` → `range(len(s))`. The `class Solution` nesting syntax error is still present — code fails with IndentationError at import. Logic is otherwise complete and correct. Intervention: point out the remaining syntax issue directly since it's structural, not algorithmic.
