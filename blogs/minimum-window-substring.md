@@ -46,6 +46,7 @@ TODO: What is the insight that makes O(m + n) possible? Why does a sliding windo
 
 sliding window [l, r]. Expand r when the window is not valid, sheink l when the window is already valid.
 moving r makes the window bigger, moving l makes the window smaller.
+use v == len(x) to check whether is valid. v tracks how many distinct characters hace already met their required counts. v increases when a character's count becomes exactly equal to its required count. checking v == len(x) enough is because Once the window becomes valid, we try to shrink it from the left to find the smallest valid window. If the window becomes invalid, we expand the right pointer again.   
 
 ---
 
