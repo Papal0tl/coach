@@ -1,42 +1,36 @@
-# Minimum Window Substring
+# 53. Maximum Subarray
 
-**Source:** LeetCode 76
-**Difficulty:** Hard
-**Tags:** Hash Table, String, Sliding Window
+**Difficulty:** Medium
+**Source:** LeetCode
 
 ## Problem Statement
 
-Given two strings `s` and `t` of lengths `m` and `n` respectively, return the **minimum window substring** of `s` such that every character in `t` (including duplicates) is included in the window. If there is no such substring, return the empty string `""`.
-
-The testcases will be generated such that the answer is unique.
+Given an integer array `nums`, find the subarray with the largest sum, and return its sum.
 
 ## Examples
 
 **Example 1:**
 ```
-Input:  s = "ADOBECODEBANC", t = "ABC"
-Output: "BANC"
-Explanation: The minimum window substring "BANC" includes 'A', 'B', and 'C' from string t.
+Input:  nums = [-2,1,-3,4,-1,2,1,-5,4]
+Output: 6
+Explanation: The subarray [4,-1,2,1] has the largest sum 6.
 ```
 
 **Example 2:**
 ```
-Input:  s = "a", t = "a"
-Output: "a"
-Explanation: The entire string s is the minimum window.
+Input:  nums = [1]
+Output: 1
+Explanation: The subarray [1] has the largest sum 1.
 ```
 
 **Example 3:**
 ```
-Input:  s = "a", t = "aa"
-Output: ""
-Explanation: Both 'a's from t must be included in the window.
-Since the largest window of s only has one 'a', return empty string.
+Input:  nums = [5,4,-1,7,8]
+Output: 23
+Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
 ```
 
 ## Constraints
 
-- `m == s.length`
-- `n == t.length`
-- `1 <= m, n <= 10^5`
-- `s` and `t` consist of uppercase and lowercase English letters.
+- `1 <= nums.length <= 10^5`
+- `-10^4 <= nums[i] <= 10^4`

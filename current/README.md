@@ -1,10 +1,10 @@
-# Session: Minimum Window Substring
+# Session: Maximum Subarray
 
-**Slug:** minimum-window-substring
-**Date:** 2026-06-01
+**Slug:** maximum-subarray
+**Date:** 2026-06-03
 **Language:** Python
 **Mode:** hint-only
-**Status:** complete — archived to archives/2026-06-03-minimum-window-substring/
+**Status:** active
 
 ## Files
 
