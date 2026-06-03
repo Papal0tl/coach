@@ -1,16 +1,10 @@
-def min_window(s: str, t: str) -> str:
-    class Solution(object):
-    def minWindow(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: str
-        """
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
         x = {}
-        
+
         for ch in t:
             x[ch] = x.get(ch, 0) + 1
-        
+
         window = {}
         l = 0
         v = 0
@@ -29,7 +23,7 @@ def min_window(s: str, t: str) -> str:
                 if r - l + 1 <= min_len:
                     min_len = r - l + 1
                     first = l
-                
+
                 d = s[l]
                 l += 1
                 if d in x:
