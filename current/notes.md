@@ -43,4 +43,12 @@ Tests written in `tests.py`. Not run locally (user declined shell execution); so
 
 ## Coaching Log
 
-<!-- Entries added per turn -->
+### Turn 1 — 2026-06-03
+
+User submitted a correct, complete solution on the first attempt — no intermediate drafts. The approach is an in-place Kadane's variant: for each index `i`, `nums[i]` is overwritten with `nums[i] + max(nums[i-1], 0)`, which stores the maximum subarray sum ending at `i`. `max(nums)` at the end returns the global answer.
+
+This is algorithmically equivalent to the canonical two-variable Kadane's, but expresses the extend-or-restart decision via `max(nums[i-1], 0)` rather than `max(num, current_sum + num)` — the same logic written differently. O(n) time, O(1) space. Handles all-negative arrays correctly (the `max(..., 0)` never adds a negative prefix).
+
+One observation worth surfacing: the solution mutates the input array. The user should be able to articulate the trade-off.
+
+Intervention: ask the user to state what `nums[i]` represents after each loop iteration (test conceptual understanding before accepting and moving to blog).
