@@ -95,3 +95,9 @@ nums[i] no longer means the original number. It becomes the maximum subarray sum
 ## How to Recognize This Pattern Next Time
 
 TODO: What is the signature of a problem that calls for this technique? What keywords or constraints should trigger "track the best subarray ending here"?
+
+maximum or minimum value of a contiguous subarray.
+best result ending at the previous position.
+start fresh at the current element.
+largest sum
+
