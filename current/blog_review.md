@@ -1,13 +1,13 @@
 # Blog Review — maximum-subarray
 
 **Date:** 2026-06-03
-**Verdict:** Revision required — one incomplete section
+**Verdict:** Accepted
 
 ---
 
 ## Correctness
 
-All filled-in sections are algorithmically correct.
+All sections are algorithmically correct.
 
 - Brute force: correctly identifies O(n³) with `sum()` and O(n²) with a running sum. ✓
 - Key insight: correctly describes the extend-or-restart decision and the role of `max(nums[i-1], 0)`. ✓
@@ -17,24 +17,20 @@ All filled-in sections are algorithmically correct.
 
 ## Key Insight and Invariant
 
-The key insight is explained well. The `max(nums[i-1], 0)` logic and the extend-vs-drop decision are clear.
-
-The invariant (`nums[i]` stores the maximum subarray sum ending at index `i`) appears in the Mistakes section but is not named explicitly in the Key Insight or Correctness Argument. It's present enough to be acceptable — the two-choices argument in Correctness implicitly relies on it.
+The key insight is explained well. The `max(nums[i-1], 0)` logic and the extend-vs-drop decision are clear. The invariant (`nums[i]` stores the maximum subarray sum ending at `i`) appears explicitly in the Mistakes section, which is sufficient.
 
 ## Mistakes Made
 
-Honest. The user didn't introduce bugs this session, so there were no real mistakes to report. The observation about `nums[i]` changing meaning is accurate and worth remembering for in-place DP variants.
+Honest: no bugs were introduced, so the observation about the in-place mutation changing the meaning of `nums[i]` is the right thing to record. It's worth remembering for any in-place DP variant.
 
 ## Transfer Readiness
 
-The extend-or-restart logic and the two-choices argument are well internalized. The user will recognize this pattern when they see it again.
+The "How to Recognize" section identifies the right triggers: contiguous subarray, optimization (max/min), and the "best ending at previous position" signal that points to the DP structure. The pattern is well-internalized.
 
-**One gap:** The "How to Recognize This Pattern Next Time" section is still a `TODO`. This is a required section. Transfer readiness cannot be confirmed without it.
-
-## Required Revision
-
-Complete the **How to Recognize This Pattern Next Time** section. Answer: what problem shapes, keywords, or constraints should trigger "track the best subarray-ending-here value"?
+One extension worth noting: the same "best ending here" structure shows up in variants like maximum subarray product, maximum circular subarray, and longest increasing subarray — wherever local optimality at each position can be computed from the previous position in O(1).
 
 ---
 
-Review will be updated after the revision is submitted.
+## Summary
+
+Session complete. Correct solution on the first attempt, correct invariant stated when asked, and a sound blog covering all required sections. The extend-or-restart decision and the two-choices correctness argument are well understood.
