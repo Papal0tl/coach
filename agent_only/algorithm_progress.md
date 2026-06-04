@@ -19,3 +19,11 @@ This file is agent-maintained. Track algorithm-specific learning with archive-ba
 ## Two Pointers
 
 Not yet observed in isolation. Sliding window sessions are partial evidence.
+
+## Dynamic Programming (1-D)
+
+| Date | Problem | Outcome | Notes |
+| --- | --- | --- | --- |
+| 2026-06-03 | Maximum Subarray (LC 53) | Independent solve, first attempt | In-place Kadane's variant. Stated invariant precisely when asked. No bugs. See archives/2026-06-03-maximum-subarray/ |
+
+**Assessment (2026-06-03):** Clean first-attempt solve using the in-place `nums[i] += max(nums[i-1], 0)` form. This is equivalent to canonical Kadane's but slightly less standard — suggests comfort with in-place mutation and DP state reuse. Invariant was correct in code and verbalized precisely on first ask. Next step: a 1-D DP problem where the recurrence is less obvious (e.g., Coin Change, House Robber II, or Jump Game) to test whether the user can derive the state definition from scratch rather than pattern-match to a known template.

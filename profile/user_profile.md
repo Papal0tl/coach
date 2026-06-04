@@ -12,14 +12,15 @@
 
 ## Observed Strengths
 
-- Pattern recognition: independently chose sliding window + coverage counter on first attempt for a Hard problem (minimum-window-substring, 2026-06-03).
+- Pattern recognition: independently chose sliding window + coverage counter on first attempt for a Hard problem (minimum-window-substring, 2026-06-03); independently applied in-place Kadane's variant for a Medium DP problem (maximum-subarray, 2026-06-03).
 - Data structure selection: correctly reached for two frequency maps without prompting.
 - Logical structure: while-loop body logic (including correct order of operations for coverage counter decrement) was written correctly on first try.
+- Invariant articulation (improving): stated the Kadane invariant precisely when asked — "nums[i] represents the maximum subarray sum ending exactly at index i" — without a revision cycle.
 
 ## Active Growth Areas
 
-- Articulating invariants in writing: needed one blog revision to explain the coverage counter (`v`) clearly; understands it in code before being able to describe it in words.
-- Range/index precision: confused which string the window iterates over (`range(len(t))` vs `range(len(s))`).
+- Articulating invariants in writing: blog Key Insight sections describe mechanics well but tend not to name the invariant explicitly as a statement. Improving across sessions (no blog revision needed for invariant this time).
+- Range/index precision: confused which string the window iterates over (`range(len(t))` vs `range(len(s))`) in the previous session. No recurrence this session.
 
 ## Common Failure Modes
 
@@ -36,3 +37,4 @@
 | Date | Problem | Archive | Summary |
 | --- | --- | --- | --- |
 | 2026-06-03 | Minimum Window Substring (LC 76) | archives/2026-06-03-minimum-window-substring/ | Independently reached sliding window + coverage counter. One range bug, one paste artifact. Blog accepted after one revision. |
+| 2026-06-03 | Maximum Subarray (LC 53) | archives/2026-06-03-maximum-subarray/ | Correct in-place Kadane's on first attempt. No bugs. Stated invariant precisely when asked. Blog accepted after one revision (missing pattern-recognition section). |

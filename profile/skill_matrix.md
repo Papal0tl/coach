@@ -11,13 +11,13 @@ Scale:
 | --- | ---: | --- | --- |
 | Problem restatement | 0 | Not observed. | — |
 | Constraint analysis | 0 | Not observed. | — |
-| Brute-force construction | 2 | Correctly described O(m²·n) brute force in blog without prompting. | 2026-06-03 |
-| Pattern recognition | 3 | Independently chose sliding window + coverage counter on first attempt (LC 76, Hard). | 2026-06-03 |
-| Invariant formulation | 2 | Understood v/formed counter in code; needed one blog revision to articulate it clearly in words. | 2026-06-03 |
-| Data structure selection | 3 | Reached for two frequency maps + integer coverage counter without hints. | 2026-06-03 |
-| Complexity analysis | 2 | Stated O(m + n) correctly in blog; did not discuss unprompted during coding. | 2026-06-03 |
-| Edge-case design | 2 | Handled duplicates in t correctly; mentioned no-solution and len(t) > len(s) in blog. | 2026-06-03 |
-| Debugging discipline | 2 | Found range bug after being prompted to trace Example 1; fixed structural issue after direct callout. | 2026-06-03 |
-| Code clarity | 2 | Clean sliding window structure; paste artifact caused syntax error not caught before submission. | 2026-06-03 |
+| Brute-force construction | 2 | Correctly described O(n²)/O(n³) brute force in both session blogs without prompting. | 2026-06-03 |
+| Pattern recognition | 3 | Sliding window + coverage counter for Hard (LC 76); in-place Kadane's for Medium (LC 53) — both on first attempt. | 2026-06-03 |
+| Invariant formulation | 2 | Stated Kadane invariant precisely when asked verbally; blog Key Insight sections remain implicit rather than naming the invariant as a statement. | 2026-06-03 |
+| Data structure selection | 3 | Reached for two frequency maps + coverage counter without hints (LC 76). | 2026-06-03 |
+| Complexity analysis | 2 | Stated O(n) and O(m+n) correctly in blogs; did not discuss unprompted during coding. | 2026-06-03 |
+| Edge-case design | 2 | Handled all-negative (Kadane) and duplicates-in-t (sliding window) correctly in code; edge cases in blogs are accurate. | 2026-06-03 |
+| Debugging discipline | 2 | No bugs in LC 53. In LC 76, found range bug after prompt to trace; fixed structural issue after direct callout. | 2026-06-03 |
+| Code clarity | 2 | Clean solutions; paste artifact caused syntax error in LC 76. No issues in LC 53. | 2026-06-03 |
 | Test design | 0 | Not observed (agent wrote tests). | — |
-| Communication | 2 | Terse but accurate. Typed blog revisions into chat instead of saving to file — repeated twice. | 2026-06-03 |
+| Communication | 2 | Terse but accurate. Blog pattern-recognition section left incomplete on first submit. | 2026-06-03 |
