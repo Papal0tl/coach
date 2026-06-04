@@ -16,17 +16,34 @@ Given an integer array `nums`, find the contiguous subarray with the largest sum
 
 TODO: What was your first instinct when you read this problem? Did brute force come to mind, or did a pattern emerge immediately?
 
+Check every possible subarray and finding the one with the largest sum. Since the answer must be a continuous subarray, need to compare sums of different cntinuous ranges.
+
 ---
 
 ## Brute Force
 
 TODO: Describe the brute force approach. What is its time complexity and why is it too slow?
 
+Try every starting index and every ending index, then calculate the sum.
+```
+for i in range(len(nums)):
+    for j in range(i, len(nums)):
+        check sum(nums[i:j+1])
+```
+too slow because time complexity is O(n^3) if using sum() each time, O(n^2) if keeping a running sum.
+
 ---
 
 ## Key Insight
 
 TODO: What is the insight that makes O(n) possible? Why can you decide at each index whether to extend the running subarray or start fresh?
+
+O(n): at each index, decide whether to extend the previous subarray or start fresh from the current number.
+```
+nums[i] = nums[i] + max(nums[i - 1], 0)
+```
+if nums[i-1] > 0, keep it because it helps increase the sum.
+if num[i-1] <= 0, drop it because it makes the sum worse.
 
 ---
 
@@ -43,6 +60,12 @@ TODO: What is the insight that makes O(n) possible? Why can you decide at each i
 ## Correctness Argument
 
 TODO: Why does this algorithm never miss the optimal subarray? Specifically: why is `max(nums[i - 1], 0)` the right choice at each step?
+
+Because any subarray ending at i has only two choices: either it starts at i: nums[i]
+or it extends a best subarray ending at i - 1: nums[i - 1] + nums[i]
+
+If the previous best sum is positive, extending it makes the current sum larger.
+If the previous best sum is zero or negative, extending it does not help, so we start over at the current number.
 
 ---
 
@@ -64,6 +87,8 @@ TODO: Why does this algorithm never miss the optimal subarray? Specifically: why
 ## Mistakes Made
 
 TODO: What bugs or wrong turns did you hit during this session? What did each one teach you?
+
+nums[i] no longer means the original number. It becomes the maximum subarray sum ending at index i.
 
 ---
 
