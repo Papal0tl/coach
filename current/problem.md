@@ -1,36 +1,38 @@
-# 53. Maximum Subarray
+# Merge Intervals
 
+**Source:** LeetCode 56
 **Difficulty:** Medium
-**Source:** LeetCode
+**Tags:** Array, Sorting
 
 ## Problem Statement
 
-Given an integer array `nums`, find the subarray with the largest sum, and return its sum.
+Given an array of intervals where `intervals[i] = [starti, endi]`, merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
 
 ## Examples
 
 **Example 1:**
 ```
-Input:  nums = [-2,1,-3,4,-1,2,1,-5,4]
-Output: 6
-Explanation: The subarray [4,-1,2,1] has the largest sum 6.
+Input:  intervals = [[1,3],[2,6],[8,10],[15,18]]
+Output: [[1,6],[8,10],[15,18]]
+Explanation: [1,3] and [2,6] overlap → merged into [1,6].
 ```
 
 **Example 2:**
 ```
-Input:  nums = [1]
-Output: 1
-Explanation: The subarray [1] has the largest sum 1.
+Input:  intervals = [[1,4],[4,5]]
+Output: [[1,5]]
+Explanation: [1,4] and [4,5] are considered overlapping (touching counts).
 ```
 
 **Example 3:**
 ```
-Input:  nums = [5,4,-1,7,8]
-Output: 23
-Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
+Input:  intervals = [[4,7],[1,4]]
+Output: [[1,7]]
+Explanation: Input may not be sorted. [1,4] and [4,7] overlap.
 ```
 
 ## Constraints
 
-- `1 <= nums.length <= 10^5`
-- `-10^4 <= nums[i] <= 10^4`
+- `1 <= intervals.length <= 10^4`
+- `intervals[i].length == 2`
+- `0 <= starti <= endi <= 10^4`

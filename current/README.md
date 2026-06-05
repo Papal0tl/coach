@@ -1,10 +1,10 @@
-# Session: Maximum Subarray
+# Session: Merge Intervals
 
-**Slug:** maximum-subarray
-**Date:** 2026-06-03
+**Slug:** merge-intervals
+**Date:** 2026-06-05
 **Language:** Python
 **Mode:** hint-only
-**Status:** complete — archived to archives/2026-06-03-maximum-subarray/
+**Status:** in progress
 
 ## Files
 
