@@ -1,7 +1,7 @@
 # Blog Review — merge-intervals
 
 **Date:** 2026-06-05
-**Verdict:** Revisions requested
+**Verdict:** Accepted
 
 ---
 
@@ -9,30 +9,34 @@
 
 All algorithmic content is correct.
 
-- Brute force: O(n²) pairwise comparison — accurate. ✓
-- Key insight: sorting by start, then comparing only against `res[-1]` — correct. ✓
-- Correctness argument: the claim "it cannot overlap with res[-1] or any earlier interval" is the right claim and is stated clearly. ✓
+- Brute force: O(n²) pairwise — accurate. ✓
+- Key insight: sort by start, compare only against `res[-1]` — correct. ✓
+- Correctness argument: states that after sorting, if `cur_start > res[-1][1]` then no earlier interval in `res` can be affected either — the right claim. ✓
 - Complexity: O(n log n) time, O(n) space — accurate. ✓
 - Edge cases: all correct. ✓
 
 ## Key Insight and Invariant
 
-The key insight is present: sort by start, then a one-step-back comparison against `res[-1]` suffices. The invariant (`res[-1]` is the fully-merged interval covering all processed intervals that overlap with each other) is implicit in the correctness argument but not named as a statement. Sufficient for this problem — no revision needed here.
+The key insight is clear. The invariant (`res[-1]` holds the fully-merged result of all processed intervals so far) is implicit in the correctness argument. Sufficient.
 
 ## Mistakes Made
 
-Both mistakes are recorded honestly and with correct explanations:
-- Comparing against `intervals[i-1][1]` instead of `res[-1][1]` — described clearly. ✓
-- Seeding `res = intervals[0]` vs `res = [intervals[0]]` — the explanation is detailed and correct. ✓
+Both mistakes are recorded honestly and explained correctly:
+- Comparing against `intervals[i-1][1]` instead of `res[-1][1]` — clear. ✓
+- Seeding with `intervals[0]` vs `[intervals[0]]` — detailed and correct. ✓
 
-## Transfer Readiness — Revision Required
+## Transfer Readiness
 
-The "How to Recognize" section lists five problem names. That is not transfer readiness — it is a list of answers. A future problem won't announce itself by name; you need to recognize it from its shape.
+The revised "How to Recognize" section is a clear improvement. It describes the structural signals:
+- Input is intervals/ranges of the form `[start, end]`.
+- Goal is to merge or simplify overlapping ranges.
+- Intervals are in arbitrary order.
+- After sorting, the decision at each step depends only on `res[-1]`.
 
-**Revise this section to answer:** What signals in a problem's statement tell you to try sorting intervals and scanning with a running merged result? Describe the triggers, not the titles.
+And it names the strategy: sort by start → scan left to right → maintain current merged interval → merge or append. This is transferable.
 
 ---
 
 ## Summary
 
-Strong blog overall — correctness, insight, and mistakes are all solid. One required revision: rewrite "How to Recognize" to describe the problem signals that indicate this pattern, not just the names of problems that use it.
+Session complete. Correct solution reached through guided tracing. The two key bugs (comparing `intervals[i-1][1]` vs `res[-1][1]`, and seeding `res` correctly) were both diagnosed by the user through concrete examples. Blog covers all required sections with accurate content. Pattern recognition is now described in terms of signals, not problem names.
