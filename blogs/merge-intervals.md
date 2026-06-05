@@ -77,8 +77,14 @@ the type of res should be [intervals[]], not res = [] and intervals[]. eg: inter
 
 ## How to Recognize This Pattern Next Time
 
-Merge Intervals
-Insert Interval
-Meeting Rooms
-Employee Free Time
-Non-overlapping Intervals
+The input is a collection of intervals or ranges of the form [start, end].
+The goal is to combine, merge, or simplify overlapping ranges.
+Two intervals interact only through their positions on a number line.
+The intervals are given in arbitrary order.
+After sorting by start value, deciding what to do with the current interval only depends on the most recently merged interval.
+
+When these conditions appear, a common strategy is:
+Sort intervals by start point
+→ Scan from left to right
+→ Maintain the current merged interval
+→ Either merge or start a new interval
