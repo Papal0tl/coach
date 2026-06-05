@@ -14,19 +14,21 @@ Given an array of intervals `[start, end]`, merge all overlapping intervals and 
 
 ## Initial Intuition
 
-*(Write in your own words: what was your first instinct when you read the problem? Did you think about brute force, sorting, or something else?)*
+My first idea is to keep track of the last interval that had already been processed and compare each new interval against it.
+
+For each interval, I extracted its start and end values and compared them with the start and end of the last interval. If the current interval started before the previous merged interval ended, I considered them overlapping and merged them. Otherwise, I added the interval as a new entry in the result.
 
 ---
 
 ## Brute Force
 
-*(Describe a naive approach. What would you check, and why is it slow?)*
+Compare every interval with every other interval and repeatedly merge any pair that overlaps. This is slow because each interval may need to be compared with many others, leading to about O(n²) comparisons. It is also harder to manage because merging one pair may affect later comparisons.
 
 ---
 
 ## Key Insight
 
-*(What unlocks the efficient solution? Why does sorting matter, and what does it let you do in the scan?)*
+Key insight is to sort the intervals by their start value first. After sorting, any interval that can overlap with the current merged interval must appear immediately after it during the scan. Then only need to compare the current interval with the last merged interval in `res[-1]`, instead of checking all previous intervals.
 
 ---
 
@@ -43,7 +45,8 @@ Given an array of intervals `[start, end]`, merge all overlapping intervals and 
 
 ## Correctness Argument
 
-*(Why does this work? Why is it safe to only ever compare against `res[-1]` and never look further back?)*
+After sorting, intervals are processed from left to right by start value. `res[-1]` always stores the most recent merged interval. If the current interval starts before or at `res[-1]`’s end, then they overlap, so need to extend the end. If the current interval starts after `res[-1]`’s end, then it cannot overlap with `res[-1]` or any earlier interval. So, append it as a new interval.
+
 
 ---
 
@@ -66,10 +69,16 @@ Given an array of intervals `[start, end]`, merge all overlapping intervals and 
 
 ## Mistakes Made
 
-*(What went wrong during your attempt? What did you fix and why?)*
+Use `intervals[i-1]` to get the previous interval’s start and end and get the value from intervals last and previous value. It should compare intervals current value with the intervals newest value.
+
+the type of res should be [intervals[]], not res = [] and intervals[]. eg: intervals = [[1,3],[2,6],[8,10]]. Then intervals[0] is [1,3]. This is one interval. However, the final answer should be: [[1,6],[8,10]]. which is: a list of intervals not a single interval. If res = intervals[0], then: res = [1,3]. Now: res[-1], returns: 3 instead of: [1,3]. The later code will not work.
 
 ---
 
 ## How to Recognize This Pattern Next Time
 
-*(What signals in a problem should make you think "sort + linear scan with a running merged interval"?)*
+Merge Intervals
+Insert Interval
+Meeting Rooms
+Employee Free Time
+Non-overlapping Intervals
