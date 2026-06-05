@@ -12,15 +12,17 @@
 
 ## Observed Strengths
 
-- Pattern recognition: independently chose sliding window + coverage counter on first attempt for a Hard problem (minimum-window-substring, 2026-06-03); independently applied in-place Kadane's variant for a Medium DP problem (maximum-subarray, 2026-06-03).
+- Pattern recognition (established patterns): independently chose sliding window + coverage counter on first attempt for a Hard problem (minimum-window-substring, 2026-06-03); independently applied in-place Kadane's variant for a Medium DP problem (maximum-subarray, 2026-06-03).
 - Data structure selection: correctly reached for two frequency maps without prompting.
 - Logical structure: while-loop body logic (including correct order of operations for coverage counter decrement) was written correctly on first try.
-- Invariant articulation (improving): stated the Kadane invariant precisely when asked — "nums[i] represents the maximum subarray sum ending exactly at index i" — without a revision cycle.
+- Invariant articulation (improving): stated the Kadane invariant precisely when asked; correctness argument in merge-intervals blog correctly named why `res[-1]` is the only comparison needed after sorting.
+- Tracing discipline: willing to trace concrete examples when prompted; reached both the sorting insight and the `res[-1]` fix through tracing without direct explanation.
 
 ## Active Growth Areas
 
-- Articulating invariants in writing: blog Key Insight sections describe mechanics well but tend not to name the invariant explicitly as a statement. Improving across sessions (no blog revision needed for invariant this time).
-- Range/index precision: confused which string the window iterates over (`range(len(t))` vs `range(len(s))`) in the previous session. No recurrence this session.
+- Preprocessing recognition: did not immediately sort in merge-intervals; needed one tracing exercise to discover that unsorted input breaks the overlap check. Watch for this in other problems where a sort or preprocessing step is the key unlock.
+- Articulating invariants in writing: blog Key Insight sections describe mechanics well but tend not to name the invariant explicitly as a statement. Improving across sessions.
+- Range/index precision: confused which string the window iterates over (`range(len(t))` vs `range(len(s))`) in the first session. No recurrence since.
 
 ## Common Failure Modes
 
@@ -38,3 +40,4 @@
 | --- | --- | --- | --- |
 | 2026-06-03 | Minimum Window Substring (LC 76) | archives/2026-06-03-minimum-window-substring/ | Independently reached sliding window + coverage counter. One range bug, one paste artifact. Blog accepted after one revision. |
 | 2026-06-03 | Maximum Subarray (LC 53) | archives/2026-06-03-maximum-subarray/ | Correct in-place Kadane's on first attempt. No bugs. Stated invariant precisely when asked. Blog accepted after one revision (missing pattern-recognition section). |
+| 2026-06-05 | Merge Intervals (LC 56) | archives/2026-06-05-merge-intervals/ | Had correct loop shape but missing sort and comparing against wrong endpoint. Both fixed through tracing. Complexity stated correctly after one prompt. Blog accepted after one revision (pattern recognition section). |

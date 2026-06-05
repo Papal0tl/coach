@@ -20,6 +20,14 @@ This file is agent-maintained. Track algorithm-specific learning with archive-ba
 
 Not yet observed in isolation. Sliding window sessions are partial evidence.
 
+## Interval Sorting / Sort + Linear Scan
+
+| Date | Problem | Outcome | Notes |
+| --- | --- | --- | --- |
+| 2026-06-05 | Merge Intervals (LC 56) | Solved with scaffolding | Had correct loop shape and overlap condition; missed sort and compared against wrong endpoint. Both fixed via tracing. See archives/2026-06-05-merge-intervals/ |
+
+**Assessment (2026-06-05):** First exposure to the interval sort + scan pattern. The overlap condition (`cur_start <= last_end`) and the merge step (`max(end, cur_end)`) came naturally. The sort and the `res[-1]` vs `intervals[i-1]` distinction required guided tracing. Not a first-attempt independent solve, but scaffolding was light (2-3 hint steps, no direct explanation). Next step: Insert Interval (LC 57) or Meeting Rooms II (LC 253) to test whether sorting is now automatic for this class.
+
 ## Dynamic Programming (1-D)
 
 | Date | Problem | Outcome | Notes |

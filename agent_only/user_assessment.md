@@ -4,7 +4,7 @@ This file is agent-maintained. Keep it candid, evidence-backed, and in English.
 
 ## Longitudinal Summary
 
-Two sessions observed (2026-06-03). Both problems solved independently on the first attempt — a Hard sliding window (LC 76) and a Medium DP (LC 53). The user applied Kadane's algorithm correctly using an in-place in-place variant that is slightly less obvious than the canonical two-variable form. No bugs in the second session. The pattern recognition strength is consistent and likely reflects prior exposure to competitive programming or LeetCode grinding. The key calibration question remains: can they derive a novel algorithm from first principles on a problem they have not seen before?
+Three sessions observed (2026-06-03 through 2026-06-05). Sessions 1 and 2 (LC 76, LC 53) were first-attempt solves — both on patterns the user likely had prior exposure to (sliding window, Kadane's). Session 3 (LC 56, merge intervals) is the first data point on a pattern where the user did not immediately reach the correct structure. They had the right loop shape and overlap condition, but missed sorting and compared against the wrong endpoint (`intervals[i-1][1]` instead of `res[-1][1]`). Both gaps were resolved through tracing in 2-3 hint steps without direct explanation. This is consistent with understanding the mechanics but not having a fully automatic grip on the "sort first" class of problems. The calibration question from earlier still stands: first-principle derivation on a genuinely unfamiliar problem.
 
 ## Strengths
 
@@ -15,9 +15,10 @@ Two sessions observed (2026-06-03). Both problems solved independently on the fi
 
 ## Recurring Weaknesses
 
-- **Range/index slips**: `range(len(t))` instead of `range(len(s))` in session 1. Not repeated in session 2 (single-array problem, so not testable). Watch for this in future two-sequence problems.
-- **Invariant in writing**: Blog Key Insight sections explain the mechanics correctly but tend to describe what the code does rather than naming the invariant as an explicit statement. Improving — no revision needed for invariant in session 2.
-- **Pattern-recognition section discipline**: Left the "How to Recognize" section as a TODO in both blogs on first submit. Not a deep gap — completes correctly when reminded — but worth watching.
+- **Range/index slips**: `range(len(t))` instead of `range(len(s))` in session 1. Not repeated in sessions 2 or 3 (no two-sequence problems). Watch for recurrence.
+- **Preprocessing step recognition**: Did not immediately sort in merge-intervals (session 3). The sort is the critical unlock for this problem class. Needed one tracing exercise to discover it. Watch whether this recurs on other "sort first" problems (meeting rooms, insert interval, etc.).
+- **Invariant in writing**: Blog Key Insight sections explain the mechanics correctly but tend not to name the invariant as an explicit statement. Improving — no revision needed for invariant content in sessions 2 or 3.
+- **Pattern-recognition section discipline**: "How to Recognize" section required revision in all three sessions — session 1 and 2 left it as TODO; session 3 listed problem names instead of signals. Completes correctly when asked, but does not self-initiate meaningful content here.
 
 ## Communication Habits
 
@@ -35,11 +36,12 @@ Two sessions observed (2026-06-03). Both problems solved independently on the fi
 
 ## Blog Quality Trends
 
-- Session 1: Key Insight needed one revision (coverage counter mechanics not fully explained). One TODO left in place.
-- Session 2: All substantive sections correct on first submit. Completeness gap only (missing pattern-recognition section). Trend is positive.
+- Session 1 (LC 76): Key Insight needed one revision (coverage counter mechanics not fully explained). One TODO left in place.
+- Session 2 (LC 53): All substantive sections correct on first submit. Completeness gap only (missing pattern-recognition section). Trend positive.
+- Session 3 (LC 56): All substantive sections correct on first submit. Pattern-recognition section listed problem names instead of signals — revised correctly on first request. Correctness argument was the strongest yet: explicitly stated why `res[-1]` suffices after sorting.
 
 ## Spaced Repetition Needs
 
 - `range(len(s))` vs `range(len(t))` — watch for recurrence in next two-sequence problem.
-- Invariant naming in blog — ask user to name the invariant explicitly as a statement (not just describe the mechanism) in the next DP session.
-- Novel pattern derivation — next problem should ideally require the user to construct the approach from scratch, not apply a known template.
+- Preprocessing / sorting as a first step — probe again on next interval-family problem (e.g., Insert Interval, Meeting Rooms II) to see if the sort is now automatic.
+- Novel pattern derivation — the first two solves were likely pattern-matched. Session 3 was the first evidence of scaffolded derivation. Next step: a problem where the key insight is genuinely non-obvious (e.g., Trapping Rain Water, Jump Game II, or a medium-hard DP with a non-standard state definition).
