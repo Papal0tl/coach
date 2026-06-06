@@ -22,7 +22,7 @@ Complexity is: Time -> O(n·k). Space -> O(1)
 Too slow when n and k are large.
 
 ## Key Insight
-Rotatr by n positions returns the array to its original state.
+Rotate by n positions returns the array to its original state.
 The final list should be (last k elements)+(first n-k elements)
 So use slicing. Therefore: `k %= n` removes unnecessary full rotations.
 
