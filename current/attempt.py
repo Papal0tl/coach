@@ -7,7 +7,4 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         n = len(nums)
-        lst = []
-        for i in range (n):
-            lst = nums[-i:] + nums[:i]
-        return lst
+        nums = nums[-k:] + nums[:-k]
