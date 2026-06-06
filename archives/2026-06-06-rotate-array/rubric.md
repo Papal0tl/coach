@@ -17,6 +17,13 @@
 - Produces correct output for k = 0, k = n, k > n.
 - Time: O(n). Space: ideally O(1), but O(n) with extra array is accepted.
 
+## Session Outcome
+
+- Modulo reduction: reached independently after one trace prompt. ✓
+- In-place thinking: reached `nums[:] = ...` independently after one rebind prompt. ✓
+- k → algorithm connection: first attempt ignored k entirely — needed prompting to notice.
+- Slicing approach: O(n) space; reversal trick (O(1) space) not explored.
+
 ## Coaching Priority
 
 1. First probe whether the user sees "last k elements move to front" as the restatement.

@@ -4,7 +4,7 @@ This file is agent-maintained. Keep it candid, evidence-backed, and in English.
 
 ## Longitudinal Summary
 
-Three sessions observed (2026-06-03 through 2026-06-05). Sessions 1 and 2 (LC 76, LC 53) were first-attempt solves — both on patterns the user likely had prior exposure to (sliding window, Kadane's). Session 3 (LC 56, merge intervals) is the first data point on a pattern where the user did not immediately reach the correct structure. They had the right loop shape and overlap condition, but missed sorting and compared against the wrong endpoint (`intervals[i-1][1]` instead of `res[-1][1]`). Both gaps were resolved through tracing in 2-3 hint steps without direct explanation. This is consistent with understanding the mechanics but not having a fully automatic grip on the "sort first" class of problems. The calibration question from earlier still stands: first-principle derivation on a genuinely unfamiliar problem.
+Four sessions observed (2026-06-03 through 2026-06-06). Sessions 1 and 2 (LC 76, LC 53) were first-attempt solves on familiar patterns. Session 3 (LC 56) revealed a missing preprocessing instinct. Session 4 (LC 189, rotate-array) introduced a new failure mode: the first attempt completely ignored the input parameter k, building a loop over all possible split positions unrelated to the problem. This was not self-caught; it took a prompt to trace through the output and notice k's absence. Once directed, the user recovered quickly and derived the correct slicing approach independently. Notably, `nums[:] = ...` was self-discovered after one rebind demonstration — good Python fluency. The modulo reduction was identified immediately once the k > n trace was shown. The calibration question sharpens: on genuinely unfamiliar problems, the user's first-pass structure sometimes diverges from the problem entirely before converging. The derivation scaffolding is light (2-4 hints), but the initial frame can be significantly off.
 
 ## Strengths
 
@@ -18,7 +18,7 @@ Three sessions observed (2026-06-03 through 2026-06-05). Sessions 1 and 2 (LC 76
 - **Range/index slips**: `range(len(t))` instead of `range(len(s))` in session 1. Not repeated in sessions 2 or 3 (no two-sequence problems). Watch for recurrence.
 - **Preprocessing step recognition**: Did not immediately sort in merge-intervals (session 3). The sort is the critical unlock for this problem class. Needed one tracing exercise to discover it. Watch whether this recurs on other "sort first" problems (meeting rooms, insert interval, etc.).
 - **Invariant in writing**: Blog Key Insight sections explain the mechanics correctly but tend not to name the invariant as an explicit statement. Improving — no revision needed for invariant content in sessions 2 or 3.
-- **Pattern-recognition section discipline**: "How to Recognize" section required revision in all three sessions — session 1 and 2 left it as TODO; session 3 listed problem names instead of signals. Completes correctly when asked, but does not self-initiate meaningful content here.
+- **Pattern-recognition section discipline**: Required revision in sessions 1-3. Session 4 (rotate-array) was the first time meaningful signals were written unprompted. Trend positive — monitor in next session.
 
 ## Communication Habits
 
@@ -44,4 +44,5 @@ Three sessions observed (2026-06-03 through 2026-06-05). Sessions 1 and 2 (LC 76
 
 - `range(len(s))` vs `range(len(t))` — watch for recurrence in next two-sequence problem.
 - Preprocessing / sorting as a first step — probe again on next interval-family problem (e.g., Insert Interval, Meeting Rooms II) to see if the sort is now automatic.
-- Novel pattern derivation — the first two solves were likely pattern-matched. Session 3 was the first evidence of scaffolded derivation. Next step: a problem where the key insight is genuinely non-obvious (e.g., Trapping Rain Water, Jump Game II, or a medium-hard DP with a non-standard state definition).
+- Input→algorithm connection — first attempt on rotate-array ignored k. Probe in next 1-2 sessions: does the user explicitly connect all given parameters to the solution structure before writing code?
+- Novel pattern derivation — session 4 (rotate-array) is a partial data point: the slicing approach is intuitive once the restatement is found, but the initial frame was completely off. Next step: a problem where the key insight is genuinely non-obvious (e.g., Trapping Rain Water, Jump Game II, or a medium-hard DP with a non-standard state definition).

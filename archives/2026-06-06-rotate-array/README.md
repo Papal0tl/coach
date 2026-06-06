@@ -4,7 +4,7 @@
 **Date:** 2026-06-06
 **Language:** Python
 **Mode:** hint-only
-**Status:** in progress
+**Status:** complete — archived to archives/2026-06-06-rotate-array/
 
 ## Files
 

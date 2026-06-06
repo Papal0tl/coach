@@ -53,3 +53,21 @@ When k % n == 0, every reverse is a no-op and the array is unchanged — correct
 All 10 tests pass locally with python3.
 
 ## Coaching Log
+
+### Turn 1 — 2026-06-06
+
+User's first attempt looped over all i in range(n), computing `nums[-i:] + nums[:i]` each iteration, ignoring k entirely. The final value of lst was the rotation by n-1 steps — unrelated to the requested k. Also returned a new list instead of modifying in-place.
+
+Prompted to trace Example 1 and locate k in the code. User immediately identified that k was absent, then rewrote to `nums = nums[-k:] + nums[:-k]`.
+
+Second attempt had the right slicing idea but two issues: (1) `nums = ...` rebinds the local variable, leaving the caller's list unchanged; (2) k ≥ n causes Python to clamp the negative index, producing an incorrect result. Prompted with a mini example to expose the local-rebind behavior. User independently chose `nums[:] = ...` (slice assignment) — correct and no further explanation needed.
+
+k ≥ n: prompted user to trace `nums[-10:]` and `nums[:-10]` on a 7-element list. User correctly produced `[1..7]` and `[]`. Immediately named `k = k % n` as the fix.
+
+Final solution: `k %= n; nums[:] = nums[-k:] + nums[:-k]`. O(n) time, O(n) space. All tests pass.
+
+Coaching note: first attempt not only missed k but built an entirely different loop. This is a distinct failure mode from previous sessions — it's not a missing preprocessing step, it's a disconnect between the problem parameter and the algorithm. Worth watching: does the user connect all given inputs to the solution structure on the first pass in future problems?
+
+In-place slice assignment was self-discovered after one rebind prompt — good Python instinct.
+
+Blog: written on first attempt. Pattern-recognition section was meaningful without prompting — an improvement over all three prior sessions. One typo (Rotatr) fixed on request.

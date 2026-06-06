@@ -15,7 +15,7 @@ Scale:
 | Pattern recognition | 2 | First-attempt solves for sliding window (LC 76) and DP (LC 53). For a novel pattern (interval sort + scan, LC 56), missed the sort step; reached it via tracing. Score reflects performance on unfamiliar patterns. | 2026-06-05 |
 | Invariant formulation | 2 | Stated Kadane invariant precisely when asked verbally; merge-intervals correctness argument correctly named why res[-1] suffices after sorting. Blog Key Insight sections still tend toward mechanics over named invariants. | 2026-06-05 |
 | Data structure selection | 3 | Reached for two frequency maps + coverage counter without hints (LC 76). | 2026-06-03 |
-| Complexity analysis | 2 | Stated O(n) and O(m+n) correctly in blogs; merge-intervals initially said O(n) (missing the sort); corrected to O(n log n) after one prompt. | 2026-06-05 |
+| Complexity analysis | 2 | Stated O(n) time and O(n) space correctly for rotate-array without prompting. Consistent across sessions. | 2026-06-06 |
 | Edge-case design | 2 | Handled all-negative (Kadane) and duplicates-in-t (sliding window) correctly in code; edge cases in blogs are accurate. | 2026-06-03 |
 | Debugging discipline | 2 | No bugs in LC 53. In LC 76, found range bug after prompt to trace; fixed structural issue after direct callout. | 2026-06-03 |
 | Code clarity | 2 | Clean solutions; paste artifact caused syntax error in LC 76. No issues in LC 53. | 2026-06-03 |
