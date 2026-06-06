@@ -6,4 +6,8 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        pass
+        n = len(nums)
+        lst = []
+        for i in range (n):
+            lst = nums[-i:] + nums[:i]
+        return lst
