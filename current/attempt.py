@@ -12,9 +12,7 @@ class Solution:
 
         right = 1
         for j in range(len(nums)-1, -1, -1):
-            answer[j] = right
-            right *= nums[i]
+            answer[j] *= right
+            right *= nums[j]
         
         return answer
-
-        
