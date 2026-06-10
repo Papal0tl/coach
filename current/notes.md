@@ -25,4 +25,5 @@ Both passes maintain a single running variable (prefix / suffix), so no extra ar
 
 ## Coaching Log
 
-(Populated during the user attempt loop.)
+**Turn 1 — brute force attempt:**  
+User wrote a correct O(n²) nested loop: outer loop over i, inner loop over j skipping i. Logic and output accumulation are correct. The constraint violation is time complexity (O(n²)) — the problem requires O(n). Intervention: ask user to count operations to surface the complexity issue without naming it directly.
