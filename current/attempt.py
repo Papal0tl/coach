@@ -3,13 +3,18 @@ from typing import List
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        res = []
+        answer = [1] * len(nums)
 
+        left = 1
         for i in range(len(nums)):
-            product = 1
-            for j in range(len(nums)):
-                if i != j:
-                    product *= nums[j]
-            res.append(product)
-        return res
+            answer[i] = left
+            left *= nums[i]
+
+        right = 1
+        for j in range(len(nums)-1, -1, -1):
+            answer[j] = right
+            right *= nums[i]
+        
+        return answer
+
         
