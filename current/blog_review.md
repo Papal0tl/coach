@@ -1,7 +1,7 @@
 # Blog Review — Product of Array Except Self
 
 **Date:** 2026-06-10  
-**Status:** Revision requested
+**Status:** Accepted
 
 ---
 
