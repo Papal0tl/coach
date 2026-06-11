@@ -40,15 +40,23 @@ Space Complexity: O(1) excluding the output array.
 
 ## Key Insight
 
-For each position i, (product of all elements to the left of i) × (product of all elements to the right of i)
+For each position i, the answer can be split into two parts: (product of all elements to the left of i) × (product of all elements to the right of i)
 
 don't need to recompute these products repeatedly, can build them incrementally.
 
-Left pass: answer[i] = product of all elements to the left of i
-
-right = product of all elements to the right of the current index
-
-Therefore, answer[j] *= right, we have: answer[j] = (left product) × (right product) => the product of all elements except nums[j]
+precise invariant: 
+```
+At the moment answer[i] = left executes, left holds the product of nums[0..i-1], exclusive of nums[i] itself. 
+```
+So after the left pass, 
+```
+answer[i] = product of all elements to the left of i. 
+```
+Then in the right pass, 
+```
+At the moment answer[j] *= right executes, right holds the product of nums[j+1..n-1],exclusive of nums[j] itself. 
+```
+Therefore, answer[j] = left product × right product.
 
 ---
 
@@ -94,6 +102,8 @@ Use the wrong algorithm. The time complexity is too large (O(n^2))
 
 Originally wrote: answer[j] = right during right pass => Overwrite the left product that has been already stored in answer[j].
 Fixed: answer[j] *= right.
+
+using nums[i] instead of nums[j] in the right pass. The right pass iterates using j not i.
 
 ---
 
