@@ -1,7 +1,7 @@
 # Blog Review — First Missing Positive
 
 **Date**: 2026-06-11  
-**Status**: Revision requested
+**Status**: Accepted
 
 ## Correctness
 
@@ -43,4 +43,4 @@ Two issues:
 
 ## Transfer Readiness
 
-Partially ready. The mechanics are well understood. The pattern name and trigger are not yet explicit — fixing item 3 above is the main gap before this transfers to new problems.
+Ready. User independently named the pattern (index-as-hash-map) and identified the trigger (values belong to a fixed range [1, n]). Minor phrasing issues remain in the blog but understanding is demonstrated through both the code and the written sections.
