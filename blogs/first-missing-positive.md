@@ -79,3 +79,4 @@ Not sure why only care about values from 1 to n: numbers greater than n do not n
 ## How to Recognize This Pattern Next Time
 
 missing or duplicate numbers, and the numbers belong to a small fixed range like 1 to n.
+index as hash map.
