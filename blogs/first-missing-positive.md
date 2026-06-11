@@ -24,6 +24,7 @@ O(n) extra space, violates the requirement.
 2. sort the array 
 (1) Sort the array 
 (2) Scan from left to right to find the first missing positive number.
+This uses less extra space depending on the sort, but it takes O(n log n) time, which violates the requirement.
 
 ## Key Insight
 
@@ -77,4 +78,4 @@ Not sure why only care about values from 1 to n: numbers greater than n do not n
 
 ## How to Recognize This Pattern Next Time
 
-missing or duplicate numbers, and the numbers are belong to a small fixed range like 1 to n.
+missing or duplicate numbers, and the numbers belong to a small fixed range like 1 to n.
