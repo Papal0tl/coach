@@ -22,3 +22,13 @@
 - O(n) time — no nested loops.
 - No division used.
 - In-place output (O(1) extra space) is a stretch goal; two-array solution also accepted.
+
+## Outcomes
+
+| Skill | Observed | Notes |
+|---|---|---|
+| Prefix/suffix decomposition | With scaffolding | Reached via guided tracing (left×right table); not independent. |
+| Two-pass scan | With scaffolding | Correctly structured once decomposition was guided. |
+| O(1) space optimisation | Independent | Reused output array without prompting — optimal form achieved. |
+| Invariant articulation | With one prompt | Stated correctly after solution confirmed; needed revision in blog. |
+| Edge-case awareness | Not observed | No spontaneous mention of zeros or negatives; blog edge cases are accurate (agent-prefilled). |

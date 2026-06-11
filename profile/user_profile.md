@@ -18,6 +18,7 @@
 - Invariant articulation (improving): stated the Kadane invariant precisely when asked; correctness argument in merge-intervals blog correctly named why `res[-1]` is the only comparison needed after sorting.
 - Tracing discipline: willing to trace concrete examples when prompted; reached both the sorting insight and the `res[-1]` fix through tracing without direct explanation.
 - In-place Python: self-discovered `nums[:] = ...` slice assignment after one rebind prompt (rotate-array, 2026-06-06).
+- O(1) space reuse: independently chose to reuse the output array for the prefix/suffix product solution without prompting (product-of-array-except-self, 2026-06-10).
 
 ## Active Growth Areas
 
@@ -44,3 +45,4 @@
 | 2026-06-03 | Maximum Subarray (LC 53) | archives/2026-06-03-maximum-subarray/ | Correct in-place Kadane's on first attempt. No bugs. Stated invariant precisely when asked. Blog accepted after one revision (missing pattern-recognition section). |
 | 2026-06-05 | Merge Intervals (LC 56) | archives/2026-06-05-merge-intervals/ | Had correct loop shape but missing sort and comparing against wrong endpoint. Both fixed through tracing. Complexity stated correctly after one prompt. Blog accepted after one revision (pattern recognition section). |
 | 2026-06-06 | Rotate Array (LC 189) | archives/2026-06-06-rotate-array/ | First attempt ignored k entirely. Recovered to correct slicing approach; independently chose slice assignment for in-place. Modulo reduction reached after one trace. Blog accepted after typo fix; pattern-recognition section written meaningfully on first attempt. |
+| 2026-06-10 | Product of Array Except Self (LC 238) | archives/2026-06-10-product-of-array-except-self/ | First attempt was correct brute force O(n²). Reached left×right decomposition via guided tracing. Two-pass structure written independently once decomposition was clear. Two right-pass bugs fixed after hints. O(1) space (output reuse) achieved independently. Blog accepted after one revision (invariant precision, missing bug). |

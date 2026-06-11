@@ -36,6 +36,14 @@ Not yet observed in isolation. Sliding window sessions are partial evidence.
 
 **Assessment (2026-06-06):** First exposure to array rotation. The slicing restatement (last k + first n-k) is intuitive once found, but the user did not start there — first attempt iterated over all split positions and ignored k. Recovered in 3-4 hint steps. Solution is O(n) space; the O(1) reversal trick was not explored. Not a pressing gap for this problem, but worth introducing on a follow-up if in-place space constraint appears. Next step: a cyclic-shift variant where k is large or the in-place constraint is explicit (e.g., a problem requiring O(1) space).
 
+## Prefix / Suffix Product (Two-Pass)
+
+| Date | Problem | Outcome | Notes |
+| --- | --- | --- | --- |
+| 2026-06-10 | Product of Array Except Self (LC 238) | Solved with scaffolding | Brute force correct; left×right decomposition reached via guided tracing; two right-pass bugs fixed with hints; O(1) space independent. See archives/2026-06-10-product-of-array-except-self/ |
+
+**Assessment (2026-06-10):** First exposure to the prefix/suffix product pattern. The O(n²) brute force was correctly identified and implemented. The critical insight — decompose `answer[i]` into a left prefix product and a right suffix product — was not independently discovered; it emerged through 3-4 guided questions and a worked trace table. Once the decomposition was named, the user correctly structured both passes. The O(1) space optimization (reusing the output array rather than allocating two arrays) was chosen independently — a sign of good space-complexity instinct. The invariant was verbalized correctly when asked: "answer[j] holds the product of all elements to the left of index j." Two implementation bugs in the right pass (overwrite instead of multiply-assign, wrong loop variable) were not self-caught. Next step: a problem where a similar left/right or prefix/suffix accumulation is required but less obvious (e.g., Trapping Rain Water uses a comparable two-pass structure) to test whether this decomposition pattern transfers.
+
 ## Dynamic Programming (1-D)
 
 | Date | Problem | Outcome | Notes |

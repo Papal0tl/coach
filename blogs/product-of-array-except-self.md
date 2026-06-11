@@ -2,7 +2,8 @@
 
 **Problem:** LeetCode 238 — Medium  
 **Date:** 2026-06-10  
-**Language:** Python
+**Language:** Python  
+**Archive:** archives/2026-06-10-product-of-array-except-self/
 
 ---
 

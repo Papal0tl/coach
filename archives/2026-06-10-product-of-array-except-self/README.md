@@ -8,8 +8,8 @@
 
 ## Status
 
-- [ ] Agent solved
-- [ ] User attempt committed
-- [ ] Blog written
-- [ ] Blog reviewed
-- [ ] Archived
+- [x] Agent solved
+- [x] User attempt committed
+- [x] Blog written
+- [x] Blog reviewed
+- [x] Archived
