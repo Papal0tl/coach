@@ -14,19 +14,41 @@ Given an integer array `nums`, return an array `answer` where `answer[i]` is the
 
 ## Initial Intuition
 
-<!-- Write in your own words: what did you think of first when you read the problem? -->
+calculate the total product of the array and then divide by nums[i] for each position.
+OR directly multiply all elements except the current one for every index, but that seemed inefficient because it repeats a lot of work.
 
 ---
 
 ## Brute Force
 
-<!-- Describe what you coded first and why. What is its time complexity? -->
+For each index i, iterate through the entire array and multiply every element except nums[i].
+
+```
+for i in range(n):
+    product = 1
+    for j in range(n):
+        if i != j:
+            product *= nums[j]
+    answer[i] = product
+```
+
+Time Complexity: O(n²) because for every index we scan the whole array again.
+
+Space Complexity: O(1) excluding the output array.
 
 ---
 
 ## Key Insight
 
-<!-- What is the insight that makes O(n) possible without division? State the invariant explicitly. -->
+For each position i, (product of all elements to the left of i) × (product of all elements to the right of i)
+
+don't need to recompute these products repeatedly, can build them incrementally.
+
+Left pass: answer[i] = product of all elements to the left of i
+
+right = product of all elements to the right of the current index
+
+Therefore, answer[j] *= right, we have: answer[j] = (left product) × (right product) => the product of all elements except nums[j]
 
 ---
 
@@ -42,6 +64,11 @@ Given an integer array `nums`, return an array `answer` where `answer[i]` is the
 ## Correctness Argument
 
 <!-- Why does answer[j] hold the correct value after both passes? -->
+After first pass: answer[i] = product of all elements to the left of i => stores the running prefix product before nums[i] is included.
+
+During second pass: right = product of all elements to the right of j  => traverse from right to left and update right after processing the current index.
+
+So, when execute: answer[j] *= right, =>  (left product) × (right product). Contains every element except nums[j].
 
 ---
 
@@ -63,10 +90,17 @@ Given an integer array `nums`, return an array `answer` where `answer[i]` is the
 
 ## Mistakes Made
 
-<!-- What bugs did you introduce, and what caused them? -->
+Use the wrong algorithm. The time complexity is too large (O(n^2))
+
+Originally wrote: answer[j] = right during right pass => Overwrite the left product that has been already stored in answer[j].
+Fixed: answer[j] *= right.
 
 ---
 
 ## How to Recognize the Pattern Next Time
 
-<!-- What is the trigger for reaching for prefix/suffix products in a future problem? -->
+Asks for information about every position in an array.
+The answer for index i depends on elements before and after i.
+Recompute left and right parts separately for every index would lead to O(n²).
+Division is forbidden because of zeros.
+The operation is associative (multiplication, sum, min/max with appropriate preprocessing, etc.).
