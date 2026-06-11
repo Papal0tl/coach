@@ -10,15 +10,31 @@ Given an unsorted integer array `nums`, return the smallest positive integer not
 
 ## Initial Intuition
 
-*(Write in your own words: what did you reach for first? A set? Sorting? Why?)*
+Use a set. Put every number into a set, then check from 1 upward until I find the first number not in the set. 
+O(n) extra space, violates the requirement.
 
 ## Brute Force
 
-*(Describe the O(n) space or O(n log n) approach and why it violates the constraints.)*
+1. use a set:
+(1) Put every number in nums into a set.
+(2) Start from x = 1.
+(3) Keep checking whether x exists in the set.
+(4) The first x not in the set is the answer.
+
+2. sort the array 
+(1) Sort the array 
+(2) Scan from left to right to find the first missing positive number.
 
 ## Key Insight
 
-*(Write in your own words: what is the key observation that makes O(1) space possible? What bound on the answer matters?)*
+The smallest missing positive must be in the range 1 to len(nums) + 1. So for numbers in [1, n]. Any number less than or equal to 0, or greater than n, cannot help deciding the missing number inside the array.
+
+So, use the array itself as a hash map. For a number x, its correct position should be index x - 1. So:
+* 1 should be at index 0
+* 2 should be at index 1
+* 3 should be at index 2
+
+After placing numbers into their correct positions, scan the array. The first index i where nums[i] != i + 1 tells that i + 1 is missing.
 
 ## Final Algorithm
 
@@ -29,6 +45,15 @@ Given an unsorted integer array `nums`, return the smallest positive integer not
 ## Correctness Argument
 
 *(Write in your own words: why does the placement loop terminate? Why does the invariant — `nums[i] == i+1` wherever `i+1` was present — guarantee the scan gives the right answer?)*
+
+Every successful swap puts at least one valid number into its correct home position. A number x in [1, n] belongs at index x - 1.
+
+nums[nums[i] - 1] != nums[i] prevents infinite loops when duplicates exist.
+
+After the placement loop finishes, if a positive integer x in [1, n] exists in the array, then it must be located at index x - 1. Therefore, during the final scan, the first index i where nums[i] != i + 1 means that i + 1 was not present in the array.
+
+If every index is correct, then all numbers from 1 to n are present, so the smallest missing positive integer is n + 1.
+
 
 ## Complexity
 
@@ -45,8 +70,11 @@ Given an unsorted integer array `nums`, return the smallest positive integer not
 
 ## Mistakes Made
 
-*(Write in your own words: what bugs did you hit or nearly hit? What did tracing reveal?)*
+Forget the duplicate guard: nums[nums[i] - 1] != nums[i]. Without this condition, the code can get stuck swapping duplicate values forever.
+
+Not sure why only care about values from 1 to n: numbers greater than n do not need to be placed because they cannot be the smallest missing positive inside the range we are checking.
+
 
 ## How to Recognize This Pattern Next Time
 
-*(Write in your own words: what is the trigger for "use the array as its own hash map"? What family of problems uses this?)*
+missing or duplicate numbers, and the numbers are belong to a small fixed range like 1 to n.
