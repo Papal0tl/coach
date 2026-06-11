@@ -12,6 +12,18 @@
 | O(1) space discipline | Does the user avoid sorting or allocating extra arrays? |
 | Invariant articulation | Can the user state what the array looks like after the placement pass? |
 
+## Session Results
+
+| Skill | Outcome |
+| --- | --- |
+| Bound recognition | Reached independently via conversation. |
+| Index-as-hash insight | Reached with 2–3 guided questions (what's already there, which indices matter). |
+| In-place placement | Written correctly on first try once swap was identified. |
+| Duplicate guard | Missed on first write; caught after concrete trace of [1,1]. Not self-caught. |
+| Final scan | Written correctly on first try. |
+| O(1) space discipline | Achieved — no extra allocation. |
+| Invariant articulation | **Best observed across all sessions.** Stated precisely and unprompted: "nums[i] == i+1 wherever i+1 was present." |
+
 ## Watch-For Patterns (from profile)
 
 - May not immediately see the bound [1, n+1] — if stuck on "how to do it without extra space," ask about the range of possible answers.

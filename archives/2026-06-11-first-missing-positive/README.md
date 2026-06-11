@@ -4,7 +4,7 @@
 - **Slug**: `first-missing-positive`
 - **Language**: Python
 - **Coaching mode**: hint-only
-- **Status**: agent solved; awaiting user attempt
+- **Status**: completed and archived at archives/2026-06-11-first-missing-positive/
 
 ## Files
 

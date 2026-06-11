@@ -44,6 +44,14 @@ Not yet observed in isolation. Sliding window sessions are partial evidence.
 
 **Assessment (2026-06-10):** First exposure to the prefix/suffix product pattern. The O(n²) brute force was correctly identified and implemented. The critical insight — decompose `answer[i]` into a left prefix product and a right suffix product — was not independently discovered; it emerged through 3-4 guided questions and a worked trace table. Once the decomposition was named, the user correctly structured both passes. The O(1) space optimization (reusing the output array rather than allocating two arrays) was chosen independently — a sign of good space-complexity instinct. The invariant was verbalized correctly when asked: "answer[j] holds the product of all elements to the left of index j." Two implementation bugs in the right pass (overwrite instead of multiply-assign, wrong loop variable) were not self-caught. Next step: a problem where a similar left/right or prefix/suffix accumulation is required but less obvious (e.g., Trapping Rain Water uses a comparable two-pass structure) to test whether this decomposition pattern transfers.
 
+## Index-as-Hash-Map (Cyclic Placement)
+
+| Date | Problem | Outcome | Notes |
+| --- | --- | --- | --- |
+| 2026-06-11 | First Missing Positive (LC 41) | Solved with scaffolding | Two-pass skeleton written independently; swap mechanism reached via 2-3 guided questions; duplicate guard missed then caught via trace; invariant stated precisely and unprompted. See archives/2026-06-11-first-missing-positive/ |
+
+**Assessment (2026-06-11):** First exposure to the index-as-hash-map pattern. The structural insight (two-pass: placement then scan) was independently written before the mechanism was understood — strongest structural instinct shown so far. The bound recognition ([1, n+1] → only care about values in [1, n]) required 2-3 guided questions. Once the bound was clear, the swap was written correctly on first try. The duplicate guard was not independently anticipated but caught immediately after a concrete trace of [1,1]. The invariant ("nums[i] == i+1 wherever i+1 was present") was stated precisely and unprompted in conversation — the best invariant articulation across all sessions. Next step: a problem where values fit in [1, n] but the state is more subtle (e.g., Find All Duplicates in an Array, or Find the Duplicate Number) to test whether the pattern now transfers independently.
+
 ## Dynamic Programming (1-D)
 
 | Date | Problem | Outcome | Notes |

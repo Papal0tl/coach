@@ -36,4 +36,7 @@ After the placement phase: `nums[i] == i + 1` for every index `i` where the valu
 
 ## Coaching Observations
 
-*(filled during user attempt loop)*
+- User independently reached two-pass structure (placement + scan) and correct scan/return logic. While condition lower bound written; upper bound and swap body still missing. Good structural instinct, needs to fill in the mechanism.
+- Swap written correctly on first try. Duplicate guard (`nums[nums[i]-1] != nums[i]`) added after one trace of [1,1] showing infinite loop. Solution passes all tests.
+- Invariant stated precisely and unprompted: "after the placement loop, nums[i] == i+1 wherever i+1 was present." Best invariant articulation observed so far across all sessions.
+- Blog accepted after 2 revisions (brute force constraint reason + pattern name). Minor phrasing issue in Mistakes Made accepted by user.
