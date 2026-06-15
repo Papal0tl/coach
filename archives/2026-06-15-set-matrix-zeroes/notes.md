@@ -30,4 +30,10 @@ For the O(1) variant: the first row and first column are repurposed as the marke
 
 ## Coaching Log
 
-(to be filled during session)
+- User jumped straight to O(1) marker approach without attempting O(m+n) first — strongest space-instinct shown yet.
+- Bug 1: `false` → `False` (syntax). Not self-caught.
+- Bug 2: Marking and zeroing loops started at (0,0), causing cascade corruption of col-0 markers. Identified after two trace prompts ("what happens to matrix[1][0] at j=0?"). User correctly named the root cause: "overwrite marker cells while still relying on them."
+- Bug 3: Detection loops had swapped variable names (`first_row_zero` set by col-0 scan, `first_col_zero` set by row-0 scan). Not self-caught; identified after hint asking which dimension each loop scans.
+- Bug 4: `range(n)` → `range(m)` in final col cleanup. Caught quickly after prompt.
+- Blog: correctness argument was solid (iff condition stated correctly). "How to Recognize" needed one revision — revised well, added four-step signal and generalised to "repurpose input structure under strict space constraint."
+- 5 of 7 sessions with uncaught bugs before reporting. Intervention still needed: ask user to trace a concrete example before first feedback request.

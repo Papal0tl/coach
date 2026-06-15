@@ -5,4 +5,5 @@
 - **Language**: Python
 - **Mode**: hint-only
 - **Date**: 2026-06-14
-- **Status**: in progress
+- **Status**: complete
+- **Archive**: archives/2026-06-15-set-matrix-zeroes/

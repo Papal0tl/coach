@@ -18,14 +18,14 @@
 - Invariant articulation (improving): stated the Kadane invariant precisely when asked; correctness argument in merge-intervals blog correctly named why `res[-1]` is the only comparison needed after sorting. In session 6 (first-missing-positive), stated the placement invariant precisely and unprompted: "nums[i] == i+1 wherever i+1 was present."
 - Tracing discipline: willing to trace concrete examples when prompted; reached both the sorting insight and the `res[-1]` fix through tracing without direct explanation.
 - In-place Python: self-discovered `nums[:] = ...` slice assignment after one rebind prompt (rotate-array, 2026-06-06).
-- O(1) space reuse: independently chose to reuse the output array for the prefix/suffix product solution without prompting (product-of-array-except-self, 2026-06-10).
+- O(1) space reuse: independently chose to reuse the output array for the prefix/suffix product solution without prompting (product-of-array-except-self, 2026-06-10); jumped straight to O(1) marker approach for set-matrix-zeroes without attempting O(m+n) first (2026-06-15).
 - Structural instinct: wrote correct two-pass skeleton (placement + scan) before the swap mechanism was fully worked out (first-missing-positive, 2026-06-11).
 
 ## Active Growth Areas
 
 - Preprocessing recognition: did not immediately sort in merge-intervals; needed one tracing exercise to discover that unsorted input breaks the overlap check. Watch for this in other problems where a sort or preprocessing step is the key unlock.
 - Input→algorithm connection: first attempt on rotate-array (2026-06-06) ignored the parameter k entirely — built a loop unrelated to the input. Not self-caught; needed a trace prompt. Watch for this pattern in future first attempts.
-- Articulating invariants in writing: blog Key Insight sections describe mechanics well but tend not to name the invariant explicitly as a statement. Improving across sessions.
+- Articulating invariants in writing: blog Key Insight sections describe mechanics well but tend not to name the invariant explicitly as a statement. Improving across sessions — set-matrix-zeroes correctness argument stated the iff condition correctly on first draft.
 - Range/index precision: confused which string the window iterates over (`range(len(t))` vs `range(len(s))`) in the first session. No recurrence since.
 
 ## Common Failure Modes
@@ -48,3 +48,4 @@
 | 2026-06-06 | Rotate Array (LC 189) | archives/2026-06-06-rotate-array/ | First attempt ignored k entirely. Recovered to correct slicing approach; independently chose slice assignment for in-place. Modulo reduction reached after one trace. Blog accepted after typo fix; pattern-recognition section written meaningfully on first attempt. |
 | 2026-06-10 | Product of Array Except Self (LC 238) | archives/2026-06-10-product-of-array-except-self/ | First attempt was correct brute force O(n²). Reached left×right decomposition via guided tracing. Two-pass structure written independently once decomposition was clear. Two right-pass bugs fixed after hints. O(1) space (output reuse) achieved independently. Blog accepted after one revision (invariant precision, missing bug). |
 | 2026-06-11 | First Missing Positive (LC 41) | archives/2026-06-11-first-missing-positive/ | Two-pass structure written independently before swap mechanism was known. Swap correct on first try. Duplicate guard missed; caught after one concrete trace. Invariant stated precisely and unprompted. Blog accepted after 2 revisions. |
+| 2026-06-15 | Set Matrix Zeroes (LC 73) | archives/2026-06-15-set-matrix-zeroes/ | Jumped straight to O(1) marker approach without prompting. Cascade-corruption and variable-swap bugs not self-caught. All fixed through trace hints. Blog accepted after 1 revision (How to Recognize section). |

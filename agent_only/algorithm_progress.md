@@ -52,6 +52,14 @@ Not yet observed in isolation. Sliding window sessions are partial evidence.
 
 **Assessment (2026-06-11):** First exposure to the index-as-hash-map pattern. The structural insight (two-pass: placement then scan) was independently written before the mechanism was understood — strongest structural instinct shown so far. The bound recognition ([1, n+1] → only care about values in [1, n]) required 2-3 guided questions. Once the bound was clear, the swap was written correctly on first try. The duplicate guard was not independently anticipated but caught immediately after a concrete trace of [1,1]. The invariant ("nums[i] == i+1 wherever i+1 was present") was stated precisely and unprompted in conversation — the best invariant articulation across all sessions. Next step: a problem where values fit in [1, n] but the state is more subtle (e.g., Find All Duplicates in an Array, or Find the Duplicate Number) to test whether the pattern now transfers independently.
 
+## Matrix Marker / First Row+Col as Marker Space
+
+| Date | Problem | Outcome | Notes |
+| --- | --- | --- | --- |
+| 2026-06-15 | Set Matrix Zeroes (LC 73) | Solved with scaffolding (implementation bugs only) | Jumped to O(1) approach independently. Cascade-corruption, variable swap, range error fixed via hints. See archives/2026-06-15-set-matrix-zeroes/ |
+
+**Assessment (2026-06-15):** First exposure to the border-as-marker pattern. The O(1) space instinct was unprompted — the user went straight to the advanced approach, which is stronger than any prior "O(1) independently chosen" signal (LC 238 and rotate-array were also O(1) but the path was more scaffolded). The structural insight (first row/col as marker arrays, saved booleans for the border itself) was correctly grasped. Implementation bugs were mechanical: cascade-corruption when zeroing included j=0, variable names swapped in detection loops, range(n) vs range(m). None were self-caught, but all resolved in 2-4 hint steps. The "repurpose input structure under strict space constraint" generalisation in the blog was the clearest pattern-recognition statement across all sessions. Next step: a matrix problem where the O(1) trick involves something other than the border (e.g., Rotate Image in-place, or a problem using sign-flipping as markers) to test whether the abstraction "repurpose existing structure" now transfers, or if it's still tied to the first-row/col specific case.
+
 ## Dynamic Programming (1-D)
 
 | Date | Problem | Outcome | Notes |
