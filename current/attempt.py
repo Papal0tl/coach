@@ -13,11 +13,11 @@ class Solution:
 
         for i in range(m):
             if matrix[i][0] == 0:
-                first_row_zero = True
+                first_col_zero = True
 
         for j in range(n):
             if matrix[0][j] == 0:
-                first_col_zero = True
+                first_row_zero = True
 
         for i in range(1, m):
             for j in range(1, n):
