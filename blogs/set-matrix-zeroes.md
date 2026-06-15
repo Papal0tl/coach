@@ -88,4 +88,11 @@ The first row and first column are processed last using `first_row_zero` and `fi
 
 ## How to Recognize This Pattern Next Time
 
-Asks for an in-place matrix modification and the naive solution needs extra row/column tracking arrays.
+1. The input is a matrix.
+2. I need to remember information about entire rows and columns.
+3. The obvious solution uses O(m+n) extra space (such as two sets or two arrays).
+4. The problem explicitly asks for O(1) extra space or in-place modification.
+
+For a matrix, the first column naturally provides one storage location for each row, and the first row naturally provides one storage location for each column. This makes them a perfect replacement for the row-marker and column-marker arrays.
+
+When a problem requires tracking metadata about rows, columns, or indices under a strict space constraint, I should check whether part of the input can be repurposed as bookkeeping space.
