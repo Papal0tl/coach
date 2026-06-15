@@ -8,8 +8,8 @@ class Solution:
         """
         m = len(matrix)
         n = len(matrix[0])
-        first_row_zero = false
-        first_col_zero = false
+        first_row_zero = False
+        first_col_zero = False
 
         for i in range(m):
             if matrix[i][0] == 0:
@@ -30,3 +30,10 @@ class Solution:
                 if matrix[i][0] == 0 or matrix[0][j] == 0:
                     matrix[i][j] = 0
 
+        if first_row_zero:
+            for j in range(n):
+                matrix[0][j] = 0
+
+        if first_col_zero:
+            for i in range(n):
+                matrix[i][0] = 0
