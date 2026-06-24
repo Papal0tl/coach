@@ -20,6 +20,7 @@
 - In-place Python: self-discovered `nums[:] = ...` slice assignment after one rebind prompt (rotate-array, 2026-06-06).
 - O(1) space reuse: independently chose to reuse the output array for the prefix/suffix product solution without prompting (product-of-array-except-self, 2026-06-10); jumped straight to O(1) marker approach for set-matrix-zeroes without attempting O(m+n) first (2026-06-15).
 - Structural instinct: wrote correct two-pass skeleton (placement + scan) before the swap mechanism was fully worked out (first-missing-positive, 2026-06-11).
+- Simulation pattern recognition: independently reached shrinking-boundary simulation for spiral-matrix (2026-06-24) without being guided to it; guard conditions present in first complete attempt.
 
 ## Active Growth Areas
 
@@ -49,3 +50,4 @@
 | 2026-06-10 | Product of Array Except Self (LC 238) | archives/2026-06-10-product-of-array-except-self/ | First attempt was correct brute force O(n²). Reached left×right decomposition via guided tracing. Two-pass structure written independently once decomposition was clear. Two right-pass bugs fixed after hints. O(1) space (output reuse) achieved independently. Blog accepted after one revision (invariant precision, missing bug). |
 | 2026-06-11 | First Missing Positive (LC 41) | archives/2026-06-11-first-missing-positive/ | Two-pass structure written independently before swap mechanism was known. Swap correct on first try. Duplicate guard missed; caught after one concrete trace. Invariant stated precisely and unprompted. Blog accepted after 2 revisions. |
 | 2026-06-15 | Set Matrix Zeroes (LC 73) | archives/2026-06-15-set-matrix-zeroes/ | Jumped straight to O(1) marker approach without prompting. Cascade-corruption and variable-swap bugs not self-caught. All fixed through trace hints. Blog accepted after 1 revision (How to Recognize section). |
+| 2026-06-24 | Spiral Matrix (LC 54) | archives/2026-06-24-spiral-matrix/ | Independently reached shrinking-boundary simulation. Guard conditions in first complete attempt. Two bugs (typo, wrong boundary direction) not self-caught but fixed after one hint each. Blog accepted (mistakes section removed). |

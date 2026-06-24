@@ -60,6 +60,14 @@ Not yet observed in isolation. Sliding window sessions are partial evidence.
 
 **Assessment (2026-06-15):** First exposure to the border-as-marker pattern. The O(1) space instinct was unprompted — the user went straight to the advanced approach, which is stronger than any prior "O(1) independently chosen" signal (LC 238 and rotate-array were also O(1) but the path was more scaffolded). The structural insight (first row/col as marker arrays, saved booleans for the border itself) was correctly grasped. Implementation bugs were mechanical: cascade-corruption when zeroing included j=0, variable names swapped in detection loops, range(n) vs range(m). None were self-caught, but all resolved in 2-4 hint steps. The "repurpose input structure under strict space constraint" generalisation in the blog was the clearest pattern-recognition statement across all sessions. Next step: a matrix problem where the O(1) trick involves something other than the border (e.g., Rotate Image in-place, or a problem using sign-flipping as markers) to test whether the abstraction "repurpose existing structure" now transfers, or if it's still tied to the first-row/col specific case.
 
+## Matrix Traversal / Shrinking Boundary Simulation
+
+| Date | Problem | Outcome | Notes |
+| --- | --- | --- | --- |
+| 2026-06-24 | Spiral Matrix (LC 54) | Independent reach, implementation bugs | Reached shrinking-boundary approach without prompting. Guard conditions in first complete attempt. Typo and wrong boundary direction (`right += 1`) not self-caught but fixed after one hint each. See archives/2026-06-24-spiral-matrix/ |
+
+**Assessment (2026-06-24):** First exposure to spiral/layer traversal. This is the cleanest independent-reach signal across all novel patterns so far: the user reached for four shrinking boundaries without being told, and the guard conditions (`if top <= bottom`, `if left <= right`) appeared correctly in the first complete attempt. The only bugs were mechanical (a typo and a sign error on one boundary update) — not structural. The blog explained the guard conditions correctly. The invariant was not named explicitly, consistent with the persistent gap in blog writing. Next step: a problem requiring matrix traversal with a less obvious structure (e.g., Rotate Image, Diagonal Traverse, or Spiral Matrix II) to test whether boundary simulation now generalises as a first instinct across matrix problems.
+
 ## Dynamic Programming (1-D)
 
 | Date | Problem | Outcome | Notes |
