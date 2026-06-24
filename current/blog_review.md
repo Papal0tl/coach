@@ -40,5 +40,8 @@ The user independently reached the shrinking-boundary approach without being tol
 
 ## Required Revisions
 
-1. **Mistakes Made**: correct the inaccuracy — the guards were not forgotten; the actual bugs were the typo and `right += 1`.
-2. **Correctness Argument** (optional but recommended): add one sentence naming the invariant explicitly.
+None. Mistakes Made section was cleared rather than corrected. All other sections accepted.
+
+## Final Assessment
+
+Blog accepted.
