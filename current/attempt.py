@@ -10,7 +10,7 @@ class Solution:
         left = 0
         right = len(matrix[0]) - 1
         
-        while top <= bottom amd left <= right:
+        while top <= bottom and left <= right:
             # left -> right
             for col in range(left, right + 1):
                 res.append(matrix[top][col])
@@ -19,7 +19,7 @@ class Solution:
             # top -> bottom
             for row in range(top, bottom + 1):
                 res.append(matrix[row][right])
-            right += 1
+            right -= 1
 
             # right -> left
             if top <= bottom:
