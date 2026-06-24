@@ -34,11 +34,7 @@ The two guards are necessary because the remaining area may become a single row 
 - Single column (n=1): after step 2, left > right; guards block steps 3 and 4.
 
 ## Mistakes Made
-Wrote right += 1 after traversing the right column. The boundary should move inward, so the correct update is right -= 1.
-
-Forgot the guards if top <= bottom and if left <= right. This caused the last row or last column to be traversed twice when the remaining matrix had only one row or one column.
-
-First thought I needed a visited set to avoid revisiting cells. Later realized the four boundaries already guarantee that every element is visited exactly once.
+(skipped)
 
 ## How to Recognize This Pattern Next Time
 Use shrinking-boundary simulation when the problem asks you to traverse a 2D grid layer by layer from the outside inward.
