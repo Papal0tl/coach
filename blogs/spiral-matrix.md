@@ -4,13 +4,13 @@
 Given an m×n matrix, return all elements in spiral order (right → down → left → up, peeling inward layer by layer).
 
 ## Initial Intuition
-<!-- Write in your own words: what did you think of first when you saw this problem? -->
+Ssimulate the actual movement: go right, then down, then left, then up, and repeat. However, instead of tracking every visited cell with a set, I can shrink the valid area after finishing each side.
 
 ## Brute Force
-<!-- Write in your own words: what would a naive approach look like? -->
+Keep a visited set and move step by step in four directions. Whenever the next cell is out of bounds or already visited, change direction. This works, but it needs extra space to remember which cells were visited.
 
 ## Key Insight
-<!-- Write in your own words: what is the core idea that makes the solution work? -->
+The matrix can be viewed as layers. After finishing the top row, right column, bottom row, and left column, that outer layer is done. So we can move the four boundaries inward: top, right, bottom, and left. This avoids using a visited set.
 
 ## Final Algorithm
 Maintain four boundaries: top, bottom, left, right.
@@ -21,7 +21,8 @@ While top ≤ bottom and left ≤ right:
   4. If left ≤ right: traverse up along col `left`; left += 1
 
 ## Correctness Argument
-<!-- Write in your own words: why do the two guards (if top <= bottom, if left <= right) prevent double-counting the last row or column? -->
+The algorithm always visit the current outer layer in spiral order. After one side is visited, its boundary is moved inward, so those elements will never be visited again.
+The two guards are necessary because the remaining area may become a single row or a single column. If top > bottom, there is no bottom row left to traverse. If left > right, there is no left column left to traverse. These checks prevent adding the same row or column twice.
 
 ## Complexity
 - Time: O(m × n) — every element visited exactly once.
@@ -33,7 +34,11 @@ While top ≤ bottom and left ≤ right:
 - Single column (n=1): after step 2, left > right; guards block steps 3 and 4.
 
 ## Mistakes Made
-<!-- Write in your own words: what bugs did you introduce and how did you catch them? -->
+Wrote right += 1 after traversing the right column. The boundary should move inward, so the correct update is right -= 1.
+
+Forgot the guards if top <= bottom and if left <= right. This caused the last row or last column to be traversed twice when the remaining matrix had only one row or one column.
+
+First thought I needed a visited set to avoid revisiting cells. Later realized the four boundaries already guarantee that every element is visited exactly once.
 
 ## How to Recognize This Pattern Next Time
-<!-- Write in your own words: what cues in a future problem would make you reach for shrinking-boundary simulation? -->
+Use shrinking-boundary simulation when the problem asks you to traverse a 2D grid layer by layer from the outside inward.
