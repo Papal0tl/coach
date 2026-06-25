@@ -1,11 +1,11 @@
-# Spiral Matrix
+# Rotate Image
 
-- **Problem**: LC 54 — Spiral Matrix
-- **Slug**: spiral-matrix
+- **Problem**: LC 48 — Rotate Image
+- **Slug**: rotate-image
 - **Language**: Python
 - **Coaching mode**: hint-only
-- **Date**: 2026-06-17
-- **Status**: completed (archived 2026-06-24)
+- **Date**: 2026-06-25
+- **Status**: in progress
 
 ## Files
 

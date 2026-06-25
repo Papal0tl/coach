@@ -1,21 +1,21 @@
-# Rubric — Spiral Matrix
+# Rubric — Rotate Image
 
 ## Skill Targets
 
-- **Boundary simulation**: independently reach shrinking top/bottom/left/right bounds (vs. direction-array + visited-set approach).
-- **Direction cycling**: traverse right → down → left → up with correct range endpoints.
-- **Guard conditions**: apply `if top <= bottom` and `if left <= right` before the last two traversals to prevent double-counting.
-- **Termination**: `while top <= bottom and left <= right` — exact, no off-by-one.
-- **Edge cases**: single row, single column, 1×1 handled without special-casing.
+- **In-place transformation**: recognizes that no extra matrix is allowed and finds an in-place decomposition.
+- **Key decomposition**: discovers transpose-then-reverse-rows (or equivalent) without being told.
+- **Transpose implementation**: correctly swaps matrix[i][j] ↔ matrix[j][i] for i < j only (upper triangle).
+- **Row reversal**: correctly reverses each row in-place.
+- **Index arithmetic**: no off-by-one in the transpose loop bounds.
+- **Edge cases**: handles 1×1 and 2×2 correctly without special-casing.
 
 ## Evaluation
 
 | Criterion | Result |
 |---|---|
-| Reaches shrinking-boundary approach | Yes — independently, without prompting |
-| Correct traversal ranges (no off-by-one) | Yes |
-| Guard conditions on left/up passes | Yes — in first complete attempt |
-| Handles single-row input | Yes — passes tests |
-| Handles single-column input | Yes — passes tests |
-| Handles 1×1 input | Yes — passes tests |
-| Clean termination condition | Yes |
+| Reaches in-place decomposition without extra matrix | — |
+| Correct transpose (upper triangle only) | — |
+| Correct row reversal | — |
+| No off-by-one in loop bounds | — |
+| Handles 1×1 | — |
+| Handles 2×2 | — |
