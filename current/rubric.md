@@ -2,20 +2,23 @@
 
 ## Skill Targets
 
-- **In-place transformation**: recognizes that no extra matrix is allowed and finds an in-place decomposition.
-- **Key decomposition**: discovers transpose-then-reverse-rows (or equivalent) without being told.
-- **Transpose implementation**: correctly swaps matrix[i][j] ↔ matrix[j][i] for i < j only (upper triangle).
-- **Row reversal**: correctly reverses each row in-place.
-- **Index arithmetic**: no off-by-one in the transpose loop bounds.
-- **Edge cases**: handles 1×1 and 2×2 correctly without special-casing.
+- **In-place recognition**: understands that allocating a full copy is disallowed and finds a decomposition that avoids it.
+- **Decomposition discovery**: reaches transpose + reverse-rows (or equivalent 4-way cycle) independently.
+- **Transpose correctness**: loops only over the upper triangle (`j in range(i+1, n)`) so each pair is swapped exactly once.
+- **Row reversal vs. column reversal**: correctly reverses each row (not each column) after transposing.
+- **Index arithmetic**: no off-by-one in the transpose bounds.
+- **Edge cases**: 1×1 and 2×2 handled without special-casing.
+- **Invariant articulation**: can explain why the two-step decomposition produces 90° CW.
 
 ## Evaluation
 
 | Criterion | Result |
 |---|---|
-| Reaches in-place decomposition without extra matrix | — |
-| Correct transpose (upper triangle only) | — |
-| Correct row reversal | — |
+| Reaches in-place decomposition (no extra matrix) | — |
+| Correct approach: transpose + reverse-rows or 4-way cycle | — |
+| Upper-triangle-only transpose (no double-swap) | — |
+| Correct direction: row reversal (not column) after transpose | — |
 | No off-by-one in loop bounds | — |
-| Handles 1×1 | — |
-| Handles 2×2 | — |
+| Handles 1×1 without special case | — |
+| Handles 2×2 correctly | — |
+| Can articulate why decomposition works | — |
