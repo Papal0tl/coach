@@ -6,4 +6,10 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        pass
+        n = len(matrix)
+
+        for i in range(n//2):
+            for j in range(i, n - i - 1):
+                tmp = matrix[i][j]
+
+            
