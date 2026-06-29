@@ -53,4 +53,6 @@ for row in matrix:
 
 ## Observations
 
-(Populated during coaching.)
+- User stated "transpose then flip" as strategy, but implemented a 4-way cycle ring loop. Switched approach mid-implementation (or misstated strategy).
+- 4-way cycle: loop bounds correct (`range(n//2)` outer, `range(i, n-i-1)` inner). All four assignments correct on first complete attempt. All tests pass including 1×1 and 2×2.
+- Self-caught: no bugs. Completed cycle independently without hints.
