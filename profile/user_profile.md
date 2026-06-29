@@ -21,6 +21,7 @@
 - O(1) space reuse: independently chose to reuse the output array for the prefix/suffix product solution without prompting (product-of-array-except-self, 2026-06-10); jumped straight to O(1) marker approach for set-matrix-zeroes without attempting O(m+n) first (2026-06-15).
 - Structural instinct: wrote correct two-pass skeleton (placement + scan) before the swap mechanism was fully worked out (first-missing-positive, 2026-06-11).
 - Simulation pattern recognition: independently reached shrinking-boundary simulation for spiral-matrix (2026-06-24) without being guided to it; guard conditions present in first complete attempt.
+- Matrix transformation (4-way cycle): independently implemented correct 4-way cycle for rotate-image (2026-06-29) — loop bounds, coordinate pairs, and assignment order all correct on first complete attempt; zero bugs.
 
 ## Active Growth Areas
 
@@ -51,3 +52,4 @@
 | 2026-06-11 | First Missing Positive (LC 41) | archives/2026-06-11-first-missing-positive/ | Two-pass structure written independently before swap mechanism was known. Swap correct on first try. Duplicate guard missed; caught after one concrete trace. Invariant stated precisely and unprompted. Blog accepted after 2 revisions. |
 | 2026-06-15 | Set Matrix Zeroes (LC 73) | archives/2026-06-15-set-matrix-zeroes/ | Jumped straight to O(1) marker approach without prompting. Cascade-corruption and variable-swap bugs not self-caught. All fixed through trace hints. Blog accepted after 1 revision (How to Recognize section). |
 | 2026-06-24 | Spiral Matrix (LC 54) | archives/2026-06-24-spiral-matrix/ | Independently reached shrinking-boundary simulation. Guard conditions in first complete attempt. Two bugs (typo, wrong boundary direction) not self-caught but fixed after one hint each. Blog accepted (mistakes section removed). |
+| 2026-06-29 | Rotate Image (LC 48) | archives/2026-06-29-rotate-image/ | Stated "transpose then flip" but independently implemented correct 4-way cycle. Loop bounds and coordinate pairs correct on first attempt. Zero bugs. Blog accepted first pass (mistakes section kept as-is). |
