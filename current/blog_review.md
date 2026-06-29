@@ -38,4 +38,8 @@ High. The user identified the coordinate mapping from first principles (brute fo
 
 ## Required Revisions
 
-1. Mistakes Made: clarify or remove the third bullet ("the coordinate starts at (0,0) instead of (1,1)").
+None. Third bullet in Mistakes Made kept as-is at user's request.
+
+## Final Assessment
+
+Blog accepted.
