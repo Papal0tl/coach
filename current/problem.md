@@ -1,29 +1,50 @@
-# LC 48 — Rotate Image
+# LC 240 — Search a 2D Matrix II
 
-**Link**: https://leetcode.com/problems/rotate-image/
+https://leetcode.cn/problems/search-a-2d-matrix-ii/
 
 ## Problem
 
-You are given an `n x n` 2D matrix representing an image. Rotate the image by **90 degrees clockwise**.
+Write an efficient algorithm that searches for a value `target` in an `m x n` integer matrix. The matrix has the following properties:
 
-You must rotate the image **in-place**: modify the input matrix directly. Do not allocate another 2D matrix.
+- Integers in each row are sorted in ascending order from left to right.
+- Integers in each column are sorted in ascending order from top to bottom.
+
+Return `true` if `target` exists in the matrix, `false` otherwise.
 
 ## Examples
 
-**Example 1**
+**Example 1:**
 ```
-Input:  matrix = [[1,2,3],[4,5,6],[7,8,9]]
-Output:           [[7,4,1],[8,5,2],[9,6,3]]
+matrix = [
+  [1,  4,  7, 11, 15],
+  [2,  5,  8, 12, 19],
+  [3,  6,  9, 16, 22],
+  [10, 13, 14, 17, 24],
+  [18, 21, 23, 26, 30]
+]
+target = 5
+Output: true
 ```
 
-**Example 2**
+**Example 2:**
 ```
-Input:  matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
-Output:           [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
+matrix = [
+  [1,  4,  7, 11, 19],
+  [2,  5,  8, 12, 20],
+  [3,  6,  9, 16, 22],
+  [10, 13, 14, 17, 24],
+  [18, 21, 23, 26, 30]
+]
+target = 20
+Output: false
 ```
 
 ## Constraints
 
-- `n == matrix.length == matrix[i].length`
-- `1 <= n <= 20`
-- `-1000 <= matrix[i][j] <= 1000`
+- `m == matrix.length`
+- `n == matrix[i].length`
+- `1 <= m, n <= 300`
+- `-10^9 <= matrix[i][j] <= 10^9`
+- All integers in each row are sorted in ascending order.
+- All integers in each column are sorted in ascending order.
+- `-10^9 <= target <= 10^9`

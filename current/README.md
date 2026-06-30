@@ -1,11 +1,11 @@
-# Rotate Image
+# Search a 2D Matrix II
 
-- **Problem**: LC 48 — Rotate Image
-- **Slug**: rotate-image
+- **Problem**: LC 240 — Search a 2D Matrix II
+- **Slug**: search-a-2d-matrix-ii
 - **Language**: Python
 - **Coaching mode**: hint-only
-- **Date**: 2026-06-25
-- **Status**: completed (archived 2026-06-29)
+- **Date**: 2026-06-30
+- **Status**: in progress
 
 ## Files
 
