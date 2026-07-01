@@ -50,6 +50,13 @@ return False
 - Target at bottom-left corner: pointer walks down and left, reaches it. Correct.
 - Single row or single column: reduces to a linear scan in one dimension. Correct.
 
+## Observations
+
+- User initially drafted a row-by-row pruning loop (row truncation when element > target) — O(m*n) brute force with early row termination. Incomplete: no equality check, no return value.
+- Before testing, switched entirely to the staircase search from the top-right corner. Correct on first complete attempt: bounds, direction logic, and return values all right.
+- Explanation was clear and correct: top-right corner has the bifurcation property; each comparison eliminates a full row or column; O(m+n) follows from at most m+n steps.
+- Zero bugs in final attempt. All edge cases pass.
+
 ## Coaching Targets
 
 - Will the user try brute force first, or jump to binary search per row?
