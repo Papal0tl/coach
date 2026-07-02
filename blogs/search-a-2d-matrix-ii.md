@@ -13,6 +13,7 @@ Space complexity: O(1)
 
 
 **Key insight**: 
+Start from top right corner. From this position, moving left makes the value smaller, and moving down makes the value larger. So if the current value is too large, we can eliminate the current column. If it is too small, we can eliminate the current row.
 
 
 **Final algorithm**:
@@ -27,6 +28,8 @@ Space complexity: O(1)
 **Edge cases**: 1×1 matrix; target smaller than `matrix[0][0]`; target larger than `matrix[m-1][n-1]`; target at a corner; single row or column.
 
 **Mistakes made**: 
-
+- First tried to determine one exact row using the first column. The last row whose first element is smaller than `target` must be the correct row. Forgot that earlier rows can still contain larger values later in the row. And I mixed up row index 'i' with the actual matrix value 'matrix[i][j]'.
+- Considered trimming rows, but that makes the logic more complicated and is not optimal.
 
 **How to recognize the pattern next time**: 
+When a matrix is sorted both row-wise and column-wise, look for a corner where one direction gets smaller and other direction gets larger. From top right or bottom left, each comparison can eliminate one whole row or one whole column.
