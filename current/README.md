@@ -1,11 +1,11 @@
-# Search a 2D Matrix II
+# Intersection of Two Linked Lists
 
-- **Problem**: LC 240 — Search a 2D Matrix II
-- **Slug**: search-a-2d-matrix-ii
+- **Problem**: LC 160 — Intersection of Two Linked Lists
+- **Slug**: intersection-of-two-linked-lists
 - **Language**: Python
 - **Coaching mode**: hint-only
-- **Date**: 2026-06-30
-- **Status**: completed (archived 2026-07-02)
+- **Date**: 2026-07-02
+- **Status**: in progress
 
 ## Files
 
