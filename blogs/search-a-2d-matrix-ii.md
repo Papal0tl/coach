@@ -14,6 +14,10 @@ Space complexity: O(1)
 
 **Key insight**: 
 Start from top right corner. From this position, moving left makes the value smaller, and moving down makes the value larger. So if the current value is too large, we can eliminate the current column. If it is too small, we can eliminate the current row.
+站在右上角：
+
+比 target 大 → 左边更小 → 往左
+比 target 小 → 下面更大 → 往下
 
 
 **Final algorithm**:
