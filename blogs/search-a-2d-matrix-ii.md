@@ -26,6 +26,7 @@ If number < target -> bottem is larger -> to bottom
 3. Return False.
 
 **Correctness argument**: 
+If matrix[i][j] > target, then all elements below matrix[i][j] in the same column are greater than or equal to matrix[i][j], so they are also greater than target. Therefore, target cannot be in the discarded part of column j. Similarly, if matrix[i][j] < target, then all elements to the left in the same row are less than or equal to matrix[i][j], so they are also less than target. Thus, each move safely eliminates one row or one column without missing the target.
 
 **Complexity**: Time O(m+n) — each step decrements `j` or increments `i`, at most m+n steps total. Space O(1).
 
