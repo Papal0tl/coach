@@ -12,7 +12,7 @@ Scale:
 | Problem restatement | 0 | Not observed. | — |
 | Constraint analysis | 0 | Not observed. | — |
 | Brute-force construction | 2 | Correctly described O(n²)/O(n³) brute force in both session blogs without prompting. | 2026-06-03 |
-| Pattern recognition | 3 | First-attempt solves for sliding window (LC 76) and DP (LC 53). Independently reached shrinking-boundary simulation (LC 54) and 4-way cycle rotation (LC 48) without scaffolding. Novel decomposition patterns still benefit from guided tracing, but matrix traversal/transformation now consistently self-directed. | 2026-06-29 |
+| Pattern recognition | 3 | First-attempt solves for sliding window (LC 76) and DP (LC 53). Independently reached shrinking-boundary simulation (LC 54), 4-way cycle rotation (LC 48), and staircase search (LC 240) without scaffolding. Novel decomposition patterns still benefit from guided tracing, but matrix traversal/search now consistently self-directed. | 2026-07-02 |
 | Invariant formulation | 2 | Stated index-as-hash-map invariant precisely and unprompted (LC 41). Correctness argument in LC 73 blog stated iff condition correctly on first draft. Blog sections more consistent now; trending toward 3. | 2026-06-15 |
 | Data structure selection | 3 | Reached for two frequency maps + coverage counter without hints (LC 76). | 2026-06-03 |
 | Complexity analysis | 2 | Stated O(n) time and O(n) space correctly for rotate-array without prompting. Consistent across sessions. | 2026-06-06 |

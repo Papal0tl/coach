@@ -78,6 +78,14 @@ Not yet observed in isolation. Sliding window sessions are partial evidence.
 
 **Follow-up (2026-06-29 — LC 48 Rotate Image):** The adjacent matrix problem (in-place rotation) was solved independently and bug-free, with correct ring and position logic on the first attempt. Spatial instinct across matrix problems is now demonstrably generalising. See archives/2026-06-29-rotate-image/. Next step: a traversal problem with non-square or irregular structure to probe the limit of this generalisation.
 
+## Matrix Search / Staircase Search
+
+| Date | Problem | Outcome | Notes |
+| --- | --- | --- | --- |
+| 2026-07-02 | Search a 2D Matrix II (LC 240) | Independent reach, zero bugs | Initial row-pruning draft abandoned before completion. Pivoted to staircase search independently. Correct implementation on first complete attempt. See archives/2026-07-02-search-a-2d-matrix-ii/ |
+
+**Assessment (2026-07-02):** First exposure to the staircase search pattern. The initial approach (row-by-row pruning by truncating rows when an element exceeds target) was incomplete — no equality check, no return value, would have caused IndexError on truncated rows under continued iteration. The user abandoned it before submitting and pivoted to the correct staircase approach independently. The staircase reasoning was explained correctly in conversation: top-right corner has opposing move directions, each comparison eliminates a full row or column, O(m+n) follows. Zero bugs in final implementation. Blog correctness argument required explicit prompting but was accurate once written. Next step: LC 74 (Search a 2D Matrix) to compare — that matrix has a stronger sorted property (each row's first element > previous row's last), enabling binary search; the contrast would test whether the user can select the right approach based on which property holds.
+
 ## Dynamic Programming (1-D)
 
 | Date | Problem | Outcome | Notes |
