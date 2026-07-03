@@ -94,6 +94,14 @@ Not yet observed in isolation. Sliding window sessions are partial evidence.
 
 **Assessment (2026-07-03):** First exposure to linked-list two-pointer synchronization and the first linked-list problem overall. The core insight (redirect each pointer to the other list's head to equalize total path length at m + n) was applied correctly with no scaffolding — the strongest first-attempt signal yet on a non-matrix novel pattern, with no intermediate commits showing trial and error. The only gap was using `!=` instead of `is not` for node comparison; this is accidentally correct only because `ListNode` has no `__eq__` override. The user identified this exact issue independently while writing the blog's Mistakes Made section, then corrected `attempt.py` to `is not` before the agent's review even required it — the first observed instance of self-catching a gap during reflective writing rather than through a coaching trace prompt. Correctness argument (m + n - c equalization) was precise and complete on first blog submission; zero revision cycles needed. Next step: a single-list two-pointer problem (e.g., Linked List Cycle II — LC 142, or Middle of the Linked List) to test whether pointer-synchronization reasoning transfers to a different list topology, and whether the `is`/`==` distinction is now applied by default without a rubric prompt.
 
+## Linked List Reversal / In-Place Pointer Rewiring
+
+| Date | Problem | Outcome | Notes |
+| --- | --- | --- | --- |
+| 2026-07-03 | Reverse Linked List (LC 206) | Independent solve, zero bugs | Correct three-pointer walk (prev/cur/saved-next) on first attempt. Loop invariant stated precisely and unprompted when asked. See archives/2026-07-03-reverse-linked-list/ |
+
+**Assessment (2026-07-03):** Second linked-list problem, same day as the Two Pointers / Linked List Synchronization session above (LC 160), testing a distinct sub-skill: in-place pointer rewiring rather than cross-list synchronization. The three-pointer pattern (save `cur.next` before overwriting, advance `prev` and `cur`) was correct on the first attempt with no scaffolding, including correct `prev = None` initialization and empty-list handling with no special-casing. When asked directly "can you state the invariant," the answer was immediate and precise: "prev holds the reversed sublist, cur holds the remaining unprocessed sublist." This is the cleanest on-demand invariant articulation yet — no hedging, no partial answer. The user declined the recursive-variant follow-up when offered — first explicit opt-out of an optional extension observed in any session. Next step: a fast/slow two-pointer problem on a single list (Linked List Cycle II — LC 142, or Middle of the Linked List — LC 876) to test a third linked-list sub-pattern (cycle/midpoint detection) distinct from both intersection-sync and reversal.
+
 ## Dynamic Programming (1-D)
 
 | Date | Problem | Outcome | Notes |
