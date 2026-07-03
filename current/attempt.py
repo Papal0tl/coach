@@ -21,6 +21,6 @@ class Solution:
             rev_val.append(vals[i])
 
         if vals == rev_val:
-            return true
+            return True
         else:
-            return false
+            return False
