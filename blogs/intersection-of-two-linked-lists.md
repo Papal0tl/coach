@@ -4,13 +4,19 @@
 Given the heads of two singly linked lists, return the node where they intersect (by reference, not value), or `None` if they never intersect.
 
 ## Initial Intuition
-(to be filled by user)
+Compare node values, but this is wrong because intersection means two pointers refer to the exact same node object, not just nodes with the same value.
 
 ## Brute Force
-(to be filled by user)
+For every node in list A, scan every node in list B and check whether they are the same node reference.
+
+Time: O(mn)  
+Space: O(1)
 
 ## Key Insight
-(to be filled by user)
+#### Important: the two lists may have different lengths, so the two pointers may reach the shared part at different times.
+
+By switching each pointer to the other list's head after reaching `None`, both pointers walk the same total path length: A + B and B + A. This cancels out the length difference and aligns them at the intersection.
+
 
 ## Final Algorithm
 Redirect each pointer to the other list's head once it reaches the end:
@@ -36,7 +42,14 @@ Redirecting each pointer to the other list's head makes both pointers traverse e
 - Single-node lists, no intersection: both reach `None` after 2 steps.
 
 ## Mistakes Made
-(to be filled by user)
+- First thought intersection meant two nodes had the same value.
+- Forgot that `a != b` compares node references when `ListNode` has no custom `__eq__`.
+- Did not immediately see why redirecting to the other head cancels the length difference.
+- Almost compared `a.val` and `b.val`, which would be incorrect.
 
 ## How to Recognize This Pattern Next Time
-(to be filled by user)
+- The problem asks for intersection of two linked lists.
+- Intersection means same node object, not same value.
+- The two lists may have different lengths.
+- You need O(1) space.
+- You need to align two pointers without explicitly computing both lengths.
