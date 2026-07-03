@@ -8,9 +8,7 @@
 
 ## Missing Concepts
 
-None on the algorithm itself. One gap between the blog and the code:
-
-- **Mistakes Made** states: "Forgot that `a != b` compares node references when `ListNode` has no custom `__eq__`." This is a correct and valuable realization — but `current/attempt.py` still uses `while a != b:`, not `while a is not b:`. The rubric target is explicit `is`/`is not` for identity comparison. Right now the code is only *accidentally* correct (it works because `ListNode` has no `__eq__` override, so `!=` falls back to identity) rather than *explicitly* correct. Since you've already identified this in writing, it's worth closing the loop by updating the code to say what it means.
+None. `current/attempt.py` has been updated to `while a is not b:`, matching the identity-comparison understanding in the blog. Verified the fix doesn't change behavior on the no-intersection and identical-list-identity test cases.
 
 ## Clarity
 
@@ -23,8 +21,8 @@ Ready. The "How to Recognize This Pattern Next Time" checklist correctly abstrac
 
 ## Required Revisions
 
-- Update `current/attempt.py` to use `is not` / `is` instead of `!=` / `==`, so the code reflects the identity-comparison understanding stated in the blog. Small change, but it turns a correct-by-accident line into correct-by-design.
+None outstanding.
 
 ## Agent Assessment
 
-Strong session. The user reached the two-pointer redirect approach, can explain the path-length equalization argument precisely (matches the m + n - c argument from notes.md), and reflected honestly on missteps. The only outstanding item is syncing the code's comparison operator with the insight already articulated in the blog — once that's done, this is ready to close out.
+Strong session. The user reached the two-pointer redirect approach, can explain the path-length equalization argument precisely (matches the m + n - c argument from notes.md), reflected honestly on missteps, and closed the loop between insight and code. Ready to close out the session.

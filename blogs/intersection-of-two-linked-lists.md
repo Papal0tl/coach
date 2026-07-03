@@ -43,7 +43,7 @@ Redirecting each pointer to the other list's head makes both pointers traverse e
 
 ## Mistakes Made
 - First thought intersection meant two nodes had the same value.
-- Forgot that `a != b` compares node references when `ListNode` has no custom `__eq__`.
+- Forgot that `a != b` compares node references when `ListNode` has no custom `__eq__`. => change it to `a is not b`
 - Did not immediately see why redirecting to the other head cancels the length difference.
 - Almost compared `a.val` and `b.val`, which would be incorrect.
 
