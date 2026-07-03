@@ -22,6 +22,8 @@
 - Structural instinct: wrote correct two-pass skeleton (placement + scan) before the swap mechanism was fully worked out (first-missing-positive, 2026-06-11).
 - Simulation pattern recognition: independently reached shrinking-boundary simulation for spiral-matrix (2026-06-24) without being guided to it; guard conditions present in first complete attempt.
 - Matrix transformation (4-way cycle): independently implemented correct 4-way cycle for rotate-image (2026-06-29) — loop bounds, coordinate pairs, and assignment order all correct on first complete attempt; zero bugs.
+- Two-pointer list synchronization: went from `pass` directly to the correct two-pointer redirect solution for intersection-of-two-linked-lists (2026-07-03) in a single attempt — no intermediate hints, zero logical bugs. Strongest first-attempt signal yet on a genuinely novel (non-matrix) pattern.
+- Self-reflection during writing: independently caught the `!=` vs `is not` accidental-correctness gap while writing the blog's Mistakes Made section, then fixed the code before being asked (2026-07-03).
 
 ## Active Growth Areas
 
@@ -54,3 +56,4 @@
 | 2026-06-24 | Spiral Matrix (LC 54) | archives/2026-06-24-spiral-matrix/ | Independently reached shrinking-boundary simulation. Guard conditions in first complete attempt. Two bugs (typo, wrong boundary direction) not self-caught but fixed after one hint each. Blog accepted (mistakes section removed). |
 | 2026-06-29 | Rotate Image (LC 48) | archives/2026-06-29-rotate-image/ | Stated "transpose then flip" but independently implemented correct 4-way cycle. Loop bounds and coordinate pairs correct on first attempt. Zero bugs. Blog accepted first pass (mistakes section kept as-is). |
 | 2026-07-02 | Search a 2D Matrix II (LC 240) | archives/2026-07-02-search-a-2d-matrix-ii/ | Drafted incomplete row-pruning loop then pivoted to optimal staircase search independently. Zero bugs in final attempt. Staircase reasoning explained correctly. Blog required 3 revision cycles: 4 blank sections initially, then an English-only violation (Chinese text), then blank correctness argument. Correctness argument accurate once written. |
+| 2026-07-03 | Intersection of Two Linked Lists (LC 160) | archives/2026-07-03-intersection-of-two-linked-lists/ | Went from `pass` straight to the correct two-pointer redirect solution in one commit, zero bugs, no hints needed. Used `!=` instead of `is not` (accidentally correct); self-caught this exact gap while writing the blog's Mistakes Made section and fixed the code before closeout. Blog accepted with zero revisions on substantive content. |

@@ -86,6 +86,14 @@ Not yet observed in isolation. Sliding window sessions are partial evidence.
 
 **Assessment (2026-07-02):** First exposure to the staircase search pattern. The initial approach (row-by-row pruning by truncating rows when an element exceeds target) was incomplete — no equality check, no return value, would have caused IndexError on truncated rows under continued iteration. The user abandoned it before submitting and pivoted to the correct staircase approach independently. The staircase reasoning was explained correctly in conversation: top-right corner has opposing move directions, each comparison eliminates a full row or column, O(m+n) follows. Zero bugs in final implementation. Blog correctness argument required explicit prompting but was accurate once written. Next step: LC 74 (Search a 2D Matrix) to compare — that matrix has a stronger sorted property (each row's first element > previous row's last), enabling binary search; the contrast would test whether the user can select the right approach based on which property holds.
 
+## Two Pointers / Linked List Synchronization
+
+| Date | Problem | Outcome | Notes |
+| --- | --- | --- | --- |
+| 2026-07-03 | Intersection of Two Linked Lists (LC 160) | Independent solve, zero bugs | Went from `pass` to the correct two-pointer redirect in a single attempt, no intermediate hints. See archives/2026-07-03-intersection-of-two-linked-lists/ |
+
+**Assessment (2026-07-03):** First exposure to linked-list two-pointer synchronization and the first linked-list problem overall. The core insight (redirect each pointer to the other list's head to equalize total path length at m + n) was applied correctly with no scaffolding — the strongest first-attempt signal yet on a non-matrix novel pattern, with no intermediate commits showing trial and error. The only gap was using `!=` instead of `is not` for node comparison; this is accidentally correct only because `ListNode` has no `__eq__` override. The user identified this exact issue independently while writing the blog's Mistakes Made section, then corrected `attempt.py` to `is not` before the agent's review even required it — the first observed instance of self-catching a gap during reflective writing rather than through a coaching trace prompt. Correctness argument (m + n - c equalization) was precise and complete on first blog submission; zero revision cycles needed. Next step: a single-list two-pointer problem (e.g., Linked List Cycle II — LC 142, or Middle of the Linked List) to test whether pointer-synchronization reasoning transfers to a different list topology, and whether the `is`/`==` distinction is now applied by default without a rubric prompt.
+
 ## Dynamic Programming (1-D)
 
 | Date | Problem | Outcome | Notes |
