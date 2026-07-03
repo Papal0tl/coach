@@ -29,7 +29,8 @@ return vals == rev_val
 ```
 
 ## Correctness Argument
-_TODO: write in your own words. (Hint: why does comparing `vals` to its reverse decide the palindrome question correctly, for both even- and odd-length lists?)_
+`vals` stores the linked list values from head to tail. `rev_val` stores the same values from tail to head. If the linked list is a palindrome, every value from the front matches the corresponding value from the back, so `vals == rev_val`. If any mirrored pair is different, the two lists will not be equal, so the linked list is not a palindrome. This works for even-length lists and odd-length lists; in an odd-length list, the middle value just matches itself.
+
 
 ## Complexity
 - Time: O(n) — one pass to copy values, one pass to build the reversed list, one comparison.
@@ -42,7 +43,9 @@ _TODO: write in your own words. (Hint: why does comparing `vals` to its reverse 
 - Empty list is out of scope per constraints (`1 <= number of nodes`).
 
 ## Mistakes Made
-N/A
+- Wrote `range(len(vals) - 1, -1, -1, -1)`, but `range()` only takes up to three arguments: `start, stop, step`. This taught me that reverse looping should be `range(len(vals) - 1, -1, -1)`.
+- Wrote `cur.val[i]`, but `cur.val` is just one value, not a list. I should use `cur.val` when adding the current node’s value.
+- Wrote lowercase `true` / `false`, but Python uses `True` / `False` with capital letters.
 
 ## How to Recognize This Pattern Next Time
 Whether a linked list reads the same forward and backward. If I need to compare positions from both ends, an array is much easier than a singly linked list because it supports direct indexing and reversing.
