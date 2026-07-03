@@ -13,9 +13,15 @@
 
 | Criterion | Result |
 |---|---|
-| Identifies the no-backward-traversal constraint | |
-| Fast/slow pointer correctly finds middle (even + odd) | |
-| Reversal applied correctly to the second half | |
-| Comparison loop correct, including middle-node case | |
-| Reaches O(1) space (vs. O(n) array/stack) | |
-| Considers restoring the list | |
+| Identifies the no-backward-traversal constraint | Implicitly — worked around it via value copy rather than stating it explicitly. |
+| Fast/slow pointer correctly finds middle (even + odd) | Not attempted — O(1)-space follow-up declined. |
+| Reversal applied correctly to the second half | Not attempted — O(1)-space follow-up declined. |
+| Comparison loop correct, including middle-node case | Yes, via `vals == rev_val`; all 6 manual test cases pass. |
+| Reaches O(1) space (vs. O(n) array/stack) | No — user chose to stop at the O(n)-space brute force. |
+| Considers restoring the list | N/A — brute force doesn't mutate the list. |
+
+## Bugs Fixed This Session
+
+- `range()` called with 4 arguments instead of 3 (`TypeError`) — fixed after tracing a concrete example to find the correct `stop` value.
+- Indexed with `cur.val[i]` instead of `vals[i]` — fixed in the same pass as the range fix.
+- Used lowercase `true`/`false` instead of Python's `True`/`False` (`NameError`) — fixed immediately after being asked for the correct literal.

@@ -52,3 +52,14 @@ Went straight for the O(n)-space brute force (collect values, build reversed lis
 - Not yet run against `tests.py`, so none of this has been surfaced by execution.
 
 Asked the user to run it against `tests.py` themselves rather than pointing out each bug directly, to see what they self-diagnose from the traceback.
+
+Noted `tests.py` imports from `agent_solution`, not `attempt` — running it doesn't exercise the user's code. Flagged this directly (a tooling fact, not an algorithm hint) and ran `attempt.py` manually to surface real errors.
+
+Fixed all three bugs across three checkpoints, each after a guided question rather than a direct answer:
+- `range(len(vals), -1, -1, -1)` (4 args, `TypeError`) → traced a concrete example (`vals=[1,2,3]`) to find the correct `stop` value; fixed to `range(len(vals) - 1, -1, -1)` unprompted after the trace.
+- `cur.val[i]` instead of `vals[i]` — fixed in the same edit as the range fix, without a separate prompt.
+- `true`/`false` lowercase (JS/Java habit) — fixed immediately after being asked for Python's actual literal.
+
+Correctly stated complexity unprompted: O(n) time, O(n) space for the brute force. All 6 manual test cases pass.
+
+User initially said they wanted to try the O(1)-space follow-up, then reversed course and asked to move directly to the blog. Recording the O(1)-space (fast/slow + in-place reversal) approach as skipped by user choice — session closes with the O(n)-space brute force only, matching how the recursive variant was declined in the prior reverse-linked-list session.
