@@ -54,3 +54,5 @@ return prev
 ## Outcome — First Attempt (2026-07-03)
 
 Correct iterative solution on the first attempt, all 5 tests pass. Pointer-save discipline, `prev = None` initialization, and empty-list handling (no special-casing) all correct without prompting. Stated the loop invariant precisely and unprompted when asked: "prev holds the reversed sublist, cur holds the remaining unprocessed sublist." Minor style note (not a bug): variable named `next` shadows the builtin `next()` — not exercised in this scope, but worth flagging as a naming habit.
+
+User declined to attempt the recursive variant when offered. Moving to the blog phase with iterative-only coverage.

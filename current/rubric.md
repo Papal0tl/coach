@@ -17,5 +17,5 @@
 | `prev` initialized to `None` | Yes. |
 | Can state the loop invariant | Yes — stated precisely and unprompted: "prev holds the reversed sublist, cur holds the remaining unprocessed sublist." |
 | Empty list handled without special-casing | Yes — loop naturally skips when `head is None`. |
-| Attempts or explains recursive version | Not yet — to be probed next. |
+| Attempts or explains recursive version | Skipped by user choice — declined the recursive follow-up. |
 | O(1) space (iterative) achieved | Yes. |
