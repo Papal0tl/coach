@@ -1,60 +1,52 @@
-# Coaching Notes — Intersection of Two Linked Lists
+# Coaching Notes — Reverse Linked List
 
 ## Session
 
-- Date: 2026-07-02
-- Problem: LC 160 Intersection of Two Linked Lists
+- Date: 2026-07-03
+- Problem: LC 206 Reverse Linked List
 - Language: Python
 - Mode: hint-only
 
 ## Key Insight
 
-The core observation: if two lists intersect, they share a common suffix. The challenge is that the two prefixes before the intersection may have different lengths, so walking both pointers in parallel won't naturally align them.
+Reversing a singly linked list in place requires flipping every `next` pointer to point backward. Because each node's `next` is overwritten, the node that comes after it must be saved *before* the overwrite, or the rest of the list becomes unreachable.
 
-The two-pointer trick: when pointer A finishes list A, redirect it to the head of list B. When pointer B finishes list B, redirect it to the head of list A. Both pointers now travel the same total distance: `len(A) + len(B)`. They arrive at the intersection simultaneously.
+The standard iterative approach keeps three references: `prev` (the reversed portion so far, starts at `None`), `cur` (the node being processed), and `nxt` (saved before rewiring). Each step: save `cur.next`, point `cur.next` back to `prev`, then advance both `prev` and `cur`.
 
-If there is no intersection, both pointers reach `None` at the same step (after `m + n` steps), so the loop exits correctly.
+A recursive version reverses the rest of the list first, then fixes up the link between the current node and its (now-reversed) successor.
 
 ## Invariant
 
-After the redirect, pointer A has traveled: `(m - c) + c + (n - c)` steps to reach the intersection, where `c` is the length of the shared tail. Pointer B has traveled: `(n - c) + c + (m - c)` steps. Both equal `m + n - c`. They are synchronized.
+At the top of each iteration, `prev` is the head of the correctly-reversed sublist of all nodes processed so far, and `cur` is the head of the remaining (still-forward) sublist. When `cur` becomes `None`, `prev` is the new head of the fully reversed list.
 
-## Algorithm
+## Algorithm (iterative)
 
 ```
-a, b = headA, headB
-while a is not b:
-    a = a.next if a else headB
-    b = b.next if b else headA
-return a
+prev, cur = None, head
+while cur:
+    nxt = cur.next
+    cur.next = prev
+    prev = cur
+    cur = nxt
+return prev
 ```
 
 ## Complexity
 
-- Time: O(m + n) — each pointer traverses at most m + n nodes.
-- Space: O(1).
+- Time: O(n) — each node visited once.
+- Space: O(1) iterative; O(n) recursive (call stack).
 
 ## Edge Cases
 
-- No intersection: both pointers reach `None` simultaneously after m + n steps; `None is None` is True, returns `None`. ✓
-- Lists of equal length that intersect: pointers meet on the first pass without needing the redirect.
-- Intersection at the very first node (skipA = 0, skipB = 0): headA is headB; loop condition is false immediately, returns headA. ✓
-- One list is longer than the other: redirect handles the offset automatically.
-- Single-node lists, no intersection: both reach `None` after 2 steps. ✓
-
-## Alternative Approaches
-
-- **Hash set**: store all nodes from listA, scan listB for first match. O(m + n) time, O(m) space. Simple but uses extra memory.
-- **Length difference**: compute lengths of both lists, advance the longer pointer by the difference, walk both until they meet. O(m + n) time, O(1) space. Correct but more code than the two-pointer redirect.
+- Empty list (`head = None`): loop never runs, returns `None`. ✓
+- Single node: loop runs once, `cur.next` set to `None` (already `None`), returns the same node as new head. ✓
+- Two nodes: verifies the pointer swap direction is correct, not just a no-op.
+- List with repeated/negative values: confirms comparison is by structure/order, not value uniqueness.
 
 ## Coaching Targets
 
-- Will the user reach the hash set approach first?
-- Will the user discover the two-pointer redirect independently, or will they need a nudge about equal total path length?
-- Can the user explain *why* the redirect equalizes the paths (the m + n - c argument)?
-- Does the user correctly handle the no-intersection case (both reach None)?
-- Does the user use `is` (identity) rather than `==` (value equality)?
-
-## Outcome (2026-07-03)
-
-Went from `pass` straight to a fully correct two-pointer redirect solution in one commit — no intermediate hints or bugs. Only gap was using `!=` instead of `is not`; this worked by accident (no `__eq__` override on `ListNode`) but wasn't the explicit identity comparison the rubric targets. The user self-identified this exact issue while writing the blog's "Mistakes Made" section and then fixed `attempt.py` to use `is not` before closeout — self-catching happened during reflection/writing rather than during initial coding, a new variant worth tracking. Blog required zero revision cycles on the substantive sections; only the code fix was needed.
+- Does the user save `cur.next` before overwriting it (the classic bug: losing the rest of the list)?
+- Does the user initialize `prev = None` (so the original head's `next` correctly becomes `None`)?
+- Can the user state the loop invariant (prev = reversed-so-far, cur = remaining)?
+- Will the user attempt the recursive version, and can they explain the recursive invariant (reverse the rest, then fix the link)?
+- Does the user handle the empty-list case without a special-case branch?

@@ -1,11 +1,11 @@
-# Intersection of Two Linked Lists
+# Reverse Linked List
 
-- **Problem**: LC 160 — Intersection of Two Linked Lists
-- **Slug**: intersection-of-two-linked-lists
+- **Problem**: LC 206 — Reverse Linked List
+- **Slug**: reverse-linked-list
 - **Language**: Python
 - **Coaching mode**: hint-only
-- **Date**: 2026-07-02
-- **Status**: archived — see archives/2026-07-03-intersection-of-two-linked-lists/
+- **Date**: 2026-07-03
+- **Status**: in progress
 
 ## Files
 
