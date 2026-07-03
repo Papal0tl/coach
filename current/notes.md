@@ -41,3 +41,14 @@ This composes three patterns already seen this session series: fast/slow pointer
 ## Follow-Up Candidates
 
 - O(n) space brute force (copy values into a list/array, two-pointer compare) as a natural first step before the O(1) optimization.
+
+## Observations — First Attempt (2026-07-03)
+
+Went straight for the O(n)-space brute force (collect values, build reversed list, compare) — matches the anticipated first step. Not yet run; has not been self-tested. Several issues present:
+
+- `range(len(vals), -1, -1, -1)` — 4 arguments; `range()` only accepts up to 3 (start, stop, step). Will raise `TypeError` immediately.
+- Inside that loop, indexes with `cur.val[i]` instead of `vals[i]` — `cur` is `None` by this point (loop above already exhausted it), so this would fail even if the `range` call were fixed.
+- Uses `true`/`false` (lowercase) instead of Python's `True`/`False` — `NameError`, since JS/Java capitalization habits don't carry over.
+- Not yet run against `tests.py`, so none of this has been surfaced by execution.
+
+Asked the user to run it against `tests.py` themselves rather than pointing out each bug directly, to see what they self-diagnose from the traceback.
