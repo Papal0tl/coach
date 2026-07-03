@@ -17,8 +17,8 @@ class Solution:
             cur = cur.next
         
         rev_val = []
-        for i in range(len(vals), -1, -1, -1):
-            rev_val.append(cur.val[i])
+        for i in range(len(vals) - 1, -1, -1):
+            rev_val.append(vals[i])
 
         if vals == rev_val:
             return true
