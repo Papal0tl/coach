@@ -1,11 +1,11 @@
-# Reverse Linked List
+# Palindrome Linked List
 
-- **Problem**: LC 206 — Reverse Linked List
-- **Slug**: reverse-linked-list
+- **Problem**: LC 234 — Palindrome Linked List
+- **Slug**: palindrome-linked-list
 - **Language**: Python
 - **Coaching mode**: hint-only
 - **Date**: 2026-07-03
-- **Status**: archived — see archives/2026-07-03-reverse-linked-list/
+- **Status**: active
 
 ## Files
 
