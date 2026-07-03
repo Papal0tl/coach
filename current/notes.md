@@ -50,3 +50,7 @@ return prev
 - Can the user state the loop invariant (prev = reversed-so-far, cur = remaining)?
 - Will the user attempt the recursive version, and can they explain the recursive invariant (reverse the rest, then fix the link)?
 - Does the user handle the empty-list case without a special-case branch?
+
+## Outcome — First Attempt (2026-07-03)
+
+Correct iterative solution on the first attempt, all 5 tests pass. Pointer-save discipline, `prev = None` initialization, and empty-list handling (no special-casing) all correct without prompting. Stated the loop invariant precisely and unprompted when asked: "prev holds the reversed sublist, cur holds the remaining unprocessed sublist." Minor style note (not a bug): variable named `next` shadows the builtin `next()` — not exercised in this scope, but worth flagging as a naming habit.

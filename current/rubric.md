@@ -13,9 +13,9 @@
 
 | Criterion | Result |
 |---|---|
-| Saves `cur.next` before rewiring | |
-| `prev` initialized to `None` | |
-| Can state the loop invariant | |
-| Empty list handled without special-casing | |
-| Attempts or explains recursive version | |
-| O(1) space (iterative) achieved | |
+| Saves `cur.next` before rewiring | Yes — correct on first attempt. |
+| `prev` initialized to `None` | Yes. |
+| Can state the loop invariant | Yes — stated precisely and unprompted: "prev holds the reversed sublist, cur holds the remaining unprocessed sublist." |
+| Empty list handled without special-casing | Yes — loop naturally skips when `head is None`. |
+| Attempts or explains recursive version | Not yet — to be probed next. |
+| O(1) space (iterative) achieved | Yes. |
