@@ -25,6 +25,7 @@
 - Two-pointer list synchronization: went from `pass` directly to the correct two-pointer redirect solution for intersection-of-two-linked-lists (2026-07-03) in a single attempt — no intermediate hints, zero logical bugs. Strongest first-attempt signal yet on a genuinely novel (non-matrix) pattern.
 - Self-reflection during writing: independently caught the `!=` vs `is not` accidental-correctness gap while writing the blog's Mistakes Made section, then fixed the code before being asked (2026-07-03).
 - Linked-list pointer rewiring: correct iterative reversal (three-pointer walk with saved `next`) on the first attempt for reverse-linked-list (2026-07-03), zero bugs; stated the loop invariant ("prev holds the reversed sublist, cur holds the remaining unprocessed sublist") precisely and unprompted when asked.
+- Constraint-driven approach selection: for palindrome-linked-list (2026-07-03), correctly identified that a singly linked list can't be indexed or walked backward and chose the value-copy-and-compare workaround without prompting; stated O(n) time / O(n) space complexity unprompted.
 
 ## Active Growth Areas
 
@@ -37,6 +38,8 @@
 
 - Copy-paste artifacts from LeetCode (nested class structure) cause syntax errors that aren't caught until runtime.
 - Edits made in IDE don't get saved before reporting "done" — requires a reminder to save.
+- Syntax/API-level slips distinct from logic bugs: in palindrome-linked-list (2026-07-03), three bugs were all mechanical rather than conceptual — a 4-argument `range()` call, indexing a scalar (`cur.val[i]`) instead of the intended list, and lowercase `true`/`false` (non-Python capitalization). The underlying algorithm was correct in each case; the bugs were in translating it to valid Python syntax. Each was fixed quickly (one guided question or trace each) but none were self-caught before running.
+- Declining optional follow-ups once a correct baseline works: reverse-linked-list's recursive variant (2026-07-03) and palindrome-linked-list's O(1)-space variant (2026-07-03) were both declined after the core solution was reached — two data points now, worth watching whether this is a consistent scope preference.
 
 ## Coaching Preferences
 
@@ -59,3 +62,4 @@
 | 2026-07-02 | Search a 2D Matrix II (LC 240) | archives/2026-07-02-search-a-2d-matrix-ii/ | Drafted incomplete row-pruning loop then pivoted to optimal staircase search independently. Zero bugs in final attempt. Staircase reasoning explained correctly. Blog required 3 revision cycles: 4 blank sections initially, then an English-only violation (Chinese text), then blank correctness argument. Correctness argument accurate once written. |
 | 2026-07-03 | Intersection of Two Linked Lists (LC 160) | archives/2026-07-03-intersection-of-two-linked-lists/ | Went from `pass` straight to the correct two-pointer redirect solution in one commit, zero bugs, no hints needed. Used `!=` instead of `is not` (accidentally correct); self-caught this exact gap while writing the blog's Mistakes Made section and fixed the code before closeout. Blog accepted with zero revisions on substantive content. |
 | 2026-07-03 | Reverse Linked List (LC 206) | archives/2026-07-03-reverse-linked-list/ | Correct iterative reversal on first attempt, zero bugs. Stated the loop invariant precisely and unprompted when asked. Declined the recursive follow-up when offered. Blog accepted with zero revisions; correctness argument was the strongest section. |
+| 2026-07-03 | Palindrome Linked List (LC 234) | archives/2026-07-03-palindrome-linked-list/ | Correctly identified the no-backward-traversal constraint and chose value-copy-and-compare (O(n) space) without prompting. Three syntax-level bugs (4-arg `range()`, wrong index source, lowercase `true`/`false`) fixed via guided questions/traces, not self-caught before running. Declined the O(1)-space (fast/slow pointer + in-place reversal) follow-up. Blog accepted after 1 revision (blank correctness argument, inaccurate "N/A" mistakes section). |

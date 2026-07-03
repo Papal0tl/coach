@@ -5,7 +5,7 @@
 - **Language**: Python
 - **Coaching mode**: hint-only
 - **Date**: 2026-07-03
-- **Status**: active
+- **Status**: archived — see archives/2026-07-03-palindrome-linked-list/
 
 ## Files
 
