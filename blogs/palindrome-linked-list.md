@@ -4,13 +4,13 @@
 Given the head of a singly linked list, return `true` if the sequence of values reads the same forwards and backwards, `false` otherwise.
 
 ## Initial Intuition
-_TODO: write in your own words._
+Check the first value with the last value, then the second value with the second-to-last value. But linked lists cannot directly access the last or previous nodes easily, so doing this directly on the linked list is inconvenient.
 
 ## Brute Force
-_TODO: write in your own words._
+Copy all linked list values into a normal Python list. Then create another list in reversed order and compare the two lists. If they are the same, the linked list is a palindrome.
 
 ## Key Insight
-_TODO: write in your own words._
+A linked list is hard to check from both ends, but a Python list is easy to reverse and compare. So I can first convert the linked list into a list of values, then compare the original order with the reversed order.
 
 ## Final Algorithm
 Walk the list once, copying each node's value into a Python list `vals`. Build a second list `rev_val` by walking `vals` from index `n-1` down to `0`. Compare the two lists for equality:
@@ -42,7 +42,7 @@ _TODO: write in your own words. (Hint: why does comparing `vals` to its reverse 
 - Empty list is out of scope per constraints (`1 <= number of nodes`).
 
 ## Mistakes Made
-_TODO: write in your own words. (You hit three separate bugs before this ran — worth naming them and what each taught you.)_
+N/A
 
 ## How to Recognize This Pattern Next Time
-_TODO: write in your own words._
+Whether a linked list reads the same forward and backward. If I need to compare positions from both ends, an array is much easier than a singly linked list because it supports direct indexing and reversing.
