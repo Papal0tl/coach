@@ -18,9 +18,9 @@ class Solution:
         seen = set()
 
         cur = head
-        while cur is not None:
+        while cur:
             if cur in seen:
                 return cur
             seen.add(cur)
             cur = cur.next
-        return null
+        return None
