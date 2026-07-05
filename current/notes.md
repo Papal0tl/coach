@@ -24,12 +24,17 @@ Use a dummy head and a `tail` pointer. While both lists have remaining nodes, sp
 
 ## User-Facing Takeaways
 
-(to be filled during feedback step)
+- First draft had the correct overall shape (compare heads, splice smaller node, advance, attach leftover at the end) but was incomplete: `curr = ` had no value, variable names were inconsistent (`l1`/`l2`/`cur` vs. the declared `list1`/`list2`), and `return` had no value. Recovered variable-name consistency and the leftover-attachment block without further hints.
+- Correctly identified the dummy-node technique unprompted when asked how to handle "where to attach the first node" (`dummy = ListNode()` then `cur = dummy`) — matches the reference solution's approach exactly.
+- One mechanical bug: `Listnode` (lowercase `n`) instead of `ListNode` on the dummy-node construction line — caught immediately via the `NameError` traceback, no hint needed beyond running it.
+- One conceptual gap, resolved after a single guiding question: initially returned `dummy` itself instead of `dummy.next`; correctly identified that `dummy` is a placeholder never meant to be part of the real answer once asked directly.
+- Final attempt passes all 9 reference tests (examples + edge cases: empty lists, single-node, duplicates, non-interleaved ranges).
 
 ## Follow-Up Candidates
 
-(to be filled during feedback step)
+- Recursive formulation of the same merge (base case: one list empty; recursive case: smaller head's `.next` is the merge of the rest).
+- Complexity discussion: O(n + m) time, O(1) extra space — worth confirming the user can state this unprompted before the blog.
 
 ## Follow-Up Decisions
 
-(to be filled during feedback step)
+(pending — ask before closeout)
