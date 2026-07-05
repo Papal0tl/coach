@@ -16,4 +16,8 @@ Given the user has twice declined the O(1)-space fast/slow follow-up after landi
 
 ## Evaluation
 
-(to be filled in after the attempt is complete)
+- Reached hash-set (visited-node) solution first, zero bugs, correct on first attempt.
+- Stated O(n) time / O(n) space correctly, unprompted.
+- Named "fast and slow pointer" as the O(1)-space alternative without being shown it, when asked if one exists.
+- Did not implement fast/slow in `attempt.py`, but wrote and reasoned through correct fast/slow code in the blog's Final Algorithm section (guard conditions, meeting-point check, and the two-case correctness argument all present and accurate). Verified independently: passes all reference tests.
+- All rubric skill targets met, either in `attempt.py` or in the blog.
