@@ -26,12 +26,12 @@ Solid for the "track visited nodes to find a repeat" pattern generally (works fo
 
 ## Required Revisions
 
-1. Fix the second bullet under Mistakes Made — remove or correct the claim that `while cur` vs `while cur is not None` mattered for correctness. The real fix was `null` → `None`; the loop-condition change was a no-op style choice, not a bug fix.
+None remaining. The incorrect bullet ("The loop condition should be `while cur`...") was removed; Mistakes Made now correctly attributes the fix to `null` → `None` only.
 
 ## Agent Assessment
 
-Correct, well-explained hash-set solution with accurate complexity and thorough edge cases. One inaccurate technical claim in Mistakes Made needs a fix before this is accepted. Fourth consecutive decline of an O(1)-space follow-up across linked-list sessions (reverse-linked-list, palindrome-linked-list, linked-list-cycle, now linked-list-cycle-ii) — worth surfacing to the user directly at some point, since Floyd's-algorithm entry-finding is a distinct and commonly-tested technique that hasn't been produced as working code in any session yet, only reasoned about once in prose.
+Correct, well-explained hash-set solution with accurate complexity and thorough edge cases. Fourth consecutive decline of an O(1)-space follow-up across linked-list sessions (reverse-linked-list, palindrome-linked-list, linked-list-cycle, now linked-list-cycle-ii) — worth surfacing to the user directly at some point, since Floyd's-algorithm entry-finding is a distinct and commonly-tested technique that hasn't been produced as working code in any session yet, only reasoned about once in prose.
 
 ## Review Status
 
-Revision requested — see Required Revisions above.
+Accepted.
