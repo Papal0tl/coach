@@ -28,7 +28,8 @@ If the O(1)-space two-pointer approach isn't reached, a hash-set fallback also w
 ## User-Facing Takeaways
 
 - First attempt: hash-set approach, logic is correct (first repeated node = cycle entry). This matches the fallback noted in prep above.
-- Bug: `return null` on the final line — `null` is not a Python keyword (JS/Java carryover), will raise `NameError`. Same category as the palindrome-linked-list session's `true`/`false` capitalization slip — mechanical, not conceptual. Not yet self-caught; flagged via question rather than direct fix.
+- Bug: `return null` on the final line — `null` is not a Python keyword (JS/Java carryover), will raise `NameError`. Same category as the palindrome-linked-list session's `true`/`false` capitalization slip — mechanical, not conceptual. Fixed after one guided question ("what does the loop actually return?") — recognized `None` vs `null` immediately once prompted to look at that line; not self-caught before being asked, but no further hint needed.
+- Fixed attempt (hash-set, O(n) time / O(n) space) passes all 7 reference tests.
 
 ## Follow-Up Candidates
 
