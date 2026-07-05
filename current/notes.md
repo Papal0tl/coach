@@ -27,7 +27,8 @@ If the O(1)-space two-pointer approach isn't reached, a hash-set fallback also w
 
 ## User-Facing Takeaways
 
-(fill during/after coaching)
+- First attempt: hash-set approach, logic is correct (first repeated node = cycle entry). This matches the fallback noted in prep above.
+- Bug: `return null` on the final line — `null` is not a Python keyword (JS/Java carryover), will raise `NameError`. Same category as the palindrome-linked-list session's `true`/`false` capitalization slip — mechanical, not conceptual. Not yet self-caught; flagged via question rather than direct fix.
 
 ## Follow-Up Candidates
 
