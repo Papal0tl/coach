@@ -5,7 +5,7 @@
 - **Language**: Python
 - **Coaching mode**: hint-only
 - **Date**: 2026-07-05
-- **Status**: in progress
+- **Status**: archived — see archives/2026-07-05-linked-list-cycle/
 
 ## Files
 

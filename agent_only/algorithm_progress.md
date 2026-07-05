@@ -16,9 +16,13 @@ This file is agent-maintained. Track algorithm-specific learning with archive-ba
 | --- | --- | --- | --- |
 | 2026-06-03 | Minimum Window Substring (LC 76) | Independent solve | Used two frequency maps correctly. See archives/2026-06-03-minimum-window-substring/ |
 
-## Two Pointers
+## Two Pointers / Fast-Slow (Floyd's)
 
-Not yet observed in isolation as fast/slow (Floyd's) pointers. Sliding window sessions and the front/back value-array comparison in palindrome-linked-list (2026-07-03, see "Palindrome Check / Structure Conversion" below) are partial evidence for the general two-pointer family, but the fast/slow-pointer sub-pattern specifically (middle-finding, cycle detection) remains untested — declined as a follow-up in the palindrome-linked-list session. Highest-priority next target: LC 141 (Linked List Cycle) or LC 876 (Middle of the Linked List).
+| Date | Problem | Outcome | Notes |
+| --- | --- | --- | --- |
+| 2026-07-05 | Linked List Cycle (LC 141) | Hash-set solved independently first, zero bugs; fast/slow written correctly in blog (not run) | Named fast/slow unprompted when asked for an O(1)-space alternative; wrote correct guard conditions, meeting check, and two-case correctness argument. Verified independently against tests. See archives/2026-07-05-linked-list-cycle/ |
+
+**Assessment (2026-07-05):** First exposure with an actual result, after being declined as a follow-up in both the reverse-linked-list and palindrome-linked-list sessions (2026-07-03). Reached for the hash-set/visited-node approach first (consistent with the extra-space-first ordering seen in every prior linked-list session), zero bugs. When asked directly if an O(1)-space approach exists, named "fast and slow pointer" immediately and — rather than declining outright as in the two prior sessions — wrote fully correct code for it in the blog: proper `fast is not None and fast.next is not None` guard, correct meeting check, and a two-case correctness argument (no-cycle: fast reaches `None` strictly ahead of slow; cycle: the gap between fast and slow shrinks by one each iteration once both are inside the loop, so they must meet). This was not typed into `attempt.py` or run by the user, but was independently verified against the full reference test suite and passed. Repeated the same `==` vs `is` node-identity gap seen in the intersection-of-two-linked-lists blog (session 11) — that time self-caught, this time not, flagged as a non-blocking review note. Remaining gap: hands-on, typed-and-run implementation of fast/slow (as opposed to written derivation) is still unobserved. Next step: Middle of the Linked List (LC 876) or Linked List Cycle II (LC 142), framed so that fast/slow is the natural first thing to type rather than a follow-up, to see if it gets implemented and run this time.
 
 ## Interval Sorting / Sort + Linear Scan
 
