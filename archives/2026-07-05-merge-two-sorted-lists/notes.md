@@ -1,7 +1,7 @@
 # Session Notes
 
 - Problem slug: `merge-two-sorted-lists`
-- Archive path: TBD
+- Archive path: `archives/2026-07-05-merge-two-sorted-lists/`
 
 ## Agent Preparation
 
@@ -38,3 +38,4 @@ Use a dummy head and a `tail` pointer. While both lists have remaining nodes, sp
 ## Follow-Up Decisions
 
 - Recursive follow-up offered alongside a request to state complexity; user moved straight to writing the blog without answering either. Unlike the linked-list-cycle session (fast/slow pointer derived in prose) this is closer to the more common pattern of declining optional follow-ups outright, though scope differs (this was a request to state existing-solution complexity, not just a code follow-up).
+- Blog revision was requested (see `blog_review.md`: inaccurate "forgot the cur pointer" bullet, missing two real bugs) and the user explicitly declined it ("move on archive it"), closing the session with the blog as originally drafted. This is a new variant of the established follow-up-decline pattern: previous sessions declined optional next-step work (recursion, O(1) space); this is the first time a requested *correction to already-submitted work* was declined outright rather than applied.
