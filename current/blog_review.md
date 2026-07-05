@@ -35,4 +35,4 @@ Strong session overall: correct dummy-node two-pointer merge reached with target
 
 ## Review Status
 
-Revision requested.
+Revision requested, then declined by the user — closing without the Mistakes Made correction. The inaccurate "forgot the cur pointer" bullet and the missing `Listnode` typo / `dummy` vs. `dummy.next` bugs remain unaddressed in `blogs/merge-two-sorted-lists.md`. Recorded here so the archive reflects what actually happened rather than an accepted-as-correct blog.
