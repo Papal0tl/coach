@@ -18,4 +18,4 @@
 
 - First attempt: correct hash-set (visited-node) solution on the first try, zero bugs. Passed all reference tests including empty list and single-node self-loop.
 - Consistent with prior pattern: reached for hash-set/extra-space approach before considering the fast/slow pointer alternative (same order as reverse-linked-list and palindrome-linked-list, both 2026-07-03).
-- Next: ask for time/space complexity statement, then offer the O(1)-space fast/slow follow-up (declined twice before — third data point on whether this is a consistent scope preference).
+- Stated complexity correctly (O(n) time, O(n) space) unprompted, and named "fast and slow pointer" as the O(1)-space alternative without being shown it — but chose not to implement it, moving straight to the blog instead. This is the third instance of declining an optional O(1)-space follow-up after a correct baseline (reverse-linked-list, palindrome-linked-list, now linked-list-cycle, all this week). Naming the technique correctly without implementing it is a new data point: recognition is ahead of implementation practice for this specific follow-up class.
