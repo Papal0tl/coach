@@ -15,4 +15,12 @@ class ListNode:
 
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        pass
+        seen = set()
+
+        cur = head
+        while cur is not None:
+            if cur in seen:
+                return cur
+            seen.add(cur)
+            cur = cur.next
+        return null
