@@ -4,13 +4,23 @@
 Given the heads of two sorted linked lists `list1` and `list2`, merge them into one sorted list by splicing together the existing nodes (not creating new ones), and return the head of the merged list.
 
 ## Initial Intuition
-<!-- Write in your own words: what was your first idea when you saw this problem? -->
+Creating a new list and repeatedly choosing the smaller value from the two lists. Since both lists are already sorted, it seemed unnecessary to collect all values and sort them again.
 
 ## Brute Force
-<!-- Write in your own words: is there a less efficient approach you considered (e.g. collect all values, sort, rebuild)? How does it compare to your final solution? -->
+Copy all values from both linked lists into an array, sort the array, then create a brand new linked list from the sorted values.
+
+This works, but it uses extra space for the array and creates new nodes, while the problem allows us to reuse the existing nodes.
+
+Time Complexity: O((n + m) log(n + m))
+
+Space Complexity: O(n + m)
 
 ## Key Insight
-<!-- Write in your own words: what's the core idea that makes the efficient solution work? -->
+Both linked lists are already sorted.
+
+At every step, the smaller of the two current head nodes must be the next node in the merged list. We only need to compare the current heads, attach the smaller one, and move that list's pointer forward.
+
+Using a dummy node makes building the result much simpler because we never need to treat the first node as a special case.
 
 ## Final Algorithm
 1. Create a dummy/sentinel node and a `cur` pointer starting at it, to avoid special-casing the first node of the result.
@@ -42,7 +52,11 @@ class Solution:
 ```
 
 ## Correctness Argument
-<!-- Write in your own words: why does this produce a fully sorted list? Consider the state of the result at any point in the loop, and why attaching the leftover tail at the end preserves sortedness. -->
+At the beginning of every loop iteration, the merged list already contains all previously selected nodes in sorted order.
+
+Since both remaining lists are still individually sorted, the smaller of their two head nodes is the smallest remaining node overall. Appending that node preserves the sorted order of the merged list.
+
+When one list becomes empty, every remaining node in the other list is already greater than or equal to the last node that was appended, so attaching the remaining nodes directly keeps the entire merged list sorted.
 
 ## Complexity
 Time Complexity: O(n + m), where n and m are the lengths of `list1` and `list2` — each node is visited exactly once.
@@ -56,7 +70,12 @@ Space Complexity: O(1) extra space — no new nodes are allocated, only existing
 - Single-node lists.
 
 ## Mistakes Made
-<!-- Write in your own words: what bugs did you actually hit while writing this, and what was the real fix? Be precise about cause and effect. -->
+- Initially wanted to create completely new nodes instead of reusing the existing ones, but the problem can be solved more efficiently by simply changing the next pointers.
+- Forgot that building a linked list needs a pointer (cur) to track the last node of the result. Without it, it is difficult to know where the next node should be attached.
+- Didn't realize why a dummy node is useful at first. Without it, the first node of the merged list needs special handling, making the code more complicated.
 
 ## How to Recognize This Pattern Next Time
-<!-- Write in your own words: what cues in a problem statement point to this two-pointer merge + dummy-node technique? -->
+- The input consists of two sorted linked lists.
+- The problem asks you to merge them into one sorted list.
+- Only ever need to compare the current heads of the two lists.
+- The problem allows to reuse the existing nodes instead of creating new ones.
