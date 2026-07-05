@@ -15,7 +15,7 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        dummy = Listnode(0)
+        dummy = ListNode(0)
         cur = dummy
 
         while list1 is not None and list2 is not None:
@@ -26,4 +26,10 @@ class Solution:
                 cur.next = list2
                 list2 = list2.next
             cur = cur.next
-        return 
+
+        if list1 is not None:
+            cur.next = list1
+        else:
+            cur.next = list2
+
+        return dummy.next
