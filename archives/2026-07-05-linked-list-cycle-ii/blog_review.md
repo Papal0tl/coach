@@ -1,7 +1,7 @@
 # Blog Review
 
 - Problem slug: `linked-list-cycle-ii`
-- Archive path: `archives/2026-07-05-linked-list-cycle-ii/` (pending)
+- Archive path: `archives/2026-07-05-linked-list-cycle-ii/`
 - Blog path: `blogs/linked-list-cycle-ii.md`
 
 ## Correctness
