@@ -37,4 +37,4 @@ Use a dummy head and a `tail` pointer. While both lists have remaining nodes, sp
 
 ## Follow-Up Decisions
 
-(pending — ask before closeout)
+- Recursive follow-up offered alongside a request to state complexity; user moved straight to writing the blog without answering either. Unlike the linked-list-cycle session (fast/slow pointer derived in prose) this is closer to the more common pattern of declining optional follow-ups outright, though scope differs (this was a request to state existing-solution complexity, not just a code follow-up).
