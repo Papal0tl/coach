@@ -53,7 +53,6 @@ Space Complexity: O(n)
 
 ## Mistakes Made
 - Forgot that Python uses `None`, not `null`.
-- The loop condition should be `while cur`, not `while cur is not None` or it will stop in one cycle.
 
 ## How to Recognize This Pattern Next Time
 - The input is a linked structure (linked list or graph).
