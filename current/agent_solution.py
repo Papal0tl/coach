@@ -15,4 +15,17 @@ class ListNode:
 
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        pass
+        slow = head
+        fast = head
+
+        while fast is not None and fast.next is not None:
+            slow = slow.next
+            fast = fast.next.next
+            if slow is fast:
+                ptr = head
+                while ptr is not slow:
+                    ptr = ptr.next
+                    slow = slow.next
+                return ptr
+
+        return None

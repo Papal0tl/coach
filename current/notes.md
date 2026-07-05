@@ -12,7 +12,9 @@
 
 ## Reference Solution Summary
 
-(fill after solving independently — do not expose to user by default)
+Fast/slow pointers detect a cycle by meeting inside it. Once they meet, reset one pointer (`ptr`) to `head` and advance both `ptr` and `slow` one step at a time; they meet again exactly at the cycle's entry node. Proof sketch: let `a` = distance from head to cycle start, `b` = distance from cycle start to the meeting point, `c` = remaining cycle length after the meeting point (so cycle length = `b + c`). Slow has traveled `a + b` when they meet; fast has traveled `2(a + b)` and is also `a + b` steps ahead of slow within the cycle relative to a lap, giving `a + b ≡ 0 (mod b + c)` from `fast_dist - slow_dist = a + b` being a multiple of the cycle length. This reduces to `a ≡ c (mod cycle length)`, i.e. walking `a` more steps from the meeting point (mod cycle length) lands back at the cycle start — which is exactly what walking `a` steps from `head` does. Validated locally against 7 cases (no `pytest` needed; ran directly with `python3 tests.py`).
+
+If the O(1)-space two-pointer approach isn't reached, a hash-set fallback also works: walk the list, and the first node seen twice is the cycle entry (O(n) space). Useful as a stepping stone if hinting is needed, since the user already used hash sets for LC 141.
 
 ## Edge Cases
 
