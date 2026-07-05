@@ -9,4 +9,12 @@ class ListNode:
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        pass
+        seen = set()
+
+        cur = head
+        while cur is not None:
+            if cur in seen:
+                return True
+            seen.add(cur)
+            cur = cur.next
+        return False
