@@ -35,3 +35,7 @@ If the O(1)-space two-pointer approach isn't reached, a hash-set fallback also w
 
 - Prove why `a = c - b` holds (math derivation), if not already covered in the blog.
 - Compare against the hash-set approach the user already knows from LC 141.
+
+## Follow-Up Decisions
+
+- O(1)-space two-pointer variant (finding meeting point then resetting one pointer to head) was offered after the working hash-set solution passed all tests. User declined and moved straight to the blog. Consistent with the established pattern of declining optional space-optimization follow-ups (reverse-linked-list recursion, palindrome-linked-list O(1) space) — this is the fourth such decline across linked-list sessions. Unlike linked-list-cycle (2026-07-05), where the O(1) variant was at least reasoned through and written in the blog, here the hash-set version is the final submitted solution with no O(1) variant attempted in any form yet.
