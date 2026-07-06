@@ -1,7 +1,7 @@
 # Session Notes
 
 - Problem slug: `add-two-numbers`
-- Archive path: TBD
+- Archive path: archives/2026-07-06-add-two-numbers/
 
 ## Agent Preparation
 
@@ -33,8 +33,8 @@ Solved independently before coaching. Pattern: simultaneous traversal of two lin
 
 ## Follow-Up Candidates
 
-(to be filled during feedback step)
+- No optional follow-up was offered this session (the problem has no natural O(1)-space or alternate-structure variant beyond the carry-propagation solution itself).
 
 ## Follow-Up Decisions
 
-(to be filled during feedback step)
+- Blog revision requested (Mistakes Made section fabricated two bugs that never occurred — `set1()`/`set2()`, "collecting values first" — and omitted the real first bug — missing carry variable). User declined the revision and asked to archive as-is. This is the second consecutive session (after merge-two-sorted-lists, 2026-07-05) where a requested blog correction was declined rather than applied.
