@@ -18,3 +18,4 @@
 
 - First draft: two-pass length-counting approach (count `length`, then walk `length - n` steps from a dummy node). Crashes with `AttributeError: 'NoneType' object has no attribute 'next'` on `[1,2,3,4,5], n=2`.
 - Root cause: `dummy = ListNode(0)` is created without linking `next=head`, so `dummy.next` is `None` instead of `head`. Asked user to trace what `dummy` points to right after construction rather than revealing directly.
+- Fix: user immediately identified the bug (`dummy.next` should be `head`) unprompted after being asked to trace it, and applied `dummy.next = head`. 6/6 tests pass. Two-pass approach (count length, then walk `length - n` steps).
