@@ -24,7 +24,12 @@ Solved independently before coaching. Pattern: simultaneous traversal of two lin
 
 ## User-Facing Takeaways
 
-(to be filled during feedback step)
+- First draft (dummy node, digit-wise sum) had two sequential bugs, both fixed via guided tracing without direct explanation:
+  1. No `carry` variable at all — `total % 10` was computed but the `total // 10` overflow was silently dropped, corrupting every digit position after the first carry (e.g. `[2,4,3]+[5,6,4]` gave `[7,0,7]` instead of `[7,0,8]`).
+  2. After adding `carry`, the loop condition (`while l1 or l2`) didn't check for a nonzero trailing carry, so a final carry after both lists were exhausted was dropped (e.g. `5+5` gave `[0]` instead of `[0,1]`).
+- Both times, the fix was reached by tracing a concrete failing example rather than being told the answer; the user supplied the exact fix (`or carry != 0`) unprompted once the missing case was pointed out.
+- Dummy-node structure and digit-extraction (`total % 10`, `total // 10`) were correct from the first draft — this is the second consecutive session reusing the dummy-node technique correctly.
+- All 8 reference tests pass after the two fixes.
 
 ## Follow-Up Candidates
 
