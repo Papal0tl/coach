@@ -13,3 +13,8 @@
 - Complexity: O(L) time (single pass over the list length L), O(1) space.
 - Edge cases: single-node list (n=1), removing the head (n == length), removing the tail (n=1).
 - One-pass follow-up: the gap technique above already is one-pass (no separate length-counting pass), so this should be the natural end state to look for, not a bonus.
+
+## User Attempt Log
+
+- First draft: two-pass length-counting approach (count `length`, then walk `length - n` steps from a dummy node). Crashes with `AttributeError: 'NoneType' object has no attribute 'next'` on `[1,2,3,4,5], n=2`.
+- Root cause: `dummy = ListNode(0)` is created without linking `next=head`, so `dummy.next` is `None` instead of `head`. Asked user to trace what `dummy` points to right after construction rather than revealing directly.
