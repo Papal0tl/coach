@@ -1,5 +1,7 @@
 # Remove Nth Node From End of List (LC 19)
 
+- Archive: archives/2026-07-06-remove-nth-node-from-end-of-list/
+
 ## Problem Summary
 Given the head of a singly linked list, remove the nth node counting from the end of the list, and return the head of the resulting list. `n` is guaranteed to be between 1 and the length of the list.
 
