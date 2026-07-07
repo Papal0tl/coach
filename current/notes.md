@@ -26,6 +26,11 @@
 - This is the fourth linked-list session (after intersection, reverse, palindrome, cycle, cycle-ii, merge-two-sorted-lists, add-two-numbers, remove-nth-node-from-end-of-list). Dummy-node technique has now transferred across five consecutive sessions — expect it to surface again here without prompting.
 - New wrinkle vs prior problems: this requires rewiring *pairs* of nodes rather than single-node reversal/removal, so three pointers per iteration (`prev`, `first`, `second`) must be tracked and the order of the three re-links matters (get `first.next` before overwriting `second.next`, or the rest of the list is lost).
 
+## Coaching Log
+
+- First attempt (committed f231ae3): correct dummy-node + three-pointer (`a`, `b`, `prev`) pairwise swap on the first try. All 6 reference tests pass, zero bugs. Re-link order differs slightly from the reference (`prev.next = b` before `a.next = b.next`) but is still correct because `b.next` is read before it gets overwritten — order-of-operations reasoning worth probing.
+- Dummy-node technique transferred again without prompting — now six consecutive linked-list sessions using it unprompted.
+
 ## Follow-Up Candidates
 
 - Recursive solution (`head.next.next = swapPairs(head.next.next)` style) — good follow-up given prior declines on recursive/optional variants (reverse-linked-list recursion was declined 2026-07-03).
