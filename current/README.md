@@ -6,19 +6,19 @@
 - Coaching mode: hint-only
 - Started: 2026-07-06
 - Archive path: `archives/2026-07-06-swap-nodes-in-pairs/`
-- Status: `active`
+- Status: `closed`
 
 ## Goal
 
-Solve LC 24 (Swap Nodes in Pairs) with guided, hint-only coaching. Fourth linked-list session.
+Solve LC 24 (Swap Nodes in Pairs) with guided, hint-only coaching. Ninth linked-list session.
 
 ## Current State
 
 - Agent reference solution: `done`
-- User attempt: `not started`
-- Tests: `done`
-- Blog: `not started`
-- Blog review: `not started`
+- User attempt: `done, zero bugs`
+- Tests: `done, 6/6 pass`
+- Blog: `done`
+- Blog review: `accepted, zero revisions`
 
 ## Session Files
 
