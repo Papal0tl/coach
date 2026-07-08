@@ -14,9 +14,9 @@ Solve LC 25 (Reverse Nodes in k-Group) with guided, hint-only coaching. Tenth li
 
 ## Current State
 
-- Agent reference solution: `pending`
+- Agent reference solution: `done`
 - User attempt: `not started`
-- Tests: `pending`
+- Tests: `done, 8/8 pass`
 - Blog: `not started`
 - Blog review: `not started`
 
