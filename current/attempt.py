@@ -38,6 +38,12 @@ class Solution(object):
             cur = group_head
 
             while cur != group_next:
+                tmp = cur.next
+                cur.next = prev
+                prev = cur
+                cur = tmp
+            group_prev.next = kth
+            group_prev = group_head
 
                 
 
