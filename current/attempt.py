@@ -13,5 +13,29 @@ class ListNode:
         self.next = next
 
 
-class Solution:
-    pass
+class Solution(object):
+    def reverseKGroup(self, head, k):
+        """
+        :type head: Optional[ListNode]
+        :type k: int
+        :rtype: Optional[ListNode]
+        """
+        dummy = ListNode(0)
+        dummy.next = head
+        t_prev = dummy
+
+        while true:
+            kth = t_prev
+            for i in range(k):
+                if kth is None:
+                    return dummy.next
+            t_next = kth.next
+            t_head = t_prev.next
+
+            prev = t_next
+            cur = t_head
+            
+
+
+        
+
