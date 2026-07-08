@@ -22,19 +22,25 @@ class Solution(object):
         """
         dummy = ListNode(0)
         dummy.next = head
-        t_prev = dummy
+        group_prev = dummy
 
         while true:
-            kth = t_prev
+            kth = group_prev
             for i in range(k):
+                kth = kth.next
                 if kth is None:
                     return dummy.next
-            t_next = kth.next
-            t_head = t_prev.next
 
-            prev = t_next
-            cur = t_head
-            
+            group_next = kth.next
+            group_head = group_prev.next
+
+            prev = group_next
+            cur = group_head
+
+            while cur != group_next:
+
+                
+
 
 
         
