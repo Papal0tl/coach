@@ -24,7 +24,7 @@ class Solution(object):
         dummy.next = head
         group_prev = dummy
 
-        while true:
+        while True:
             kth = group_prev
             for i in range(k):
                 kth = kth.next
