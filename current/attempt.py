@@ -27,5 +27,7 @@ class Solution:
         else:
             new_node.next = None
         if cur.random:
+            new_node.random = map[cur.random]
         else:
+            new_node.random = None
     return map[head]
