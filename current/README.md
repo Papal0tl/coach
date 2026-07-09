@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-07-09
 - Archive path: `archives/2026-07-09-copy-list-with-random-pointer/`
-- Status: `active`
+- Status: `closed`
 
 ## Goal
 
@@ -17,8 +17,8 @@ Deep-copy a singly linked list where each node has an extra `random` pointer tha
 - Agent reference solution: `done, 7/7 tests pass`
 - User attempt: `done, verified against 7/7 tests`
 - Tests: `done`
-- Blog: `scaffolded, awaiting user-filled sections`
-- Blog review: `not started`
+- Blog: `done, accepted after 1 revision`
+- Blog review: `done, accepted`
 
 ## Session Files
 
