@@ -13,4 +13,22 @@ class Node:
 
 
 class Solution:
-    pass
+    def copyRandomList(self, head: "Node | None") -> "Node | None":
+        if head is None:
+            return None
+
+        old_to_new: dict["Node | None", "Node | None"] = {None: None}
+
+        cur = head
+        while cur is not None:
+            old_to_new[cur] = Node(cur.val)
+            cur = cur.next
+
+        cur = head
+        while cur is not None:
+            copy = old_to_new[cur]
+            copy.next = old_to_new[cur.next]
+            copy.random = old_to_new[cur.random]
+            cur = cur.next
+
+        return old_to_new[head]
