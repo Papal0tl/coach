@@ -14,10 +14,10 @@ Deep-copy a singly linked list where each node has an extra `random` pointer tha
 
 ## Current State
 
-- Agent reference solution: `pending`
-- User attempt: `not started`
-- Tests: `pending`
-- Blog: `not started`
+- Agent reference solution: `done, 7/7 tests pass`
+- User attempt: `done, verified against 7/7 tests`
+- Tests: `done`
+- Blog: `scaffolded, awaiting user-filled sections`
 - Blog review: `not started`
 
 ## Session Files

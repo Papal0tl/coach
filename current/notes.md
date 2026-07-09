@@ -33,3 +33,11 @@ Return `old_to_new[head]`.
 ## Follow-Up Candidates
 
 - O(1) space interleaving solution, if the user finishes the hash-map version cleanly and wants a harder variant (matches the pattern of prior sessions offering space-optimized follow-ups).
+
+## Session Log
+
+- User independently named "hash map from old node to new node" as the fix for the forward-reference problem, unprompted, after one guiding question — no direct explanation needed for the core algorithmic idea.
+- Implementation went through several mechanical/syntax rounds rather than logic rounds: (1) draft written directly in the class body instead of inside a method (`return` outside function, twice — first attempt had it right after being told, but a stale/unsaved file caused two repeated identical errors before the edit actually landed); (2) `Node(cur)` passed the whole node instead of `cur.val`, self-fixed; (3) second-pass loop initially never advanced `cur` (would have infinite-looped), self-fixed before being flagged; (4) briefly deleted the `Node` class entirely while editing, restored in the next commit. All fixed by the user with no direct code from the agent — errors were surfaced by actually running the file rather than mental tracing (mental trace was requested twice and not really engaged with; running the file directly got much faster convergence).
+- Also independently renamed `map` to `mapp` to avoid shadowing the builtin — not required for correctness here (never called as a function), but a good defensive habit, self-initiated.
+- Verified correctness by running all 7 tests (3 official examples + empty list + self-referential random + no-random-pointers + deep-copy identity check) against `attempt.py` directly — all pass.
+- User asked to move straight to the blog after only informally checking one example ("this should pass, right?") rather than actually running the suite themselves; agent ran the full suite before agreeing to proceed. Also used Chinese for this request despite the English-only session preference.
