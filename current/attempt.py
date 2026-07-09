@@ -13,6 +13,9 @@ class Node:
 
 
 class Solution:
+    if head is None:
+        return None
+        
     map = {}
     cur = head
     while cur:
@@ -30,4 +33,5 @@ class Solution:
             new_node.random = map[cur.random]
         else:
             new_node.random = None
+        cur = cur.next
     return map[head]
