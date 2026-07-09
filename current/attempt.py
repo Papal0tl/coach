@@ -16,15 +16,16 @@ class Solution:
     map = {}
     cur = head
     while cur:
-        map[cur] =
+        map[cur] = Node(cur)
         cur = cur.next
 
     cur = head
     while cur:
         new_node = map[cur]
         if cur.next:
+            new_node.next = map[cur.next]
         else:
-
+            new_node.next = None
         if cur.random:
         else:
     return map[head]
