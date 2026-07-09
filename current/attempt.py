@@ -15,11 +15,11 @@ class Node:
 class Solution:
     if head is None:
         return None
-        
+
     map = {}
     cur = head
     while cur:
-        map[cur] = Node(cur)
+        map[cur] = Node(cur.val)
         cur = cur.next
 
     cur = head
