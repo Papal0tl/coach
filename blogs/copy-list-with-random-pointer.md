@@ -4,13 +4,19 @@
 Given the head of a singly linked list where each node also has a `random` pointer (which may point to any node in the list, including itself, or to `None`), construct a deep copy of the entire list. The copy must consist of brand-new node objects with the same `val`, `next`, and `random` structure as the original, but no pointer in the copy may reference any node from the original list.
 
 ## Initial Intuition
-TODO (user-filled): what was your first instinct when you read this problem, before you had a full plan?
+Copy the list from left to right like a normal linked list: create a new node for each original node, connect the `next` pointers, and then somehow copy the `random` pointers too. But the `random` pointer made it harder because it can point anywhere, not just to the next node.
+
 
 ## Brute Force
-TODO (user-filled): describe an approach distinct from your final algorithm, and its time/space cost.
+First copy all the values into new nodes, then for each original node, find the index of its `random` target by scanning the original list. After that, scan the copied list to the same index and connect the copied `random` pointer.
+
+Inefficient because each `random` pointer may require another full scan of the list. The time complexity is O(n²), and the space complexity is O(n).
+
 
 ## Key Insight
-TODO (user-filled): what made this problem click? Consider: why can't you set a copied node's `random` pointer at the same time you create that node?
+Need a way to quickly find the copied node that corresponds to any original node. Cannot always set `random` immediately while creating a node, because `random` might point forward to a node whose copy has not been created yet.
+
+So should first create all copied nodes and store a mapping from original node to copied node. Then in a second pass, it can safely connect both `next` and `random`, because every possible target already has a copied node.
 
 ## Final Algorithm
 1. If `head` is `None`, return `None`.
@@ -46,7 +52,11 @@ class Solution:
 ```
 
 ## Correctness Argument
-TODO (user-filled, with agent prompts if needed): state the invariant that holds after the first pass (what does `mapp` guarantee for every original node?), and argue why the second pass can always resolve `cur.next` and `cur.random` correctly regardless of whether they point forward or backward in the list.
+After first pass, `mapp` guarantees every original node has one corresponding new node with the same value. These new nodes are separate objects, so the copy will not reuse original nodes.
+
+During the second pass, if at an original node `cur`, its copied node is `mapp[cur]`. If `cur.next` points to another original node, that node already has a copy in `mapp`, so `mapp[cur.next]` gives the correct copied `next` node. The same is true for `cur.random`: it may point forward, backward, to itself, or to `None`, but if it points to a real node, that node's copy already exists in `mapp`.
+
+So, every copied node gets the same `val`, `next`, and `random` structure as the original list, while all pointers in the copied list point only to copied nodes.
 
 ## Complexity
 Time Complexity: O(n), where n is the number of nodes — two linear passes over the list.
@@ -60,7 +70,9 @@ Space Complexity: O(n) — the `mapp` dictionary holds one entry per original no
 - The original list must remain unmodified.
 
 ## Mistakes I Made
-TODO (user-filled): describe the actual bugs you hit and how you found/fixed each one.
+- Wrote `Node(cur)` instead of `Node(cur.val)`. That would pass the whole original node object into the constructor instead of copying only the node's value.
+- Used `map` as a variable name at first, which works but is not a good habit because `map` is a built-in Python function. I changed it to `mapp`.
 
 ## How I Will Recognize This Pattern Next Time
-TODO (user-filled): what signals in a problem statement point you toward this pattern?
+Copy a structure with extra pointers, random pointers, or references that may point anywhere => Think about building a mapping from original objects to copied objects.
+
