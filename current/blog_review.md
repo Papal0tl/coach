@@ -22,13 +22,12 @@ High. Pattern Recognition section ("copy a structure with extra pointers/referen
 
 ## Required Revisions
 
-- **Mistakes I Made is incomplete/inaccurate about severity.** It lists two real but minor issues (`Node(cur)` vs `Node(cur.val)`, and the `map`→`mapp` rename, which was a style choice rather than a bug fix). It omits the actual dominant issue of the session: the entire method body (`if head is None`, both `while` loops, the final `return`) was originally written directly inside the class body instead of inside a `def copyRandomList(self, head):` method, causing a repeated `SyntaxError: 'return' outside function`. This took several rounds and one direct explanation from the agent to resolve — it was the single biggest blocker in the session and is worth reflecting on explicitly (e.g., always sketch the method skeleton first, add logic second).
-- Optionally worth a one-line mention: the second-pass loop initially had no `cur = cur.next`, which would have caused an infinite loop had the method-wrapping bug not already been blocking execution. This was self-fixed before ever manifesting at runtime, so it's minor, but honest inclusion is in the spirit of this section.
+Resolved. The Mistakes section now includes the method-wrapping bug (code written directly in the class body instead of inside `def copyRandomList(self, head):`, causing repeated `SyntaxError: 'return' outside function` — correctly identified as the biggest blocker) and the second-pass `cur = cur.next` omission that would have caused an infinite loop. Both additions are accurate to what actually happened in the session history.
 
 ## Agent Assessment
 
-Algorithmic understanding this session is excellent — the hash-map insight was self-generated after a single guiding question, and the correctness argument shows real command of *why* the two-pass structure works, not just that it does. The gap is entirely in the Mistakes section's accuracy, continuing a pattern noted across several prior sessions (merge-two-sorted-lists, add-two-numbers) where the write-up underreports or misattributes the actual friction points. Requesting one revision.
+Algorithmic understanding this session is excellent — the hash-map insight was self-generated after a single guiding question, and the correctness argument shows real command of *why* the two-pass structure works, not just that it does. The revision request was accepted and applied accurately and completely on the first pass, breaking from the tendency in some prior sessions (merge-two-sorted-lists, add-two-numbers) to omit or misattribute real bugs — this write-up now matches the actual git history precisely.
 
 ## Review Status
 
-Revision requested.
+Accepted after 1 revision.
