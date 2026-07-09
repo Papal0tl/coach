@@ -70,6 +70,8 @@ Space Complexity: O(n) — the `mapp` dictionary holds one entry per original no
 - The original list must remain unmodified.
 
 ## Mistakes I Made
+- Wrote the whole method body (the `if head is None` check, both `while` loops, and the final `return`) directly inside the class body instead of inside a `def copyRandomList(self, head):` method. This caused a repeated `SyntaxError: 'return' outside function`, since `return` is only legal inside a function. This was the biggest blocker of the session and took several rounds to fix.
+- The second-pass `while` loop initially had no `cur = cur.next`, which would have caused an infinite loop if it had ever actually run. I caught and fixed this myself before it ran, while the method-wrapping bug above was still blocking execution.
 - Wrote `Node(cur)` instead of `Node(cur.val)`. That would pass the whole original node object into the constructor instead of copying only the node's value.
 - Used `map` as a variable name at first, which works but is not a good habit because `map` is a built-in Python function. I changed it to `mapp`.
 
