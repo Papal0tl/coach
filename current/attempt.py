@@ -13,4 +13,18 @@ class Node:
 
 
 class Solution:
-    pass
+    map = {}
+    cur = head
+    while cur:
+        map[cur] =
+        cur = cur.next
+
+    cur = head
+    while cur:
+        new_node = map[cur]
+        if cur.next:
+        else:
+
+        if cur.random:
+        else:
+    return map[head]
