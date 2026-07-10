@@ -4,13 +4,29 @@
 Given the head of a singly linked list, return the list after sorting it in ascending order by node value. Follow-up: do it in O(n log n) time and O(1) extra space.
 
 ## Initial Intuition
-<!-- Your words: what was your first idea when you read this problem, before you knew it wouldn't work or would need refining? -->
+Walk through the linked list, compare each node with the next node, and swap them whenever they were in the wrong order.
 
 ## Brute Force
-<!-- Your words: describe a valid but non-optimal approach (e.g. dumping values into an array, sorting, rebuilding the list) and its complexity. -->
+Copy every node value into a list, sort the list with built-in sorting algorithm, and then write the sorted values back into the linked-list nodes.
+
+For example: 
+1. Traverse the linked list and append every value to an array.
+2. Sort the array.
+3. Traverse the linked list again and replace each node's value with the corresponding sorted value.
+
+Time complexity: O(n log n) 
+Space complexity: O(n)
 
 ## Key Insight
-<!-- Your words: why doesn't an array-style sort transfer directly to a linked list, and what makes merge sort the natural fit here? -->
+Linked lists do not support direct indexing or efficient random access. Reaching the node at index i requires walking through all previous nodes.
+
+Merge sorts:
+1. Use fast and slow pointers to find the middle.
+2. Cut the list into two halves.
+3. Recursively sort each half.
+4. Merge the two sorted halves by rewiring their existing nodes.
+
+merge: Nodes can be appended to the result by changing only next pointers. Each recursion level processes all n nodes once, and there are O(log n) levels, O(n log n) total time.
 
 ## Final Algorithm
 1. Base case: if `head` is `None` or `head.next` is `None`, return `head` unchanged (already sorted).
@@ -69,7 +85,13 @@ Space Complexity: O(log n) — the recursion stack depth, since this is the recu
 - Already sorted or reverse-sorted input: correctness doesn't depend on initial order.
 
 ## Mistakes I Made
-<!-- Your words: what actually went wrong along the way, in the order it happened. Check the git log for `sort-list` commits if you want to jog your memory — don't invent or omit steps. -->
+- Tried to solve the problem like bubble sort by comparing cur.val with cur.next.val. This would eventually access cur.next.val when cur.next was None, causing an AttributeError. It also would have taken O(n²) time.
+- Used a temporary variable without preserving the nodes that actually needed to be reconnected. Assignments such as tmp = cur and then cur = tmp did not change anything because both variables referred to the same node.
+- Called self.sortList(fast) instead of self.sortList(right). Since fast could already be None, this discarded the entire right half instead of sorting it.
+- After finding the middle with fast and slow pointers, wrote right = fast. For an even-length list such as [4,2,1,3], fast is None when the loop ends. The right half must begin at slow, not fast.
 
 ## How I Will Recognize This Pattern Next Time
-<!-- Your words: what's the general signal that should make you reach for merge sort (or this split+recurse+merge shape) on a future problem? -->
+- The data structure is a linked list, so random access is inefficient.
+- The list can be split using fast and slow pointers.
+- Two sorted linked lists can be merged efficiently by rewiring nodes.
+- The problem naturally has the divide-and-conquer shape: split, recursively solve each half, and merge the results.
