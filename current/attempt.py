@@ -24,6 +24,6 @@ class Solution:
             fast = fast.next.next
         prev.next = None
         left = head
-        right = fast
+        right = slow
         left = self.sortList(left)
         right = self.sortList(fast)
