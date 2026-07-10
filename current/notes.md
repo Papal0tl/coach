@@ -40,3 +40,7 @@
 ## Session Log
 
 - Agent solved independently first: recursive merge sort (fast/slow split + two-pointer merge), all 8 reference tests pass.
+- First user draft took a different approach than the reference: a single forward pass doing adjacent-node swaps when out of order (bubble-sort-like), using a dummy head. Two issues observed by running it against `[4,2,1,3]`:
+  1. Missing `return` statement at the end of `sortList` — the function falls off the end and implicitly returns `None`. Confirmed by running: `sol.sortList(head)` returns `None`.
+  2. The swap logic (`tmp = cur.next; cur.next = tmp.next; tmp.next = cur; cur = tmp`) rewires `cur` and its successor but never updates the `.next` pointer of the node *before* `cur` (tracked nowhere in this draft) — the swapped-in node becomes unreachable from the rest of the list. This is also only a single pass, so even with the swap fixed it would only bubble one adjacent inversion per pass, not fully sort in one call.
+  - Asked the user to (a) check what their function returns given the missing `return`, and (b) trace what happens to the node before `cur` during a swap, rather than revealing the fix directly.
