@@ -26,4 +26,4 @@ class Solution:
                 tmp.next = cur
                 cur = tmp
             cur = cur.next
-        
+        return dummy.next
