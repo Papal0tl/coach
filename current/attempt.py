@@ -38,4 +38,8 @@ class Solution:
                 cur.next = right
                 right = right.next
                 cur = cur.next
+        if left:
+            cur.next = left
+        else:
+            cur.next = right
         return dummy.next
