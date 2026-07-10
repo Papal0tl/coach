@@ -38,4 +38,4 @@ Algorithmic understanding is strong: the user independently transferred both the
 
 ## Review Status
 
-Revisions requested (2): blank Correctness Argument; inaccurate/incomplete Mistakes I Made section.
+Accepted after 1 of 2 requested revisions. Correctness Argument was revised and is now accurate and complete (base case, recursive sorted-halves invariant, merge-step comparison argument, tail-attach reasoning). The Mistakes I Made revision was explicitly declined by the user — the section still contains a fabricated `AttributeError` bullet, a `tmp = cur; cur = tmp` description that doesn't match the actual code, and omits the missing-`return`, two `NameError`, and merge-tail-attach bugs (see Required Revisions above for the accurate list). Closing the session with this known, accepted gap.
