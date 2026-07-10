@@ -7,15 +7,15 @@
 
 | Skill | Target | Evidence | Status |
 | --- | --- | --- | --- |
-| Problem restatement | pending | pending | pending |
-| Constraint analysis | pending | pending | pending |
-| Brute-force construction | pending | pending | pending |
-| Pattern recognition | pending | pending | pending |
-| Invariant formulation | pending | pending | pending |
-| Complexity analysis | pending | pending | pending |
-| Edge-case design | pending | pending | pending |
-| Debugging discipline | pending | pending | pending |
-| Communication | pending | pending | pending |
+| Problem restatement | Names this as a generalization of merge-two-sorted-lists to k lists | pending | pending |
+| Constraint analysis | Notes k can be 0 or contain empty lists; total N bounded at 10^4 | pending | pending |
+| Brute-force construction | Names collect-all-then-sort (O(N log N)) or naive pairwise scan (O(Nk)) before optimizing | pending | pending |
+| Pattern recognition | Reaches for a min-heap or divide-and-conquer pairwise merge for the k-way minimum-extraction pattern | pending | pending |
+| Invariant formulation | States that the heap holds at most one current head per list, and that the global min must be one of those heads | pending | pending |
+| Complexity analysis | States O(N log k) time and O(k) auxiliary space, and why log k beats scanning k heads | pending | pending |
+| Edge-case design | Covers empty `lists`, `lists` of all `None`, single list, duplicate values | pending | pending |
+| Debugging discipline | Runs code / traces concrete example rather than guessing on heap-tuple comparison errors | pending | pending |
+| Communication | Explains tradeoff between heap and divide-and-conquer approaches if asked | pending | pending |
 
 ## Intervention Count
 
