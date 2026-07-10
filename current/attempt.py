@@ -13,4 +13,17 @@ class ListNode:
 
 class Solution:
     def sortList(self, head):
-        pass
+        if not head:
+            return head
+        dummy = ListNode(0)
+        dummy.next = head
+        cur = head
+        tmp = dummy
+        while cur and cur.next:
+            if cur.val > cur.next.val:
+                tmp = cur.next
+                cur.next = tmp.next
+                tmp.next = cur
+                cur = tmp
+            cur = cur.next
+        
