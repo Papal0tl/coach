@@ -23,3 +23,7 @@ class Solution:
             slow = slow.next
             fast = fast.next.next
         prev.next = None
+        left = head
+        right = fast
+        left = sortList(left)
+        right = sortList(fast)
