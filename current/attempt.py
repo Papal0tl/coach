@@ -27,3 +27,4 @@ class Solution:
         right = slow
         left = self.sortList(left)
         right = self.sortList(fast)
+        return dummy.next
