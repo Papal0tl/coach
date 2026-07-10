@@ -26,5 +26,16 @@ class Solution:
         left = head
         right = slow
         left = self.sortList(left)
-        right = self.sortList(fast)
+        right = self.sortList(right)
+        dummy = ListNode(0)
+        cur = dummy
+        while left and right:
+            if left.val <= right.val:
+                cur.next = left
+                left = left.next
+                cur = cur.next
+            else:
+                cur.next = right
+                right = right.next
+                cur = cur.next
         return dummy.next
