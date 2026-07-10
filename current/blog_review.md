@@ -1,7 +1,7 @@
 # Blog Review
 
 - Problem slug: `sort-list`
-- Archive path: (assigned at closeout)
+- Archive path: `archives/2026-07-10-sort-list/`
 - Blog path: `blogs/sort-list.md`
 
 ## Correctness

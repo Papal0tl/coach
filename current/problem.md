@@ -3,7 +3,7 @@
 - Name: Sort List
 - Slug: `sort-list`
 - Source: https://leetcode.cn/problems/sort-list/description/?envType=study-plan-v2&envId=top-100-liked (LeetCode 148)
-- Archive path: (to be assigned at closeout)
+- Archive path: `archives/2026-07-10-sort-list/`
 
 ## Statement
 

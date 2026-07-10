@@ -1,7 +1,7 @@
 # Session Notes
 
 - Problem slug: `sort-list`
-- Archive path: (assigned at closeout)
+- Archive path: `archives/2026-07-10-sort-list/`
 
 ## Agent Preparation
 

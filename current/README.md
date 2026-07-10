@@ -5,8 +5,8 @@
 - Language: Python
 - Coaching mode: hint-only
 - Started: 2026-07-09
-- Archive path: (assigned at closeout)
-- Status: `in_progress`
+- Archive path: `archives/2026-07-10-sort-list/`
+- Status: `closed`
 
 ## Goal
 
@@ -17,8 +17,8 @@ Sort a singly linked list in ascending order. Follow-up: do it in O(n log n) tim
 - Agent reference solution: `done, 8/8 tests pass`
 - User attempt: `done, 8/8 tests pass`
 - Tests: `done`
-- Blog: `not started`
-- Blog review: `not started`
+- Blog: `done, accepted after 1 of 2 revisions (Correctness Argument revised; Mistakes Made revision declined)`
+- Blog review: `done, accepted`
 
 ## Session Files
 
