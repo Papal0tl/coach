@@ -71,7 +71,13 @@ class Solution:
 ```
 
 ## Correctness Argument
-<!-- Your words: why does the base case guarantee a sorted result, and why does merging two sorted halves always produce a sorted whole? -->
+Base case: returns an empty list or a one-node list unchanged, which is already sorted.
+
+For a longer list, it splits it into two smaller halves and recursively sorts each half. By the time the recursion returns, both left and right are sorted.
+
+During merge step, it always appends the smaller front node from the two sorted lists. Therefore, the merged list remains sorted. When one list is exhausted, the remaining nodes in the other list are already sorted and can be attached directly.
+
+Thus, the algorithm returns all original nodes in ascending order.
 
 ## Complexity
 Time Complexity: O(n log n) — each of the O(log n) levels of recursion does O(n) total work merging.
