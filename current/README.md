@@ -15,7 +15,7 @@ Sort a singly linked list in ascending order. Follow-up: do it in O(n log n) tim
 ## Current State
 
 - Agent reference solution: `done, 8/8 tests pass`
-- User attempt: `not started`
+- User attempt: `done, 8/8 tests pass`
 - Tests: `done`
 - Blog: `not started`
 - Blog review: `not started`
