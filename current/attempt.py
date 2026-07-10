@@ -25,5 +25,5 @@ class Solution:
         prev.next = None
         left = head
         right = fast
-        left = sortList(left)
-        right = sortList(fast)
+        left = self.sortList(left)
+        right = self.sortList(fast)
