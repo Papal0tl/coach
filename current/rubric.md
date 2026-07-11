@@ -12,7 +12,7 @@
 | Brute-force construction | Names collect-all-then-sort (O(N log N)) or naive pairwise scan (O(Nk)) before optimizing | pending | pending |
 | Pattern recognition | Reaches for a min-heap or divide-and-conquer pairwise merge for the k-way minimum-extraction pattern | pending | pending |
 | Invariant formulation | States that the heap holds at most one current head per list, and that the global min must be one of those heads | pending | pending |
-| Complexity analysis | States O(N log k) time and O(k) auxiliary space, and why log k beats scanning k heads | pending | pending |
+| Complexity analysis | States O(N log k) time and O(k) auxiliary space, and why log k beats scanning k heads | Correctly named O(N log k) for divide-and-conquer vs. O(Nk) for own sequential fold; needed one guided trace (count rounds and per-round work for k=8) to isolate the log k factor before deriving it fully unassisted | met (guided) |
 | Edge-case design | Covers empty `lists`, `lists` of all `None`, single list, duplicate values | pending | pending |
 | Debugging discipline | Runs code / traces concrete example rather than guessing on heap-tuple comparison errors | pending | pending |
 | Communication | Explains tradeoff between heap and divide-and-conquer approaches if asked | pending | pending |
