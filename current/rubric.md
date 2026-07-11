@@ -7,13 +7,13 @@
 
 | Skill | Target | Evidence | Status |
 | --- | --- | --- | --- |
-| Problem restatement | Correctly identify this as a design problem needing O(1) get/put | — | pending |
-| Constraint analysis | Recognize O(1) requirement rules out plain list/array scan for LRU order | — | pending |
-| Brute-force construction | Describe an O(n)-per-op approach (e.g. list/dict with linear scan for LRU order) | — | pending |
-| Pattern recognition | Reach hash map + doubly linked list without being told | — | pending |
-| Invariant formulation | State what "most/least recently used" means in terms of list position | — | pending |
-| Complexity analysis | State O(1) time / O(capacity) space for the final design | — | pending |
-| Edge-case design | Handle capacity 1, get on missing key, put updating an existing key, eviction on the exact capacity boundary | — | pending |
+| Problem restatement | Identify this as a design problem needing O(1) get/put, not a single-function transform | — | pending |
+| Constraint analysis | Recognize the O(1) requirement rules out a plain dict-only or list-only approach for tracking recency | — | pending |
+| Brute-force construction | Describe an O(n)-per-op approach (e.g. dict + separate order list with linear search/removal) | — | pending |
+| Pattern recognition | Reach hash map (key -> node) + doubly linked list without being told; first design-problem session in the arc, first hash-map-of-mutable-nodes composition | — | pending |
+| Invariant formulation | State precisely what "recency order" means as a list position invariant (front = MRU, back = LRU), and that every touch moves a node to the front | — | pending |
+| Complexity analysis | State O(1) average time / O(capacity) space for the final design | — | pending |
+| Edge-case design | Handle capacity 1, get on a missing key, put updating an existing key (value + recency refresh, no eviction), eviction exactly at the capacity boundary | — | pending |
 | Debugging discipline | — | — | pending |
 | Communication | — | — | pending |
 
