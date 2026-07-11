@@ -31,4 +31,4 @@ Strong session overall: the sequential-fold approach was reused unprompted from 
 
 ## Review Status
 
-`revisions requested`
+Both requested revisions were explicitly declined by the user (asked to move straight to archive instead). Closing with known gaps: the Mistakes Made section still contains a fabricated "`return merge` inside the for loop" bullet that never happened per git history, a formatting artifact (`1if lists is None1`), and omits the two real bugs (copying `.val` instead of relinking the node; the `cur = cur.next` ordering relative to the node attach). All other sections (Correctness, Complexity, Edge Cases, Key Insight, Correctness Argument, Transfer Readiness) are accurate and accepted as-is.
