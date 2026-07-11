@@ -4,13 +4,17 @@
 Given an array of `k` linked lists, each already sorted in ascending order, merge them all into a single sorted linked list and return its head.
 
 ## Initial Intuition
-_(Your words: what was your first instinct when you saw the problem?)_
+Reuse the same idea as merging two sorted linked lists. I could keep a running merged list and combine each new list into it one at a time.
 
 ## Brute Force
-_(Your words: what's a simple, non-optimal approach you could have started with — e.g. collecting all values and sorting them? What's its time/space complexity?)_
+Traverse every linked list, collect all node values into an array, sort the array, and then build a new linked list from the sorted values.
+
+If there are N total nodes, collecting the values takes O(N), sorting takes O(N log N), and rebuilding the list takes O(N). Therefore, the total time complexity is O(N log N), and the extra space complexity is O(N).
 
 ## Key Insight
-_(Your words: what let you go from k separate sorted lists to one merge strategy? Why does folding the lists together one at a time work?)_
+Every individual linked list is already sorted, do not need to sort all values again. Repeatedly apply the merge-two-sorted-lists technique.
+
+After each outer-loop iteration, merge contains all nodes from the lists processed so far, and it remains sorted.
 
 ## Final Algorithm
 1. If `lists` is empty (or falsy), return `None`.
@@ -48,7 +52,9 @@ class Solution:
 ```
 
 ## Correctness Argument
-_(Your words, agent prompt if needed: why does merging one list at a time into the running `merge` result produce a fully sorted list at the end? What invariant holds true about `merge` after each iteration of the outer loop?)_
+After each outer-loop iteration, merge is a sorted linked list containing all nodes from the lists processed so far.
+
+During each two-list merge, the smaller current node is always attached next, so the new result remains sorted. Once one list is exhausted, the remaining nodes of the other list can be attached directly because they are already sorted and are no smaller than the last attached node.
 
 ## Complexity
 Time Complexity: O(N·k), where N is the total number of nodes across all lists and k is the number of lists. Each of the k outer-loop merges can touch up to O(N) nodes in the worst case (the accumulated `merge` list grows as more lists are folded in), so the total work sums to O(N·k) rather than O(N log k).
@@ -63,7 +69,15 @@ Space Complexity: O(1) auxiliary space beyond the output — nodes are relinked 
 - Negative and boundary values (`-10^4`, `10^4`).
 
 ## Mistakes I Made
-_(Your words: what actually went wrong while you were writing this, and how did you find and fix it?)_
+- Wrote `cur.val = list1.val` or `cur.val = list2.val`. This only changed the value stored in the current node and did not connect any node to the result list.
+- Moved with `cur = cur.next` before setting `cur.next`. Since dummy.next was still None, cur became None, causing an AttributeError.
+- The correct linked-list order is: first connect the node with cur.next = ..., and then move forward with cur = cur.next.
+- Placed return merge inside the outer for loop. This caused the function to return after merging only the first list, so the remaining lists were never processed.
+- Used 1if lists is None1, which only checks for None. Using if not lists is clearer because it also handles an empty array.
 
 ## How I Will Recognize This Pattern Next Time
-_(Your words: what about this problem's shape should cue you toward a merge-based approach next time?)_
+- Every input list is already sorted.
+- Need to compare the current head nodes.
+- The merge-two-sorted-lists pattern can be reused.
+- A dummy node avoids special handling for the first result node.
+- Always connect a node before moving the result pointer.
