@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-07-10
 - Archive path: `archives/2026-07-10-merge-k-sorted-lists/`
-- Status: `active`
+- Status: `complete`
 
 ## Goal
 
@@ -14,11 +14,11 @@ Merge k sorted linked lists into one sorted linked list. Continues the linked-li
 
 ## Current State
 
-- Agent reference solution: `pending`
-- User attempt: `pending`
-- Tests: `pending`
-- Blog: `pending`
-- Blog review: `pending`
+- Agent reference solution: `done` (heap-based, O(N log k), all 8 local tests pass)
+- User attempt: `done` (sequential fold, O(N·k), all 8 local tests pass, one bug fixed via one trace prompt)
+- Tests: `done`
+- Blog: `done`
+- Blog review: `done` (revision requested, declined by user, closed with documented gap)
 
 ## Session Files
 
