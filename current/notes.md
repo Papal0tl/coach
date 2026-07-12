@@ -26,6 +26,13 @@
 
 Pending — filled after the user attempt and blog.
 
+## Coaching Log
+
+- First draft (`__init__` + `get`, `put` still `pass`): independently reached for `Node()` and a `self.cache` dict without any hint — correctly identifies the hash-map-of-nodes + linked-list shape on the first try, first design-problem session in the arc. Not yet run (unfinished statement `node.next = ` on the last line of `get` is a syntax error as-is).
+- Structural gap: `__init__(self, capacity)` body reads `self.key = key` / `self.value = value`, but `__init__` only receives `capacity` — these lines conflate "the cache object" with "one entry in the cache." Also `capacity` itself is never stored on `self`. `Node` is used but never defined in this file.
+- `get`: references bare `cache` instead of `self.cache`. Unlink logic (`node.prev.next = node.next`, `node.next.prev = node.prev`) is correct for removing a node from a doubly linked list, but the move-to-front reinsertion and the `return node.val` are not yet written.
+- Intervention used: clarifying question about the `__init__` body (tier 1), not yet a direct explanation.
+
 ## Follow-Up Candidates
 
 - Discuss why `OrderedDict` (Python stdlib) can implement this in a few lines via `move_to_end` + `popitem(last=False)`, as a "you now understand what the built-in is doing under the hood" comparison, offered only after the user has built the raw hash-map + doubly-linked-list version themselves.
