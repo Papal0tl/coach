@@ -22,7 +22,7 @@ class LRUCache:
         self.tail.prev = self.head
 
     def get(self, key: int) -> int:
-        if key not in cache:
+        if key not in self.cache:
             return -1
         node = self.cache[key]
         node.prev.next = node.next
@@ -37,7 +37,7 @@ class LRUCache:
 
 
     def put(self, key: int, value: int) -> None:
-        if key in cache:
+        if key in self.cache:
             node = self.cache[key]
             node.value = value
 
