@@ -15,7 +15,7 @@ Design and implement an LRU cache with O(1) average-time `get` and `put`. First 
 ## Current State
 
 - Agent reference solution: `done` (hash map + doubly linked list, all 6 local tests pass)
-- User attempt: `pending`
+- User attempt: `done` (all 6 reference tests pass)
 - Tests: `done`
 - Blog: `pending`
 - Blog review: `pending`
