@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-07-11
 - Archive path: `archives/2026-07-11-lru-cache/`
-- Status: `active`
+- Status: `closed`
 
 ## Goal
 

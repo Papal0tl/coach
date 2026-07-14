@@ -24,7 +24,7 @@
 
 ## User-Facing Takeaways
 
-Pending — filled after the user attempt and blog.
+First design/class-based session (state carried across method calls, not a single-function transform) and first composition of a hash map with mutable linked-list nodes. The hash-map + doubly-linked-list shape was reached independently on the very first draft. Zero logic bugs; the only bug was a mechanical `self.` scoping slip (bare `cache` instead of `self.cache`), which recurred once across two drafts and was resolved fastest by running the code and reading the `NameError` rather than mentally tracing — consistent with this user's established debugging style. Blog was accurate and precise on every section except Mistakes Made, which described conceptual clarifications instead of the literal git-history bugs; flagged as optional, declined.
 
 ## Coaching Log
 
