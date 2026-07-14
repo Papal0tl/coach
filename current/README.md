@@ -14,9 +14,9 @@ Solve LC 94, Binary Tree Inorder Traversal, first via the agent reference soluti
 
 ## Current State
 
-- Agent reference solution: `not started`
-- User attempt: `not started`
-- Tests: `not started`
+- Agent reference solution: `done`
+- User attempt: `done (correct recursive DFS, zero bugs)`
+- Tests: `done (7/7 passing)`
 - Blog: `not started`
 - Blog review: `not started`
 
