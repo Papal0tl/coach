@@ -5,15 +5,19 @@ Design a cache with a fixed `capacity` that supports `get(key)` and `put(key, va
 
 ## Initial Intuition
 
-_User-filled: what was your first instinct for tracking "least recently used," before settling on the final design?_
+Use a dictionary to store each key-value pair and another structure to record the order in which keys were used. Could keep the most recently used key at the front and the least recently used key at the back, then remove the back key whenever the cache exceeded its capacity.
 
 ## Brute Force
 
-_User-filled: describe an approach that gets the right answer but isn't O(1) per operation (e.g. a dict plus a separate list you scan/update linearly), and state its complexity._
+Use a dictionary for storing values and a list for tracking usage order. Whenever a key is accessed or updated, remove it from its current position in the list and insert it at the front. When the cache exceeds capacity, remove the key at the end of the list.
+
+This approach gives O(1) average dictionary lookup, but removing an arbitrary key from the list takes O(n), so get and put can take O(n) time.
 
 ## Key Insight
 
-_User-filled: why does neither a hash map alone nor a linked list alone solve this, and what does combining them give you?_
+Hash map can find a key quickly, but it does not efficiently maintain which key is least recently used. A linked list can maintain usage order and move or remove nodes efficiently, but finding a specific key in the list would take O(n).
+
+Hash map finds the node in O(1) average time, and the doubly linked list moves, inserts, or removes that node in O(1) time.
 
 ## Final Algorithm
 1. Define a `Node` holding `key`, `value`, `prev`, `next`.
@@ -84,7 +88,7 @@ class LRUCache:
 
 ## Correctness Argument
 
-_User-filled: state the invariant the doubly linked list maintains (what does its order represent at all times?), and why every `get`/`put` that touches a key preserves that invariant._
+The linked list always keeps keys from most recently used to least recently used. Every successful get or put moves the key to the front, so tail.prev is always the least recently used key. When the cache exceeds capacity, removing tail.prev therefore removes the correct key.
 
 ## Complexity
 Time Complexity: O(1) average per `get` and `put` — dict lookup is O(1), and unlinking/relinking a node touches a constant number of pointers regardless of list size.
@@ -99,8 +103,15 @@ Space Complexity: O(capacity) — one `Node` and one dict entry per stored key, 
 
 ## Mistakes I Made
 
-_User-filled: describe the actual bugs from your git history, in your own words._
+- Needed to clarify the meaning of “most recently used.” After put(1, 1) followed by put(2, 2), key 2 is the most recently used key because inserting a key also counts as using it.
+- Focused only on storing key-value pairs and did not immediately see why a dictionary alone could not efficiently track the least recently used key.
+- Had to understand why both the dictionary and the linked list must store information about the same entry. The dictionary is used to find a node quickly, while the linked list stores its usage order.
+- Found the pointer updates difficult to follow, especially the four assignments used to insert a node after head.
+- Needed to distinguish updating an existing key from inserting a new key. Updating changes the value and refreshes recency, but it does not increase the cache size or trigger eviction.
 
 ## How I Will Recognize This Pattern Next Time
 
-_User-filled: what signals in a problem statement point to "hash map + doubly linked list" as the shape?_
+- Fast lookup by key.
+- A changing order based on recent access.
+- Moving an arbitrary item to the front in O(1).
+- Removing the oldest or least recently used item in O(1).
