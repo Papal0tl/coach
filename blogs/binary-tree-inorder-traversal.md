@@ -14,19 +14,19 @@ Given the root of a binary tree, return the values of its nodes in inorder order
 
 ## Initial Intuition
 
-_(Your words: what was your first instinct when you read the problem?)_
+A standard inorder traversal. Required order is "left, node, right," use recursion to implement it.
 
 ---
 
 ## Brute Force
 
-_(Your words: is there a distinct "brute force" here, or did you go straight to the natural recursive approach? If the latter, say so — not every problem has a separate brute force.)_
+The standard recursive DFS visits each node exactly once, which is optimal in both simplicity and time complexity.
 
 ---
 
 ## Key Insight
 
-_(Your words: what makes "left, visit, right" the right order to produce a sorted-looking traversal, and why does recursion make this easy to express?)_
+Traversal order: "left subtree → current node → right subtree." Since every subtree follows the same rule, recursion naturally solves the problem by applying the same steps to each subtree until reaching an empty node.
 
 ---
 
@@ -58,7 +58,7 @@ def inorderTraversal(self, root):
 
 ## Correctness Argument
 
-_(Your words: why does visiting left, then the node, then right — recursively at every level — produce values in inorder order for the whole tree, not just at the top level?)_
+The recursive function first completely traverses the left subtree, then visits the current node, and finally traverses the right subtree. Since every subtree is processed using the same left-node-right order, the entire tree is visited in inorder.
 
 ---
 
@@ -80,10 +80,11 @@ _(Your words: why does visiting left, then the node, then right — recursively 
 
 ## Mistakes Made
 
-_(Your words: what actually went wrong while you were writing this, if anything? If there were zero bugs, say that plainly rather than inventing something.)_
+N/A
 
 ---
 
 ## How to Recognize This Pattern Next Time
 
-_(Your words: what's the signal that a problem wants a tree traversal, and what's the signal that an iterative version would need an explicit stack instead of recursion?)_
+Asks for preorder, inorder, or postorder traversal of a tree => a strong signal to use DFS. 
+If recursion is not allowed or the tree is very deep, the same traversal can be implemented iteratively using an explicit stack instead of the recursion call stack.
