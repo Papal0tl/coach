@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-07-14
 - Archive path: `archives/2026-07-14-binary-tree-inorder-traversal/`
-- Status: `active`
+- Status: `closed`
 
 ## Goal
 
