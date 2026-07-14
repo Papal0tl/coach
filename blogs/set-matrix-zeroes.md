@@ -72,8 +72,6 @@ The first row and first column are processed last using `first_row_zero` and `fi
 
 ## Mistakes Made
 
-## Mistakes Made
-
 1. Thought I could immediately zero a row and column as soon as I found a 0. This does not work because the newly created zeros may later be treated as original zeros, causing extra rows and columns to be incorrectly zeroed.
 
 2. Confused about why the first row and first column can be used as markers. They are actually temporary labels that record which rows and columns need to be zeroed later.
