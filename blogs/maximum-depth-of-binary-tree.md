@@ -53,7 +53,8 @@ Agent-filled as a checklist; user should add any cases they personally missed.
 
 ## Mistakes I Made
 
-N/A
+- Wrote maxDepth(root.left) and maxDepth(root.right) instead of self.maxDepth(...). Since maxDepth was not defined as a separate global function, this caused a NameError.
+- In the base case, used a bare return. That returned None, but the recursive results need to be numbers. Passing None into max() caused a TypeError. The base case must return 0.
 
 ## How I Will Recognize This Pattern Next Time
 
