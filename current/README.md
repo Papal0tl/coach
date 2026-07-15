@@ -14,9 +14,9 @@ Solve LC 104 (Maximum Depth of Binary Tree), second session in the tree-traversa
 
 ## Current State
 
-- Agent reference solution: `not started`
+- Agent reference solution: `done`
 - User attempt: `not started`
-- Tests: `not started`
+- Tests: `done, 7/7 passing`
 - Blog: `not started`
 - Blog review: `not started`
 
