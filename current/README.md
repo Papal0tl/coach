@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-07-15
 - Archive path: `archives/2026-07-15-maximum-depth-of-binary-tree/`
-- Status: `active`
+- Status: `complete`
 
 ## Goal
 
@@ -15,10 +15,10 @@ Solve LC 104 (Maximum Depth of Binary Tree), second session in the tree-traversa
 ## Current State
 
 - Agent reference solution: `done`
-- User attempt: `not started`
+- User attempt: `done, correct, 7/7 tests passing`
 - Tests: `done, 7/7 passing`
-- Blog: `not started`
-- Blog review: `not started`
+- Blog: `done, accepted`
+- Blog review: `accepted`
 
 ## Session Files
 
