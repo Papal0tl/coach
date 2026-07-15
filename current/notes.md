@@ -23,9 +23,12 @@
 
 ## User-Facing Takeaways
 
-None yet.
+- First attempt had the correct overall recursive shape (base case, recurse both children, combine with `max(...) + 1`) on the very first draft, with zero hints needed to reach that structure — pattern transfer from binary-tree-inorder-traversal (2026-07-14) worked cleanly.
+- Two mechanical bugs, not logic bugs: (1) called `maxDepth(root.left)` as a free function instead of `self.maxDepth(root.left)`, causing `NameError`; (2) bare `return` in the base case returned `None` instead of `0`, causing `TypeError` when `max(None, None)` was evaluated. Both fixed after one guided question each.
+- Continued a self-reported "run it, don't guess" gap: when first asked what the code prints for a single-node tree, answered "return 1" without having actually run it — the real output was a `NameError`. Once explicitly told to run the exact command and compare, self-corrected on the next round trip. This is a shift from the established "empirical debugging preference" (previously converged fast once running code) — this time a predicted-but-unverified answer was given first.
+- Declined the invariant-articulation question (asked to state what `maxDepth(node)` guarantees) and the iterative BFS follow-up in the same turn, opting to move to the blog instead — first session where the invariant question itself (not just an optional code follow-up) was skipped rather than answered.
 
 ## Follow-Up Candidates
 
-- Prior session (binary-tree-inorder-traversal, 2026-07-14) declined the iterative/explicit-stack follow-up. Watch whether this session's recursive base case (empty tree, single node) transfers cleanly, and whether an iterative (BFS level-count or explicit-stack DFS) follow-up is attempted this time.
-- If the recursive solution comes easily, a natural follow-up is BFS level-order traversal (counting levels) as the iterative alternative — same underlying "depth" concept, different traversal order than the declined DFS-stack follow-up from last session.
+- BFS level-order traversal (iterative, level-count) remains untried as the iterative alternative — now twice offered (binary-tree-inorder-traversal's explicit-stack DFS, this session's BFS level-count) and twice declined. Worth trying a lower-friction entry point next time, e.g. asking for just the invariant in prose before offering the full iterative code follow-up.
+- Watch whether the "predicted output without running" gap recurs in the next session, or if this was a one-off given how simple the fix pattern had become.
