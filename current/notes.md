@@ -27,6 +27,7 @@
 - Two mechanical bugs, not logic bugs: (1) called `maxDepth(root.left)` as a free function instead of `self.maxDepth(root.left)`, causing `NameError`; (2) bare `return` in the base case returned `None` instead of `0`, causing `TypeError` when `max(None, None)` was evaluated. Both fixed after one guided question each.
 - Continued a self-reported "run it, don't guess" gap: when first asked what the code prints for a single-node tree, answered "return 1" without having actually run it — the real output was a `NameError`. Once explicitly told to run the exact command and compare, self-corrected on the next round trip. This is a shift from the established "empirical debugging preference" (previously converged fast once running code) — this time a predicted-but-unverified answer was given first.
 - Declined the invariant-articulation question (asked to state what `maxDepth(node)` guarantees) and the iterative BFS follow-up in the same turn, opting to move to the blog instead — first session where the invariant question itself (not just an optional code follow-up) was skipped rather than answered.
+- Blog's Mistakes Made revision (both real bugs) was requested and applied accurately and completely on the first pass. The optional add (noting the unverified "return 1" prediction) was requested but not included — declined only the optional part, not the required correction.
 
 ## Follow-Up Candidates
 
