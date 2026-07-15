@@ -16,4 +16,8 @@ class TreeNode:
 
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        pass
+        if root is None:
+            return
+        left_depth = maxDepth(root.left)
+        right_depth = maxDepth(root.right)
+        return max(left_depth, right_depth) + 1
