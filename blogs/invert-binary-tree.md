@@ -46,9 +46,9 @@ Space: O(h) — the recursion call stack grows with the tree's height h. O(log n
 - Symmetric tree -> structure unchanged but still correctly mirrored (values may still move).
 
 ## Mistakes I Made
-
-N/A
+- Wrote invertTree(root.left) and invertTree(root.right) without self., which caused a NameError. I learned that recursive calls to another method in the same class must use self..
+- In the base case, I initially returned [] instead of None. I learned that an empty tree should return None, since the function returns a tree node (or None), not a list.
 
 ## How I Will Recognize This Pattern Next Time
 
-If a tree problem asks to perform the same modification on every node => think about recursive DFS. If each node can be solved using the same steps as its children, recursion is usually a simple and natural solution.
+If every node in a tree requires the same operation and the result for a node depends only on applying that same operation to its children, I will consider recursive DFS. When the modification can be done in place, do not need to build a new tree.
