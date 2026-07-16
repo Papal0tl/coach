@@ -46,8 +46,7 @@ Space: O(h) — the recursion call stack grows with the tree's height h. O(log n
 - Symmetric tree -> structure unchanged but still correctly mirrored (values may still move).
 
 ## Mistakes I Made
-- Wrote invertTree(root.left) and invertTree(root.right) without self., which caused a NameError. I learned that recursive calls to another method in the same class must use self..
-- In the base case, I initially returned [] instead of None. I learned that an empty tree should return None, since the function returns a tree node (or None), not a list.
+N/A
 
 ## How I Will Recognize This Pattern Next Time
 
