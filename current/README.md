@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-07-15
 - Archive path: `archives/2026-07-15-invert-binary-tree/`
-- Status: `active`
+- Status: `archived`
 
 ## Goal
 
@@ -14,11 +14,11 @@ Solve LC 226 (Invert Binary Tree) with guided, hint-only coaching, then write an
 
 ## Current State
 
-- Agent reference solution: `pending`
-- User attempt: `pending`
-- Tests: `pending`
-- Blog: `pending`
-- Blog review: `pending`
+- Agent reference solution: `done, 5/5 local tests pass`
+- User attempt: `done, correct on first commit, all reference tests pass`
+- Tests: `done`
+- Blog: `done`
+- Blog review: `accepted`
 
 ## Session Files
 

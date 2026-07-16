@@ -26,4 +26,4 @@
 
 ## Closeout Assessment
 
-Pending.
+Correct attempt on the first submission (zero bugs, single clean commit from stub to final). Unprompted, correct answers to both the invariant/aliasing question (why discarding the recursive return values is still safe) and the complexity question (O(n)/O(h), recursion stack as the driver). Blog was strong on every agent-independent section, including a properly structured induction-based correctness argument. One coaching-relevant event: an intermediate blog revision replaced the accurate "N/A" Mistakes Made with two bugs that did not occur this session (they mirrored the *previous* session's actual bugs instead). Flagged against the commit history; the user reverted to the accurate "N/A" immediately, with no pushback or justification attempted — the fastest, cleanest resolution of this recurring cross-session pattern observed so far. Session closed and archived at `archives/2026-07-15-invert-binary-tree/`.
