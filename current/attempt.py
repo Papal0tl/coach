@@ -17,8 +17,8 @@ class Solution:
                 return 0
             left_depth = getDepth(node.left)
             right_depth = getDepth(node.right)
-            length = left_depth + right_depth
-            return 1 + length
+            cur_length = left_depth + right_depth
+            return 1 + max(cur_length, length)
         getDepth(root)
         return length
 
