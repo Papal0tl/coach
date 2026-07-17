@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-07-17
 - Archive path: `archives/2026-07-17-symmetric-tree/`
-- Status: `active`
+- Status: `complete`
 
 ## Goal
 
@@ -17,8 +17,8 @@ Fourth tree-traversal session. First "compare two trees" recursive shape (vs. LC
 - Agent reference solution: `complete`
 - User attempt: `complete, all 6 reference-style cases pass`
 - Tests: `complete`
-- Blog: `drafted, awaiting user sections`
-- Blog review: `not started`
+- Blog: `complete`
+- Blog review: `accepted`
 
 ## Session Files
 
