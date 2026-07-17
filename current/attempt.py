@@ -12,7 +12,7 @@ class Solution:
         :rtype: int
         """
         length = 0
-        def getDepth(self, node):
+        def getDepth(node):
             if node is None:
                 return 0
             left_depth = getDepth(node.left)
