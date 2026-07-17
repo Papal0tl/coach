@@ -17,7 +17,7 @@ class Solution:
                 return 0
             left_depth = getDepth(node.left)
             right_depth = getDepth(node.right)
-            length = left_depth + right depth
+            length = left_depth + right_depth
             return length
         getDepth(root)
         return length
