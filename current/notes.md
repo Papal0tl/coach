@@ -35,3 +35,7 @@ Both pass all 6 reference tests.
 
 - Iterative (BFS/queue) version — built into this problem's own follow-up, not a separate stretch goal this time.
 - Path Sum (LC 112) or Same Tree (LC 100) as adjacent "compare/traverse with a condition" variants if a lighter follow-up is wanted instead of the iterative version.
+
+## Coaching Log
+
+- First draft: `if root.left == root.right: return True else: return False`, followed by two unreachable recursive calls after the `return`. Confirms the predicted risk from "User-Facing Takeaways" — the attempt tried to make `isSymmetric(root)` recurse on a single node's two children directly, rather than reaching for a two-argument pair-comparison helper. Also has an object-identity trap (`root.left == root.right` compares `TreeNode` objects, which are never equal unless both `None`, since `TreeNode` has no `__eq__`) and dead code after the early `return`. Did not run against the reference tests before asking for a check. Intervention: asked to run the attempt against `tests.py`-style examples and predict/observe behavior, rather than being told the bugs directly.
