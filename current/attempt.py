@@ -11,14 +11,15 @@ class Solution:
         :type root: Optional[TreeNode]
         :rtype: int
         """
-        length = 0
+        self.length = 0
         def getDepth(node):
             if node is None:
                 return 0
             left_depth = getDepth(node.left)
             right_depth = getDepth(node.right)
             cur_length = left_depth + right_depth
-            return 1 + max(cur_length, length)
+            self.length = max(self.length, cur_length)
+            return 1 + max(left_depth, right_depth)
         getDepth(root)
-        return length
+        return self.length
 
