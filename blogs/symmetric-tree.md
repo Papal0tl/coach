@@ -54,7 +54,9 @@ Agent-filled as a checklist; user should add any cases they personally missed.
 - First tried comparing root.left == root.right, but that only compares the two node objects instead of checking whether the subtrees are mirrors.
 - Put the recursive calls after return True / return False, so they never executed because the function had already returned.
 - Tried calling self.isSymmetric(root.left) instead of writing a helper function that compares two nodes at the same time.
-- Forgot to handle the case where root is None, which caused an AttributeError when accessing root.left.
+- After rewriting the base cases, I used left and right without defining them, which caused NameError: name 'left' is not defined.
+- After adding the crossed compare(...) calls, the final return line was indented at the class-body level instead of inside isSymmetric, which caused SyntaxError: 'return' outside function.
+- I forgot to handle root is None before accessing root.left and root.right, which caused an AttributeError.
 
 ## How I Will Recognize This Pattern Next Time
 
