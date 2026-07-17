@@ -24,3 +24,8 @@ class Solution:
             return False
         self.isSymmetric(root.left)
         self.isSymmetric(root.right)
+
+        t1 = compare(left.left, right.right)
+        t2 = compare(left.right, right.left)
+        return t1 and t2
+    return compare(root.left, root.right)
