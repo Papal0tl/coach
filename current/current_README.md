@@ -14,10 +14,10 @@ Fourth tree-traversal session. First "compare two trees" recursive shape (vs. LC
 
 ## Current State
 
-- Agent reference solution: `not started`
-- User attempt: `not started`
-- Tests: `not started`
-- Blog: `not started`
+- Agent reference solution: `complete`
+- User attempt: `complete, all 6 reference-style cases pass`
+- Tests: `complete`
+- Blog: `drafted, awaiting user sections`
 - Blog review: `not started`
 
 ## Session Files
