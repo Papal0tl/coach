@@ -16,16 +16,18 @@ class TreeNode:
 
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-        if left is None and right is None:
-            return True
-        if left is None or right is None:
-            return False
-        if left.val != right.val:
-            return False
-        self.isSymmetric(root.left)
-        self.isSymmetric(root.right)
 
-        t1 = compare(left.left, right.right)
-        t2 = compare(left.right, right.left)
-        return t1 and t2
-    return compare(root.left, root.right)
+        def compare(left, right):
+            if left is None and right is None:
+                return True
+            if left is None or right is None:
+                return False
+            if left.val != right.val:
+                return False
+            self.isSymmetric(root.left)
+            self.isSymmetric(root.right)
+
+            t1 = compare(left.left, right.right)
+            t2 = compare(left.right, right.left)
+            return t1 and t2
+        return compare(root.left, root.right)
