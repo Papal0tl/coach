@@ -7,20 +7,20 @@
 
 | Skill | Target | Evidence | Status |
 | --- | --- | --- | --- |
-| Problem restatement | Correctly distinguish "diameter" (edges between two nodes) from "height"/"depth" (edges to a leaf) | pending | pending |
-| Constraint analysis | Recognize diameter may not pass through root | pending | pending |
-| Brute-force construction | Consider O(n^2) (recompute height at every node) before optimizing to single-pass | pending | pending |
-| Pattern recognition | Transfer recursive bottom-up combine from maximum-depth-of-binary-tree | pending | pending |
-| Invariant formulation | Separate "value returned to caller" (height) from "value tracked as running best" (diameter) | pending | pending |
-| Complexity analysis | State O(n) time / O(h) space unprompted | pending | pending |
-| Edge-case design | Empty tree, single node, skewed tree, non-root diameter | pending | pending |
-| Debugging discipline | Run code rather than predict output (established strength) | pending | pending |
-| Communication | Blog Mistakes Made completeness (recurring watch area) | pending | pending |
+| Problem restatement | Correctly distinguish "diameter" (edges between two nodes) from "height"/"depth" (edges to a leaf) | Went straight to a height-based recursive helper, no confusion between the two concepts in the initial approach | met |
+| Constraint analysis | Recognize diameter may not pass through root | Not explicitly discussed; solution's per-node update handles it correctly by construction | not directly observed |
+| Brute-force construction | Consider O(n^2) (recompute height at every node) before optimizing to single-pass | Went directly to single-pass; brute force not attempted or discussed | not observed |
+| Pattern recognition | Transfer recursive bottom-up combine from maximum-depth-of-binary-tree | First draft already had the right overall recursive shape (helper computing depth, combining child results) | met |
+| Invariant formulation | Separate "value returned to caller" (height) from "value tracked as running best" (diameter) | This was the core bug: conflated the two for 4 drafts (returning the diameter-like sum, not the height; and not persisting the running best via a shadowed local). Resolved only after two rounds of guided questions, landing on `self.length` for the tracked value and `1 + max(left, right)` for the returned height | needed scaffolding, resolved correctly |
+| Complexity analysis | State O(n) time / O(h) space unprompted | Not asked this session | not observed |
+| Edge-case design | Empty tree, single node, skewed tree, non-root diameter | Not designed by the user; covered by the pre-written reference test suite, all passed | not observed (tests were agent-authored) |
+| Debugging discipline | Run code rather than predict output (established strength) | Continued strength: every fix was verified by running the code and reading the actual error/output, never by mental trace alone | met |
+| Communication | Blog Mistakes Made completeness (recurring watch area) | pending — blog not yet written | pending |
 
 ## Intervention Count
 
 - Clarifying questions: 0
-- Hints: 0
+- Hints: 5 (run-it prompts / trace requests: syntax error x2, missing-arg error, wrong-answer trace, scoping-rules question, assignment-site enumeration question)
 - Direct explanations: 0
 - Code-level nudges: 0
 
