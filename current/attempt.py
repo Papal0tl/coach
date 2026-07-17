@@ -15,8 +15,8 @@ class Solution:
         def getDepth(self, node):
             if node is None:
                 return 0
-            left_depth = getDepth(root.left)
-            right_depth = getDepth(root.right)
+            left_depth = getDepth(node.left)
+            right_depth = getDepth(node.right)
             length = left_depth + right depth
             return length
         getDepth(root)
