@@ -22,13 +22,7 @@ High. How I Will Recognize This Pattern Next Time correctly generalizes past the
 
 ## Required Revisions
 
-One: **Mistakes I Made omits two real, significant bugs.** Checked against the session's git history (`current/attempt.py` commits `4d186bc` through `a1e1633`):
-
-- Listed and accurate: the `root.left == root.right` identity-comparison bug; the dead/unreachable recursive calls placed after an early `return`; the single-node `self.isSymmetric(root.left)`-style calls instead of a two-argument helper; the missing `root is None` guard causing an `AttributeError` on the empty-tree case.
-- **Omitted:** after the base cases were rewritten to reference `left`/`right` (commit `b0bc04e`), running the code raised `NameError: name 'left' is not defined` because `left`/`right` were used but never assigned from `root.left`/`root.right` — this took a full coaching round (run, observe, explain) to resolve.
-- **Omitted:** after the crossed-pair `compare(...)` calls were added (commit `d6570aa`), the file raised `SyntaxError: 'return' outside function` because the final `return compare(root.left, root.right)` line was indented at the class-body level instead of inside `isSymmetric` — also took a full coaching round to resolve, and was the session's most structurally significant bug (a full method-boundary/indentation error, not a logic slip).
-
-These two bugs were both real, both caused the code to fail outright (not just produce a wrong answer), and both required a dedicated run-and-diagnose round each — they belong in Mistakes Made alongside the four already listed. Please add them.
+None. The revision was applied and now matches the git history exactly: all six real bugs are listed (identity-comparison, dead code after `return`, single-node calls instead of a helper, `NameError` on undefined `left`/`right`, `SyntaxError` from the misplaced `return`, and the missing `root is None` guard). The `NameError` bullet was added by the user independently before being asked; the `SyntaxError` bullet was added on request.
 
 ## Agent Assessment
 
@@ -36,4 +30,4 @@ Zero logic bugs in the final solution; every bug across the session's 6 commits 
 
 ## Review Status
 
-revision requested
+accepted
