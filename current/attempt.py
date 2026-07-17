@@ -16,4 +16,9 @@ class TreeNode:
 
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-        pass
+        if root.left == root.right:
+            return True
+        else:
+            return False
+        self.isSymmetric(root.left)
+        self.isSymmetric(root.right)
