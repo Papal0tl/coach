@@ -13,15 +13,15 @@ Given the root of a binary tree, check whether it is a mirror of itself (symmetr
 
 ## My Initial Intuition
 
-User-filled.
+Simply compare root.left and root.right. If they were equal, return True; otherwise, return False. Then realized that checking whether two node objects are equal does not tell whether the whole tree is symmetric.
 
 ## Brute Force
 
-User-filled.
+Serialize the left and right subtrees and compare whether one is the mirror of the other => Requires extra space to store the traversal results. A recursive mirror comparison is simpler and uses the tree structure directly.
 
 ## Key Insight
 
-User-filled.
+Symmetry means mirror, not equality. Instead of comparing left with left and right with right, need to compare the left subtree's left child with the right subtree's right child, and the left subtree's right child with the right subtree's left child. The recursive helper function naturally checks this mirror relationship.
 
 ## Final Algorithm
 
@@ -31,7 +31,7 @@ Define a nested/helper function `compare(left, right)` (or `is_mirror(t1, t2)`) 
 
 ## Correctness Argument
 
-User-filled, with agent prompts if needed.
+The helper function correctly determines whether two subtrees are mirror images. If both nodes are None, they are symmetric. If only one is None or their values differ, they cannot be symmetric. Otherwise, the current nodes match, and the function recursively checks the outer pair (left.left vs. right.right) and the inner pair (left.right vs. right.left). Therefore, it returns True if and only if the entire tree is symmetric.
 
 ## Complexity
 
@@ -51,8 +51,11 @@ Agent-filled as a checklist; user should add any cases they personally missed.
 
 ## Mistakes I Made
 
-User-filled.
+- First tried comparing root.left == root.right, but that only compares the two node objects instead of checking whether the subtrees are mirrors.
+- Put the recursive calls after return True / return False, so they never executed because the function had already returned.
+- Tried calling self.isSymmetric(root.left) instead of writing a helper function that compares two nodes at the same time.
+- Forgot to handle the case where root is None, which caused an AttributeError when accessing root.left.
 
 ## How I Will Recognize This Pattern Next Time
 
-User-filled.
+A tree problem asks whether two parts are mirrors or symmetric => writing a helper function that takes two nodes instead of one. Mirror problems compare children crosswise (left.left with right.right, and left.right with right.left) rather than in parallel.
