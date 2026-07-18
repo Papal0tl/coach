@@ -31,3 +31,7 @@ Standard BFS with `collections.deque`. Guard `root is None` returns `[]` early. 
 
 - Zigzag level order traversal (LC 103): same BFS skeleton, alternate level direction.
 - Recursive (DFS-based) level order traversal using a depth parameter to index into `result`, as a contrast to the BFS approach.
+
+## Coaching Log
+
+- First draft (commit `7c27c63`): the BFS/queue skeleton, the level-size snapshot (`size = len(queue)`), and the inner `for _ in range(size)` loop were all written correctly and unprompted — matches the reference solution's structure closely, first BFS session in the arc. One mechanical bug: `deque(root)` instead of `deque([root])` (and `deque` itself is not imported yet). Consistent with the established pattern of getting the algorithmic shape right first and hitting mechanical/syntax bugs rather than logic bugs. Prompted to run the file rather than mentally trace, per the established empirical-debugging preference.
