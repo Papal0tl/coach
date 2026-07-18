@@ -14,7 +14,7 @@ class Solution:
         if root is None:
             return []
         res = []
-        queue = deque(root)
+        queue = deque([root])
         while queue:
             size = len(queue)
             level = []
