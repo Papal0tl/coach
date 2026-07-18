@@ -36,4 +36,4 @@ Strongest showing yet on Mistakes Made accuracy: zero fabrication and zero misat
 
 ## Review Status
 
-`revision requested`
+`accepted as-is` — revision requested (adding the 3 omitted mechanical bugs), user explicitly declined ("no need to revise"). Proceeding to closeout with Mistakes I Made covering only the conceptual bug.
