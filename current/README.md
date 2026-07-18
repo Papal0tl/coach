@@ -14,9 +14,9 @@ Solve LC 102 (Binary Tree Level Order Traversal) with a hint-only coaching appro
 
 ## Current State
 
-- Agent reference solution: `not started`
+- Agent reference solution: `complete`
 - User attempt: `not started`
-- Tests: `not started`
+- Tests: `complete`
 - Blog: `not started`
 - Blog review: `not started`
 
