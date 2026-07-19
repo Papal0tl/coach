@@ -52,6 +52,8 @@ Agent-filled as a checklist; user should add any cases they personally missed.
 ## Mistakes I Made
 
 - Tied to solve the problem with recursive DFS, but that naturally traverses by depth rather than by level, making the solution more complicated than using BFS.
+- Wrote deque(root) instead of deque([root]). deque expects an iterable, but root is a single TreeNode, so it should be wrapped in a list to initialize the queue with one element.
+- Forgot to import deque with from collections import deque, which caused a NameError for every non-empty tree.
 
 ## How I Will Recognize This Pattern Next Time
 
