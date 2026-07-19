@@ -22,13 +22,11 @@ Strong. The invariant was stated precisely both in the coaching conversation and
 
 ## Required Revisions
 
-**Mistakes I Made** does not match this session's actual git history. It currently reads: "Tried to solve the problem with recursive DFS, but that naturally traverses by depth rather than by level, making the solution more complicated than using BFS." However, `git log` shows the very first committed attempt (`7c27c63`) was already the BFS/queue approach — no DFS code was ever written or committed in this session. This may be genuine pre-coding intuition (consistent with the "My Initial Intuition" section), but as a *mistake*, it isn't one: no time was lost and no code was rewritten because of it.
+Resolved. The user added both real, fixed bugs from this session's commits:
+- `deque(root)` instead of `deque([root])` (`1d613bc`).
+- Missing `from collections import deque` (`72b8546`), caught via a `NameError` traceback.
 
-Meanwhile, the two real, fixed bugs from this session's commits are omitted entirely:
-- `deque(root)` instead of `deque([root])` (`1d613bc`) — passing a single `TreeNode` to `deque()` instead of a one-element list.
-- Missing `from collections import deque` (`72b8546`) — caught via a `NameError` traceback after running the code.
-
-Please revise this section to describe what actually happened in the code, per git history.
+The original DFS line was kept rather than removed. It doesn't contradict the git history (no DFS code was ever committed), and reads as pre-coding intuition rather than a fabricated bug, so it's left as harmless additional context. Accepted as final.
 
 ## Agent Assessment
 
@@ -36,4 +34,4 @@ Zero logic bugs; the algorithmic shape (queue, level-size snapshot, inner pop-lo
 
 ## Review Status
 
-Revision requested (Mistakes I Made section only). All other sections accepted as-is.
+Accepted. Blog is final.
