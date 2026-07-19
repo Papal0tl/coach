@@ -4,6 +4,7 @@ User attempt for Binary Tree Level Order Traversal.
 Write your reasoning in English comments when useful.
 """
 
+from collections import deque
 
 class Solution:
     def levelOrder(self, root):
