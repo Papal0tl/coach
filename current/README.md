@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-07-18
 - Archive path: `archives/2026-07-18-binary-tree-level-order-traversal/`
-- Status: `active`
+- Status: `closed`
 
 ## Goal
 
@@ -15,10 +15,10 @@ Solve LC 102 (Binary Tree Level Order Traversal) with a hint-only coaching appro
 ## Current State
 
 - Agent reference solution: `complete`
-- User attempt: `not started`
+- User attempt: `complete`
 - Tests: `complete`
-- Blog: `not started`
-- Blog review: `not started`
+- Blog: `complete`
+- Blog review: `accepted`
 
 ## Session Files
 
