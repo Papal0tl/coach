@@ -13,21 +13,15 @@ Given the root of a binary tree, return the level order traversal of its nodes' 
 
 ## My Initial Intuition
 
-User-filled.
-
-{{initial_intuition}}
+Using recursion, but recursion naturally goes depth-first, while this problem wants nodes grouped by level. I realized I needed a way to process all nodes of one level before moving to the next.
 
 ## Brute Force
 
-User-filled.
-
-{{brute_force}}
+Use DFS and record each node's depth in a dictionary or list of lists (e.g., levels[depth].append(node.val)). This correctly groups nodes by level but requires tracking the depth explicitly. BFS with a queue is more direct because it naturally visits nodes level by level.
 
 ## Key Insight
 
-User-filled.
-
-{{key_insight}}
+A queue processes nodes in the same order they are discovered. At the start of each iteration, the queue contains exactly one level. By saving size = len(queue) before processing, I know exactly how many nodes belong to the current level, and any children added during the loop automatically become the next level.
 
 ## Final Algorithm
 
@@ -37,9 +31,7 @@ Use a FIFO queue (`collections.deque`), seeded with `root`. In each outer-loop i
 
 ## Correctness Argument
 
-User-filled, with agent prompts if needed.
-
-{{correctness_argument}}
+The queue contains exactly the nodes of one level at the beginning. Save size = len(queue) before processing, so only those size nodes are removed and added to level. Any children are enqueued for the next iteration, so nodes from different depths are never mixed. Therefore, every node appears exactly once in the correct level.
 
 ## Complexity
 
@@ -59,12 +51,8 @@ Agent-filled as a checklist; user should add any cases they personally missed.
 
 ## Mistakes I Made
 
-User-filled.
-
-{{mistakes}}
+- Tied to solve the problem with recursive DFS, but that naturally traverses by depth rather than by level, making the solution more complicated than using BFS.
 
 ## How I Will Recognize This Pattern Next Time
 
-User-filled.
-
-{{pattern_recognition}}
+If a tree problem asks to process nodes level by level, one layer at a time, or from left to right within each depth. Should immediately think of BFS with a queue. If need to keep the levels separate, record size = len(queue) before processing each level.
