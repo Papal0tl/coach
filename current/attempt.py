@@ -18,4 +18,7 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: bool
         """
-        pass
+        if root.left and root.left.val >= root.val:
+            return False
+        if root.right and root.right.val <= root.val:
+            return False
