@@ -20,7 +20,7 @@
 ## Intervention Count
 
 - Clarifying questions: 0
-- Hints: 0
+- Hints: 1
 - Direct explanations: 0
 - Code-level nudges: 0
 

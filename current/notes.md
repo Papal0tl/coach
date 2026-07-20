@@ -30,7 +30,11 @@ cases (10/10 passing), including duplicates and boundary int values.
 
 ## User-Facing Takeaways
 
-(pending — filled after user attempt and blog)
+- First attempt checks only the immediate parent-child relationship
+  (`root.left.val >= root.val`, `root.right.val <= root.val`) with no
+  recursion into subtrees and no explicit `True`/`None`-root handling. This
+  is exactly the naive trap the rubric anticipated. Intervention used:
+  concrete trace request (Intervention Count updated in rubric.md).
 
 ## Follow-Up Candidates
 
