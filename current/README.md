@@ -17,7 +17,7 @@ Solve LC 108 (Convert Sorted Array to Binary Search Tree) with a hint-only coach
 - Agent reference solution: `complete`
 - User attempt: `pending`
 - Tests: `complete`
-- Blog: `pending`
+- Blog: `drafted (agent-filled sections only)`
 - Blog review: `pending`
 
 ## Session Files
