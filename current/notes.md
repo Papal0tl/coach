@@ -35,6 +35,9 @@ cases (10/10 passing), including duplicates and boundary int values.
   recursion into subtrees and no explicit `True`/`None`-root handling. This
   is exactly the naive trap the rubric anticipated. Intervention used:
   concrete trace request (Intervention Count updated in rubric.md).
+- User correctly traced `[5,4,6,None,None,3,7]` and identified the bug
+  themselves: "it returns True, but that's wrong since 3 < 5." Confirms the
+  naive-trap diagnosis without needing a direct explanation.
 
 ## Follow-Up Candidates
 
