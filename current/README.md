@@ -14,9 +14,9 @@ Determine whether a binary tree is a valid BST, applying the global-bounds prope
 
 ## Current State
 
-- Agent reference solution: `pending`
+- Agent reference solution: `done`
 - User attempt: `not started`
-- Tests: `pending`
+- Tests: `done (10/10 passing)`
 - Blog: `not started`
 - Blog review: `not started`
 

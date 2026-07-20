@@ -8,7 +8,7 @@
 | Skill | Target | Evidence | Status |
 | --- | --- | --- | --- |
 | Problem restatement | Recognize BST validity is a global, not local, property | | pending |
-| Constraint analysis | Handle value range (32-bit) without overflow-style bound bugs | | pending |
+| Constraint analysis | Handle value range (32-bit) without a colliding integer sentinel | | pending |
 | Brute-force construction | Consider naive parent-only comparison and see why it fails | | pending |
 | Pattern recognition | Recursive bounds propagation (or inorder traversal) | | pending |
 | Invariant formulation | State the (low, high) bound invariant per node | | pending |
