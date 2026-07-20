@@ -32,4 +32,4 @@ Recursive helper `build(lo, hi)` on index bounds into `nums`. Base case `lo > hi
 
 ## Coaching Log
 
-(to be filled during the user attempt loop)
+- First draft (commit `2b47467`): the full divide-and-conquer shape — `build(left, right)` helper, `left > right` base case, `mid = (left + right) // 2`, `TreeNode(nums[mid])`, and recursive `.left`/`.right` assignment with correctly excluded boundaries (`mid - 1`, `mid + 1`) — matches the reference solution structurally, written unprompted. Strong first-attempt transfer of the sort-list-style split/recurse shape to a build-a-tree-from-array context. One bug: `TreeNode` is referenced but never defined or imported in `attempt.py`, so running it will raise a `NameError`. Consistent with the established empirical-debugging preference, prompted to run the file rather than pointing out the missing class directly.
