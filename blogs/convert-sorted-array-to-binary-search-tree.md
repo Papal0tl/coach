@@ -13,15 +13,16 @@ Given an integer array `nums` sorted in ascending order, convert it to a height-
 
 ## My Initial Intuition
 
-User-filled.
+Choose the middle element as the root so the left and right sides would have similar sizes, then do the same recursively for the left and right halves.
 
 ## Brute Force
 
-User-filled.
+Insert every element from the sorted array into a BST one by one. This keeps the BST property, but because the numbers are inserted in increasing order, the tree becomes completely skewed like a linked list instead of remaining balanced. 
+Height: O(n), so insertion takes O(n) each in the worst case, for a total of O(n²).
 
 ## Key Insight
 
-User-filled.
+The middle element naturally splits the sorted array into values smaller than the root and values larger than the root, satisfying the BST property. Choosing the middle also keeps the left and right subtree sizes as equal as possible, producing a height-balanced tree. Since each half is still a sorted array, the same idea can be applied recursively.
 
 ## Final Algorithm
 
@@ -31,7 +32,8 @@ Recursive helper `build(left, right)` operating on an index range into `nums`. B
 
 ## Correctness Argument
 
-User-filled, with agent prompts if needed.
+- Base case: If left > right, the subarray is empty, so returning None correctly represents an empty subtree.
+- Inductive step: Assume build correctly constructs balanced BSTs for all smaller subarrays. For the current subarray, the middle element is chosen as the root. All elements on the left are smaller than the root, and all elements on the right are larger because the array is sorted, so the BST property holds. By the induction hypothesis, the recursive calls correctly build balanced BSTs for the left and right halves. Attaching them to the root produces a height-balanced BST for the current subarray.
 
 ## Complexity
 
@@ -51,8 +53,8 @@ Agent-filled as a checklist; user should add any cases they personally missed.
 
 ## Mistakes I Made
 
-User-filled.
+Mistakenly used TreeNode(mid) instead of TreeNode(nums[mid]). Mixed up the index with the element itself. The node's value should come from the array (nums[mid]), not the position (mid).
 
 ## How I Will Recognize This Pattern Next Time
 
-User-filled.
+Asks to build a balanced BST from a sorted sequence: choose the middle element as the root, then recursively build the left and right subtrees from the two halves.
