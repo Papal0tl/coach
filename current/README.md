@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-07-19
 - Archive path: `archives/2026-07-19-convert-sorted-array-to-binary-search-tree/`
-- Status: `active`
+- Status: `closed`
 
 ## Goal
 
@@ -15,10 +15,10 @@ Solve LC 108 (Convert Sorted Array to Binary Search Tree) with a hint-only coach
 ## Current State
 
 - Agent reference solution: `complete`
-- User attempt: `pending`
+- User attempt: `complete`
 - Tests: `complete`
-- Blog: `drafted (agent-filled sections only)`
-- Blog review: `pending`
+- Blog: `complete`
+- Blog review: `accepted (Mistakes Made revision declined)`
 
 ## Session Files
 
