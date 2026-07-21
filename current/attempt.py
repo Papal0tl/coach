@@ -18,7 +18,14 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: bool
         """
-        if root.left and root.left.val >= root.val:
-            return False
-        if root.right and root.right.val <= root.val:
-            return False
+        self.prev = float("-inf")
+        def inorder(node):
+            if not node:
+                return True
+            if not inorder(node.left):
+                return False
+            if node.val <= self.prev:
+                return False
+            self.prev = node.val
+            return inorder(node.left)
+        return inorder(root)
