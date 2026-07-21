@@ -38,6 +38,11 @@ cases (10/10 passing), including duplicates and boundary int values.
 - User correctly traced `[5,4,6,None,None,3,7]` and identified the bug
   themselves: "it returns True, but that's wrong since 3 < 5." Confirms the
   naive-trap diagnosis without needing a direct explanation.
+- User pivoted to inorder traversal (self.prev + strictly-increasing check),
+  the correct pattern. Bug: the final line recurses `inorder(node.left)`
+  again instead of `inorder(node.right)` — the right subtree is never
+  visited. Chose a trace request (same style as before) rather than pointing
+  at the line directly.
 
 ## Follow-Up Candidates
 
