@@ -27,5 +27,5 @@ class Solution(object):
             if node.val <= self.prev:
                 return False
             self.prev = node.val
-            return inorder(node.left)
+            return inorder(node.right)
         return inorder(root)
