@@ -43,6 +43,10 @@ cases (10/10 passing), including duplicates and boundary int values.
   again instead of `inorder(node.right)` — the right subtree is never
   visited. Chose a trace request (same style as before) rather than pointing
   at the line directly.
+- User self-diagnosed the bug from the trace request ("it re-checks the left
+  subtree instead of the right") and fixed it to `inorder(node.right)`
+  unprompted. All 10 local tests pass. Zero direct explanations needed this
+  session — every bug was found via the user's own trace.
 
 ## Follow-Up Candidates
 
