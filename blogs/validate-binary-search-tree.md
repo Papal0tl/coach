@@ -13,21 +13,15 @@ Given the root of a binary tree, determine whether it is a valid BST: every node
 
 ## My Initial Intuition
 
-User-filled.
-
-{{initial_intuition}}
+Use inorder traversal because I remembered that the inorder traversal of a BST is sorted. The idea was to visit nodes in left → root → right order and compare each value with the previously visited one. If the sequence was no longer strictly increasing, the tree could not be a valid BST.
 
 ## Brute Force
 
-User-filled.
-
-{{brute_force}}
+Checking every node against all values in its left and right subtrees => repeatedly traverse subtrees, leading to about O(n²) time in the worst case.
 
 ## Key Insight
 
-User-filled.
-
-{{key_insight}}
+An inorder traversal of a valid BST always produces a strictly increasing sequence. Instead of checking every ancestor explicitly, only need to compare each visited node with the previously visited value.
 
 ## Final Algorithm
 
@@ -37,9 +31,8 @@ Inorder traversal of a valid BST visits values in strictly increasing order. Tra
 
 ## Correctness Argument
 
-User-filled, with agent prompts if needed.
-
-{{correctness_argument}}
+- Base case: An empty subtree returns True, so it is a valid BST.
+- Inductive Case: Assume the left and right recursive calls correctly validate their subtrees. During inorder traversal, every visited value must be greater than self.prev. If any value is not strictly greater, the BST property is violated and the algorithm returns False. Otherwise every visited value is in increasing order, so the entire tree satisfies the BST property.
 
 ## Complexity
 
@@ -60,12 +53,10 @@ Agent-filled as a checklist; user should add any cases they personally missed.
 
 ## Mistakes I Made
 
-User-filled.
-
-{{mistakes}}
+- Wrote return inorder(node.left) at the end instead of node.right, so the recursion revisited the left subtree and never checked the right subtree.
+- Before tracing the recursion carefully, didn't notice that the final recursive call was going to the wrong subtree.
+- Focused on the comparison logic (self.prev) instead of verifying that the traversal order itself was correct.
 
 ## How I Will Recognize This Pattern Next Time
 
-User-filled.
-
-{{pattern_recognition}}
+Asks whether a tree is a valid BST (not to modify it), checking whether the inorder sequence is strictly increasing is often the simplest solution.
