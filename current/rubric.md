@@ -1,7 +1,7 @@
 # Rubric
 
 - Problem slug: `validate-binary-search-tree`
-- Archive path: `archives/2026-07-20-validate-binary-search-tree/`
+- Archive path: `archives/2026-07-22-validate-binary-search-tree/`
 
 ## Target Skills
 

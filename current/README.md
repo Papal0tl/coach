@@ -4,8 +4,8 @@
 - Source: https://leetcode.cn/problems/validate-binary-search-tree/description/?envType=study-plan-v2&envId=top-100-liked
 - Language: Python
 - Coaching mode: hint-only
-- Started: 2026-07-20
-- Archive path: `archives/2026-07-20-validate-binary-search-tree/`
+- Started: 2026-07-22
+- Archive path: `archives/2026-07-22-validate-binary-search-tree/`
 - Status: `active`
 
 ## Goal

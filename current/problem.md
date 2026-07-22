@@ -3,7 +3,7 @@
 - Name: Validate Binary Search Tree
 - Slug: `validate-binary-search-tree`
 - Source: https://leetcode.cn/problems/validate-binary-search-tree/description/?envType=study-plan-v2&envId=top-100-liked
-- Archive path: `archives/2026-07-20-validate-binary-search-tree/`
+- Archive path: `archives/2026-07-22-validate-binary-search-tree/`
 
 ## Statement
 
