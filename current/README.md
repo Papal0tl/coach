@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-07-22
 - Archive path: `archives/2026-07-22-validate-binary-search-tree/`
-- Status: `active`
+- Status: `closed`
 
 ## Goal
 
@@ -17,8 +17,8 @@ Determine whether a binary tree is a valid BST, applying the global-bounds prope
 - Agent reference solution: `done`
 - User attempt: `done (10/10 passing)`
 - Tests: `done (10/10 passing)`
-- Blog: `not started`
-- Blog review: `not started`
+- Blog: `done`
+- Blog review: `accepted`
 
 ## Session Files
 

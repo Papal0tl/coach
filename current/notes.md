@@ -47,6 +47,11 @@ cases (10/10 passing), including duplicates and boundary int values.
   subtree instead of the right") and fixed it to `inorder(node.right)`
   unprompted. All 10 local tests pass. Zero direct explanations needed this
   session — every bug was found via the user's own trace.
+- Blog's first draft skipped the parent-only-check attempt entirely,
+  narrating inorder traversal as the original idea. Revision requested;
+  the user added the actual first attempt, the concrete failure trace, and
+  a generalized "check local vs. global before trusting a per-parent
+  comparison" lesson — accepted on first pass with zero further requests.
 
 ## Follow-Up Candidates
 
