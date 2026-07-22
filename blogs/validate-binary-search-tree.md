@@ -13,7 +13,7 @@ Given the root of a binary tree, determine whether it is a valid BST: every node
 
 ## My Initial Intuition
 
-Use inorder traversal because I remembered that the inorder traversal of a BST is sorted. The idea was to visit nodes in left → root → right order and compare each value with the previously visited one. If the sequence was no longer strictly increasing, the tree could not be a valid BST.
+Recursively compare each node with its immediate children: the left child should be smaller than the current node, and the right child should be larger. However, I realized this is not enough because a node can satisfy its parent while still violating the BST property with respect to an ancestor. For example, in [5,4,6,None,None,3,7], node 3 is smaller than its parent 6, but it is still invalid because it appears in the right subtree of 5. After understanding that BST validity is a global property rather than a parent-child property, I switched to the inorder traversal approach.
 
 ## Brute Force
 
@@ -59,4 +59,4 @@ Agent-filled as a checklist; user should add any cases they personally missed.
 
 ## How I Will Recognize This Pattern Next Time
 
-Asks whether a tree is a valid BST (not to modify it), checking whether the inorder sequence is strictly increasing is often the simplest solution.
+When a tree problem asks whether a BST is valid, first ask whether the property is local or global. If every node must satisfy constraints from all of its ancestors, comparing only with the parent is not enough. Immediately think of either maintaining valid value bounds during recursion or using the inorder traversal property that a valid BST produces a strictly increasing sequence.
