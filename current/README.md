@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-07-22
 - Archive path: `archives/2026-07-22-kth-smallest-element-in-a-bst/`
-- Status: `active`
+- Status: `closed`
 
 ## Goal
 
@@ -15,10 +15,10 @@ Find the kth smallest value in a BST, connecting the BST's inorder-traversal-is-
 ## Current State
 
 - Agent reference solution: `done`
-- User attempt: `not started`
-- Tests: `done`
-- Blog: `not started`
-- Blog review: `not started`
+- User attempt: `done (10/10 passing)`
+- Tests: `done (10/10 passing)`
+- Blog: `done`
+- Blog review: `accepted`
 
 ## Session Files
 
