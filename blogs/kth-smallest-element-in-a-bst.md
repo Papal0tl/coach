@@ -59,8 +59,7 @@ The algorithm counts each visited node. When the counter reaches `k`, the curren
 
 ## Mistakes I Made
 
-- My first solution collected every value into a list before returning `values[k - 1]`. It was correct, but used unnecessary O(n) extra space.
-- Initially overlooked that the recursion itself could return the answer immediately. Using the recursive return value (`left = inorder(node.left)`) lets the search terminate as soon as the kth node is found instead of continuing the traversal.
+N/A
 
 ## How I Will Recognize This Pattern Next Time
 
