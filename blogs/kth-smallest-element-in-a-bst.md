@@ -9,15 +9,24 @@ Given the root of a binary search tree and an integer `k`, return the `k`th smal
 
 ## My Initial Intuition
 
-_(User-filled: what was your first instinct when you read this problem?)_
+Perform an inorder traversal, store every value in a list, and return `values[k - 1]`. Since I already knew that inorder traversal of a BST produces values in sorted order, this immediately gives the kth smallest element.
+
+Didn't actually need to build the whole list. Since the traversal is already visiting nodes in ascending order, could simply count how many nodes had been visited and stop as soon as the kth node was reached.
 
 ## Brute Force
 
-_(User-filled: what's the simplest correct approach, even if not optimal? What's its cost?)_
+Perform an inorder traversal of the BST, append every visited value to a list, then return `values[k - 1]`.
+
+- Time: O(n)
+- Space: O(n)
+
+Although correct, this always traverses and stores every node, even if `k` is very small.
 
 ## Key Insight
 
-_(User-filled: what property of a BST makes this problem solvable, and how does it connect to what you did in validate-binary-search-tree?)_
+The key property is that an inorder traversal of a Binary Search Tree visits nodes in strictly increasing order.
+
+In the previous BST validation problem, used inorder traversal to verify that the visited values were increasing. Here, reuse exactly the same property, but instead of checking the ordering, count how many nodes have been visited. The kth visited node is therefore the kth smallest value.
 
 ## Final Algorithm
 
@@ -30,7 +39,9 @@ Recursive inorder traversal that stops as soon as the kth node is visited:
 
 ## Correctness Argument
 
-_(User-filled, with agent prompts if needed: why does this always return the correct kth value, and never too early or too late?)_
+Because an inorder traversal of a Binary Search Tree visits nodes in increasing order, the nodes are visited from the smallest value to the largest.
+
+The algorithm counts each visited node. When the counter reaches `k`, the current node is exactly the kth smallest value, so returning it is correct.
 
 ## Complexity
 
@@ -46,12 +57,13 @@ _(User-filled, with agent prompts if needed: why does this always return the cor
 - Left-skewed or right-skewed trees.
 - `k` in the middle of a tree with multiple levels on both sides.
 
-_(Add any cases you personally had to think through.)_
-
 ## Mistakes I Made
 
-_(User-filled: what actually went wrong while you were writing this, if anything?)_
+- My first solution collected every value into a list before returning `values[k - 1]`. It was correct, but used unnecessary O(n) extra space.
+- Initially overlooked that the recursion itself could return the answer immediately. Using the recursive return value (`left = inorder(node.left)`) lets the search terminate as soon as the kth node is found instead of continuing the traversal.
 
 ## How I Will Recognize This Pattern Next Time
 
-_(User-filled: what signal in a future problem should make you reach for this approach?)_
+See a Binary Search Tree problem asking for the kth smallest/largest element, sorted order, or "next" value, should immediately think about inorder traversal.
+
+If only need one position in that ordering instead of the entire sequence, consider counting during traversal and returning early instead of storing every value.
