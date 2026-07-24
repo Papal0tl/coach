@@ -30,7 +30,8 @@
 ## Coaching Log
 
 - First attempt (committed): recursive inorder traversal using `self.count` as instance state, with the found value threaded back up through the recursion by returning non-`None` from the base case and checking `if left is not None: return left` before recursing right. This is an early-stopping recursive design, distinct from a full-collect-then-index approach and distinct from the class's prior mutate-and-return or reduce-to-scalar recursive shapes — here the "found" signal itself propagates up the call stack. All 10 local reference tests pass on first submission, zero bugs.
-- Not yet asked: whether the user has run `tests.py` against `attempt.py` themselves, and their own complexity assessment (this vs. a full inorder-into-list-then-index approach).
+- User confirmed running `tests.py` themselves, all 10 pass.
+- Complexity Q&A: correctly stated O(h+k) time / O(h) space for their own recursive early-stopping approach (attributing the space to "the stack," meaning the recursion call stack), then correctly stated O(n) time / O(n) space for the simpler full-inorder-collect-into-list-then-index alternative, explicitly reasoning "since it visits every node." Both answers correct and unprompted beyond the initial question, no hints needed.
 
 ## Follow-Up Candidates
 
