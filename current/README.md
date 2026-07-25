@@ -15,9 +15,9 @@ Solve LeetCode 199 (Binary Tree Right Side View) with guided, hint-only coaching
 ## Current State
 
 - Agent reference solution: `done`
-- User attempt: `pending`
+- User attempt: `done (10/10 passing, zero bugs)`
 - Tests: `done (10/10 passing)`
-- Blog: `pending`
+- Blog: `scaffolded, awaiting user sections`
 - Blog review: `pending`
 
 ## Session Files
