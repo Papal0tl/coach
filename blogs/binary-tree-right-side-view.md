@@ -17,13 +17,19 @@ Given the root of a binary tree, return the values of the nodes visible when sta
 
 User-filled.
 
+_Guiding question: when you first read the problem, what did "visible from the right side" make you think of — a traversal order, a single path, or something else?_
+
 ## Brute Force
 
 User-filled.
 
+_Guiding question: before landing on the level-size-snapshot BFS, what's the simplest (even if wasteful) way to get the answer — e.g. what would you collect first, and how would you reduce it to one value per level?_
+
 ## Key Insight
 
 User-filled.
+
+_Guiding question: what single fact about `size = len(queue)`, snapshotted before popping, makes the last-popped node in each level guaranteed to be the rightmost one?_
 
 ## Final Algorithm
 
@@ -42,6 +48,8 @@ BFS traversal with a queue, processing one level at a time:
 ## Correctness Argument
 
 User-filled, with agent prompts if needed.
+
+_Guiding question: pushing children left-before-right, and taking the last node popped per level — why does that ordering, specifically, guarantee correctness? What would break if you pushed right-before-left instead, or took the first popped node instead of the last?_
 
 ## Complexity
 
@@ -63,6 +71,10 @@ Agent-filled as a checklist; user should add any cases they personally missed.
 
 User-filled.
 
+_Guiding question: check `git log` for this session — how many commits touched `attempt.py`, and did the code change between them? Only describe bugs that actually happened._
+
 ## How I Will Recognize This Pattern Next Time
 
 User-filled.
+
+_Guiding question: what phrase in a future problem statement should make you reach for "BFS, one value per level" specifically — as opposed to full level-order output or a single root-to-leaf path?_
