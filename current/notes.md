@@ -25,7 +25,7 @@ Alternative (not the primary reference): DFS visiting right child before left ch
 
 ## User-Facing Takeaways
 
-Pending — fill in after the coaching loop based on what the user actually needed.
+First draft (single commit, `c0015db`) went directly from the empty stub to a fully correct BFS level-size-snapshot solution — structurally near-identical to the reference (`level_size`/`size`, `i == level_size - 1`, left-then-right push order). Zero bugs, all 10 tests pass, zero hints needed. Direct, clean transfer of the level-size-snapshot invariant from binary-tree-level-order-traversal (2026-07-18/19), now specialized to keep only the last node per level instead of the whole level. Tenth tree session; continues the pattern of strong first-attempt transfer for previously-seen sub-patterns.
 
 ## Follow-Up Candidates
 
