@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-07-24
 - Archive path: `archives/2026-07-24-binary-tree-right-side-view/`
-- Status: `active`
+- Status: `archived`
 
 ## Goal
 
