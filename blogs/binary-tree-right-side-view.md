@@ -9,27 +9,23 @@ Sections marked `Agent-filled` should be drafted by the coaching agent before th
 
 ## Problem
 
-Agent-filled.
-
 Given the root of a binary tree, return the values of the nodes visible when standing on the right side of the tree, ordered from top to bottom (LeetCode 199). For each depth level, exactly one node's value is visible: the rightmost node at that depth.
 
 ## My Initial Intuition
 
-User-filled.
-
-_Guiding question: when you first read the problem, what did "visible from the right side" make you think of — a traversal order, a single path, or something else?_
+Read all the whole node in the tree first, then find the rightmost node of each level.
 
 ## Brute Force
 
-User-filled.
-
-_Guiding question: before landing on the level-size-snapshot BFS, what's the simplest (even if wasteful) way to get the answer — e.g. what would you collect first, and how would you reduce it to one value per level?_
+Traverse the whole tree and store nodes by their depth, then take the last node of each level. But BFS can directly get the last node of each level.
 
 ## Key Insight
 
-User-filled.
+`size = len(queue)` is a snapshot of how many nodes are in the current level before removing any nodes.
 
-_Guiding question: what single fact about `size = len(queue)`, snapshotted before popping, makes the last-popped node in each level guaranteed to be the rightmost one?_
+Because it process the current level from left to right, the node popped at index `size - 1` is always the last node in that level, which is exactly the node visible from the right side.
+
+The next level's nodes are added after we save the current `size`, so they do not affect the current level.
 
 ## Final Algorithm
 
@@ -47,20 +43,16 @@ BFS traversal with a queue, processing one level at a time:
 
 ## Correctness Argument
 
-User-filled, with agent prompts if needed.
+For each level, `size` records the exact number of nodes in that level before processing starts. Since nodes are popped from left to right, the last popped node is the rightmost node of that level. We append only this node, so the result contains exactly the nodes visible from the right side.
 
-_Guiding question: pushing children left-before-right, and taking the last node popped per level — why does that ordering, specifically, guarantee correctness? What would break if you pushed right-before-left instead, or took the first popped node instead of the last?_
+If pushed right children before left children, the last popped node would become the leftmost node.
 
 ## Complexity
-
-Agent-filled; user should confirm they understand it.
 
 - Time: O(n) — every node is pushed and popped from the queue exactly once.
 - Space: O(w) — the queue holds at most one level's worth of nodes at a time, where w is the maximum width of the tree. In the worst case (a complete tree) w is O(n).
 
 ## Edge Cases
-
-Agent-filled as a checklist; user should add any cases they personally missed.
 
 - Empty tree (`root = None`) → `[]`.
 - Single node → `[root.val]`.
@@ -69,12 +61,20 @@ Agent-filled as a checklist; user should add any cases they personally missed.
 
 ## Mistakes I Made
 
-User-filled.
-
-_Guiding question: check `git log` for this session — how many commits touched `attempt.py`, and did the code change between them? Only describe bugs that actually happened._
+N/A
 
 ## How I Will Recognize This Pattern Next Time
 
-User-filled.
+Problem asks for one value from each depth/level of a binary tree, such as the rightmost node, leftmost node, maximum value, or average value of each level, should think of BFS with a level-size snapshot.
 
-_Guiding question: what phrase in a future problem statement should make you reach for "BFS, one value per level" specifically — as opposed to full level-order output or a single root-to-leaf path?_
+The key pattern is:
+
+```python
+size = len(queue)
+
+for i in range(size):
+    node = queue.popleft()
+
+    if i == size - 1:
+        record(node)
+```
