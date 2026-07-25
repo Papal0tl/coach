@@ -1,9 +1,35 @@
 """
-Agent reference solution for Binary Tree Right Side View.
-
-This file is separate from the user's attempt. Do not reveal it by default.
+Reference solution for Binary Tree Right Side View.
 """
+
+from collections import deque
+from typing import List, Optional
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 
 class Solution:
-    pass
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+        if not root:
+            return []
+
+        result = []
+        queue = deque([root])
+
+        while queue:
+            size = len(queue)
+            for i in range(size):
+                node = queue.popleft()
+                if i == size - 1:
+                    result.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+
+        return result

@@ -7,13 +7,13 @@
 
 | Skill | Target | Evidence | Status |
 | --- | --- | --- | --- |
-| Problem restatement | | | pending |
-| Constraint analysis | | | pending |
-| Brute-force construction | | | pending |
-| Pattern recognition | | | pending |
-| Invariant formulation | | | pending |
-| Complexity analysis | | | pending |
-| Edge-case design | | | pending |
+| Problem restatement | Distinguish "rightmost visible node per level" from "rightmost leaf" or "right spine" | | pending |
+| Constraint analysis | Recognize this is per-level, not a single-path, traversal | | pending |
+| Brute-force construction | Full level-order collection, then take last of each level | | pending |
+| Pattern recognition | Transfer BFS level-size-snapshot from binary-tree-level-order-traversal (2026-07-18/19) | | pending |
+| Invariant formulation | State why the last-popped node in a level snapshot is the rightmost visible one | | pending |
+| Complexity analysis | O(n) time, O(w) space (max width) | | pending |
+| Edge-case design | Empty tree, single node, left-skewed chain, left-deeper-than-right | | pending |
 | Debugging discipline | | | pending |
 | Communication | | | pending |
 
