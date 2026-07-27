@@ -13,4 +13,24 @@ class TreeNode:
 
 
 class Solution:
-    pass
+    def flatten(self, root):
+        """
+        :type root: Optional[TreeNode]
+        :rtype: None Do not return anything, modify root in-place instead.
+        """
+        if not root:
+            return []
+        self.flatten(root.left)
+        self.flatten(root.right)
+        left = root.left
+        right = root.right
+        root.left = None
+        root.right = left
+
+        cur = root
+        while cur.right:
+            cur = cur.right
+
+        cur.right = right
+    
+
