@@ -32,7 +32,7 @@ Brute-force baseline: pre-order traversal into a list, then rebuild the tree as 
 ## User-Facing Takeaways
 
 - First attempt (commit `3aa901a`): recursive post-order splice — `flatten(root.left)`, `flatten(root.right)`, detach `left`/`right`, set `root.right = left`, walk `cur = root` along `.right` until the tail, then `cur.right = right`. Correct on the first attempt, zero bugs, all 6 reference tests pass. This is exactly the alternative predicted in Follow-Up Candidates below (not the O(1)-space Morris-style reference solution).
-- Time complexity has not yet been discussed. This approach re-walks the newly attached left chain to find its tail at every recursive call; on a left-skewed tree this walk length grows with subtree size at each level, giving O(n^2) worst-case time despite looking like a straightforward O(n) tree recursion. Coaching plan: ask the user to state the complexity themselves, then prompt for a concrete trace on a left-skewed tree if they assume O(n).
+- Time complexity discussion was raised twice (asked to trace the `while cur.right` walk on a left-skewed tree) but the user moved directly to the blog without answering either time. The O(n^2)-worst-case point is preserved as a guiding question in the blog's Complexity section (agent-filled with the answer given, since the user did not engage) and flagged here for the profile's declined-follow-up tracking.
 
 ## Follow-Up Candidates
 
