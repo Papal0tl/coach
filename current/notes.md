@@ -1,7 +1,7 @@
 # Session Notes
 
 - Problem slug: `flatten-binary-tree-to-linked-list`
-- Archive path: `archives/2026-07-25-flatten-binary-tree-to-linked-list/`
+- Archive path: `archives/2026-07-27-flatten-binary-tree-to-linked-list/`
 
 ## Agent Preparation
 

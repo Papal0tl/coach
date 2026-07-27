@@ -1,7 +1,7 @@
 # Flatten Binary Tree to Linked List
 
 - Problem slug: `flatten-binary-tree-to-linked-list`
-- Archive path: `archives/2026-07-25-flatten-binary-tree-to-linked-list/`
+- Archive path: `archives/2026-07-27-flatten-binary-tree-to-linked-list/`
 
 Write concise bullets or compact paragraphs. Cover every section, but do not pad.
 

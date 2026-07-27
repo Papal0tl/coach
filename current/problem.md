@@ -3,7 +3,7 @@
 - Name: Flatten Binary Tree to Linked List
 - Slug: `flatten-binary-tree-to-linked-list`
 - Source: https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/description/?envType=study-plan-v2&envId=top-100-liked (LeetCode 114)
-- Archive path: `archives/2026-07-25-flatten-binary-tree-to-linked-list/`
+- Archive path: `archives/2026-07-27-flatten-binary-tree-to-linked-list/`
 
 ## Statement
 

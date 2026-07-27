@@ -4,9 +4,9 @@
 - Source: https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/description/?envType=study-plan-v2&envId=top-100-liked (LeetCode 114)
 - Language: Python
 - Coaching mode: hint-only
-- Started: 2026-07-25
-- Archive path: `archives/2026-07-25-flatten-binary-tree-to-linked-list/`
-- Status: `active`
+- Started: 2026-07-27
+- Archive path: `archives/2026-07-27-flatten-binary-tree-to-linked-list/`
+- Status: `complete`
 
 ## Goal
 
@@ -14,11 +14,11 @@ Eleventh tree-traversal session. First requiring in-place restructuring of the t
 
 ## Current State
 
-- Agent reference solution: `pending`
-- User attempt: `not started`
-- Tests: `pending`
-- Blog: `not started`
-- Blog review: `not started`
+- Agent reference solution: `done, verified against 6 local tests`
+- User attempt: `done, correct on first attempt, all 6 tests pass`
+- Tests: `done`
+- Blog: `done`
+- Blog review: `accepted, no revisions`
 
 ## Session Files
 
