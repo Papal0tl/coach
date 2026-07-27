@@ -19,7 +19,7 @@ class Solution:
         :rtype: None Do not return anything, modify root in-place instead.
         """
         if not root:
-            return []
+            return
         self.flatten(root.left)
         self.flatten(root.right)
         left = root.left
