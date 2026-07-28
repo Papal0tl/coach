@@ -14,9 +14,9 @@ Construct a binary tree given its preorder and inorder traversal arrays.
 
 ## Current State
 
-- Agent reference solution: `not started`
+- Agent reference solution: `done`
 - User attempt: `not started`
-- Tests: `not started`
+- Tests: `done (6/6 passing)`
 - Blog: `not started`
 - Blog review: `not started`
 
