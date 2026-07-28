@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-07-28
 - Archive path: `archives/2026-07-28-construct-binary-tree-from-preorder-and-inorder-traversal/`
-- Status: `active`
+- Status: `complete`
 
 ## Goal
 
@@ -15,10 +15,10 @@ Construct a binary tree given its preorder and inorder traversal arrays.
 ## Current State
 
 - Agent reference solution: `done`
-- User attempt: `not started`
+- User attempt: `done (6/6 tests pass)`
 - Tests: `done (6/6 passing)`
-- Blog: `not started`
-- Blog review: `not started`
+- Blog: `done`
+- Blog review: `accepted`
 
 ## Session Files
 
