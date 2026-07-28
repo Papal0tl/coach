@@ -35,6 +35,7 @@ Build an `inorder` value -> index map once. Use a single instance-level pointer 
 - Second bug: when translating that reasoning into code, wrote `inorder[idx:]` for the right subtree (off by one, includes the root's own value). Caught after one guiding question ("does `inorder[idx:]` still contain the root value?"); self-corrected to `inorder[idx+1:]` immediately.
 - Both bugs were mechanical translation slips (args omitted, one boundary off), not conceptual — the underlying algorithmic reasoning (stated in words) was correct both times before the code was written/fixed.
 - All 6 reference tests pass using the slicing approach.
+- Correctly named O(n^2) worst case unprompted when asked, and gave the precise reason (`.index()` and slicing are each O(n) per call, n calls total). Declined the offer to implement the O(n) pointer + hash-map optimization, moving directly to the blog instead.
 
 ## Follow-Up Candidates
 
