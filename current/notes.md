@@ -28,6 +28,14 @@ Build an `inorder` value -> index map once. Use a single instance-level pointer 
 - The problem is a divide-and-conquer / index-range recursion, close in spirit to `convert-sorted-array-to-binary-search-tree` (index-range recursion building a tree) but now driven by *two* traversal arrays instead of one sorted array, and the split point must be *found* (via `inorder`) rather than computed by a midpoint formula.
 - The naming/order dependency (build left before right, because `preorder` is root-first-left-right) is the likely trickiest invariant to state precisely.
 
+## Session Log
+
+- First draft used the slicing approach (not the pointer + hash-map reference approach), correct algorithmic shape immediately: base case, root from `preorder[0]`, `idx = inorder.index(root.val)`.
+- First bug: recursive calls `self.buildTree()` had no arguments at all. Asked to trace `preorder=[3,9,20,15,7]`, `inorder=[9,3,15,20,7]` by hand and state the left/right sub-array slices in words before touching code. User correctly derived all four slices unprompted: `preorder[1:idx+1]`/`inorder[:idx]` for left, `preorder[idx+1:]`/`inorder[idx+1:]` for right — including the general (not just this-example) reasoning that the left subtree always has exactly `idx` nodes.
+- Second bug: when translating that reasoning into code, wrote `inorder[idx:]` for the right subtree (off by one, includes the root's own value). Caught after one guiding question ("does `inorder[idx:]` still contain the root value?"); self-corrected to `inorder[idx+1:]` immediately.
+- Both bugs were mechanical translation slips (args omitted, one boundary off), not conceptual — the underlying algorithmic reasoning (stated in words) was correct both times before the code was written/fixed.
+- All 6 reference tests pass using the slicing approach.
+
 ## Follow-Up Candidates
 
 - Compare against the "slice preorder and inorder into subarrays" approach (simpler to write, but O(n^2) worst case from repeated slicing/searching) versus the O(n) pointer + hash-map approach.
