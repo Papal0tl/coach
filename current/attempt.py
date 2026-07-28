@@ -13,4 +13,17 @@ class TreeNode:
 
 
 class Solution:
-    pass
+    def buildTree(self, preorder, inorder):
+        """
+        :type preorder: List[int]
+        :type inorder: List[int]
+        :rtype: Optional[TreeNode]
+        """
+        if not preorder:
+            return None
+        root_val = preorder[0]
+        root = TreeNode(root_val)
+        idx = inorder.index(root.val)
+        root.left = self.buildTree()
+        root.right = self.buildTree()
+        return root
