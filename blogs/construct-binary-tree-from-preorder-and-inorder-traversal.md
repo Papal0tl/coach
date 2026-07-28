@@ -54,7 +54,7 @@ A faster O(n) approach precomputes a `value -> index` hash map for `inorder` (O(
 
 ## Mistakes I Made
 
-User-filled.
+- I initially used `inorder[idx:]` for the right subtree instead of `inorder[idx+1:]`. This mistakenly included the root value in the right subtree's inorder traversal, so the recursive split was incorrect. The right subtree should start after the root, not at the root itself.
 
 ## How I Will Recognize This Pattern Next Time
 
