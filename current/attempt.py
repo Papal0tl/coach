@@ -24,6 +24,6 @@ class Solution:
         root_val = preorder[0]
         root = TreeNode(root_val)
         idx = inorder.index(root.val)
-        root.left = self.buildTree()
-        root.right = self.buildTree()
+        root.left = self.buildTree(preorder[1:idx+1], inorder[:idx])
+        root.right = self.buildTree(preorder[idx+1:], inorder[idx:])
         return root
