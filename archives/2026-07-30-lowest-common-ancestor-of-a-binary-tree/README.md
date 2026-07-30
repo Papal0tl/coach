@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-07-30
 - Archive path: `archives/2026-07-30-lowest-common-ancestor-of-a-binary-tree/`
-- Status: `in_progress`
+- Status: `complete`
 
 ## Goal
 
@@ -14,11 +14,11 @@ Find the lowest common ancestor of two given nodes in a binary tree (not necessa
 
 ## Current State
 
-- Agent reference solution: `pending`
-- User attempt: `pending`
-- Tests: `pending`
-- Blog: `pending`
-- Blog review: `pending`
+- Agent reference solution: `done`
+- User attempt: `done (7/7 tests pass)`
+- Tests: `done (7/7 passing)`
+- Blog: `done`
+- Blog review: `accepted`
 
 ## Session Files
 
