@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-07-29
 - Archive path: `archives/2026-07-29-path-sum-iii/`
-- Status: `in_progress`
+- Status: `complete`
 
 ## Goal
 
@@ -14,11 +14,11 @@ Count the number of downward paths in a binary tree whose values sum to a given 
 
 ## Current State
 
-- Agent reference solution: `pending`
-- User attempt: `pending`
-- Tests: `pending`
-- Blog: `pending`
-- Blog review: `pending`
+- Agent reference solution: `done`
+- User attempt: `done (brute force, 8/8 tests pass)`
+- Tests: `done (8/8 passing)`
+- Blog: `done`
+- Blog review: `accepted`
 
 ## Session Files
 
