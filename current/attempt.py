@@ -20,4 +20,10 @@ class Solution:
         :type q: TreeNode
         :rtype: TreeNode
         """
-        pass
+        if root is None:
+            return None
+        if root == q or root == p:
+            return root
+        left = self.lowestCommonAncestor(root.left, p, q)
+        right = self.lowestCommonAncestor(root.right, p, q)
+        
