@@ -33,16 +33,13 @@ abstraction (return-value-carries-a-signal, not just true/false) and
 connects cleanly to the diameter-of-binary-tree side-channel pattern from
 earlier in the arc.
 
-## Mistakes Made — Required Revision
+## Mistakes Made — Revision Applied
 
-The section was left as the unfilled placeholder text ("User-filled.")
-rather than "N/A" or real content. Checked against git history:
-`current/attempt.py` has exactly two user commits — a deliberately
-incomplete first draft (base cases + recursive calls only, no merge logic
-yet) followed immediately by the completed version, which passed all 7
-reference tests on the first run. No bugs occurred. "N/A" would be accurate
-here; please replace the placeholder text with either "N/A" or a note about
-the two-step drafting process if you'd like to describe it.
+Initially left as unfilled placeholder text; revised to "N/A" on request,
+applied fully and accurately on the first pass. Verified against git
+history: two clean user commits (a deliberately incomplete first draft,
+then the completed version passing all 7 tests immediately) — no bugs
+occurred, so "N/A" is accurate.
 
 ## Agent Assessment
 

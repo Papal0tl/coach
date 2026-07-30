@@ -58,7 +58,7 @@ This checks both subtrees before deciding what to return. If p and q are found o
 
 ## Mistakes I Made
 
-User-filled.
+N/A
 
 ## How I Will Recognize This Pattern Next Time
 
