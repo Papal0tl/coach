@@ -5,41 +5,27 @@
 
 ## Problem
 
-Agent-filled.
-
 Given a binary tree and two nodes `p` and `q` known to exist in it, find their
 lowest common ancestor: the deepest node that has both `p` and `q` as
 descendants, where a node counts as its own descendant.
 
 ## My Initial Intuition
 
-User-filled.
-
-What was your first idea for how to find the LCA, before writing any code?
+Search the tree for p and q, and compare where they were found. Not sure at first how to use recursion to find the lowest common ancestor.
 
 ## Brute Force
 
-User-filled.
-
-An alternative approach: find the root-to-`p` path and the root-to-`q` path
-separately (each as a list of nodes from a DFS), then walk both paths
-together and take the last node where they still match. Did you consider
-this, or something else, before landing on the recursive approach you wrote?
+Finding the path from the root to p and the path from the root to q, then comparing the two paths to find their last common node. The recursive approach was simpler because did not need to store the paths.
 
 ## Key Insight
 
-User-filled.
+If both left and right return a node, p and q were found on different sides, so the current root is their LCA.
 
-You correctly identified that a recursive call's result tells you where `p`
-and `q` were found: both subtrees returning something means `p` and `q` split
-at this node; only one subtree returning something means both targets (or
-one, still being searched for) are on that side. State this in your own
-words — what does each of the three return-value cases (both found, one
-found, neither found) actually represent?
+If only left returns a node, the result is somewhere on the left, so return left. The same applies to the right.
+
+If neither side returns anything, return None because neither p nor q was found there.
 
 ## Final Algorithm
-
-Agent-filled as a concise outline; user should revise if it does not match their understanding.
 
 The submitted solution recurses on `root`: if `root` is `None`, `p`, or `q`,
 it returns `root` directly (checking for `p`/`q` before recursing further,
@@ -53,22 +39,15 @@ function returns `None`.
 
 ## Correctness Argument
 
-User-filled, with agent prompts if needed.
-
-Why does this always find the *lowest* (deepest) common ancestor, rather than
-some higher ancestor that also contains both `p` and `q`?
+This checks both subtrees before deciding what to return. If p and q are found on different sides, the current node is their first common ancestor from the bottom up. If the LCA is already deeper in one subtree, that result is returned upward, so a higher node will not replace it.
 
 ## Complexity
-
-Agent-filled; user should confirm they understand it.
 
 - Time: O(n) — every node is visited at most once.
 - Space: O(h) for the recursion stack, where h is the tree height (O(log n)
   for a balanced tree, O(n) for a fully skewed tree).
 
 ## Edge Cases
-
-Agent-filled as a checklist; user should add any cases they personally missed.
 
 - `p` is an ancestor of `q` (or vice versa) — answer is `p` itself, not a
   node further up.
@@ -83,8 +62,4 @@ User-filled.
 
 ## How I Will Recognize This Pattern Next Time
 
-User-filled.
-
-What signals in a future problem would tell you "this needs a bottom-up
-search that returns a richer signal than just found/not-found," the way this
-problem did?
+Need to find a relationship between two nodes in a tree, should think about a bottom-up recursion. If each subtree can return useful information to its parent, combine the left and right results at the current node.
