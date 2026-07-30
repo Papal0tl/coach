@@ -19,4 +19,15 @@ class Solution:
         :type targetSum: int
         :rtype: int
         """
-        pass
+        def dfs(node, target):
+            if not node:
+                return 0
+            ans = 0
+            if node.val == target:
+                ans += 1
+            ans += dfs(node.left, target - node.val)
+            ans += dfs(node.right, target - node.val)
+            return ans
+        if not root:
+            return 0
+        return (dfs(root, targetSum) + self.pathSum(root.left, targetSum) + self.pathSum(root.right, targetSum))
