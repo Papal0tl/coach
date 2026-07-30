@@ -5,6 +5,7 @@
 - 2026-07-30: Session started. Problem sourced from user-provided LeetCode.cn link.
 - 2026-07-30: Agent reference solution written (bottom-up recursive search), 7/7 local tests pass.
 - 2026-07-30: User's first draft had correct base cases (`root is None`, `root == p or root == q`) and both recursive calls, but stopped before the merge logic. Asked what the three combinations of `left`/`right` mean; correctly answered "both not None -> return root" unprompted, then correctly answered "return whichever one isn't None" for the remaining cases (covering both the one-found and neither-found cases in a single statement, matching the reference solution's `left if left else right`). Implemented as three explicit `if` statements (relying on Python's implicit `return None` for the neither-found case) rather than a single ternary; functionally identical to the reference. All 7 tests pass, zero bugs, zero scaffolding needed on the core recursive shape once the merge-logic question was posed.
+- 2026-07-30: Declined the complexity question (asked to move to the blog instead). Second documented instance of declining a complexity question specifically (first was LC 114, flatten-binary-tree-to-linked-list), as opposed to declining an optional alternate-implementation follow-up (the more common pattern in this arc).
 
 ## Key Insight (agent-only, do not reveal directly)
 
