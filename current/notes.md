@@ -4,6 +4,7 @@
 
 - 2026-07-31: Session started. Problem sourced from user-provided LeetCode.cn link. Full page content was not fetchable (client-rendered); statement, examples, and constraints recorded from the well-known canonical LeetCode 124 text.
 - 2026-07-31: Agent reference solution written and validated against 8 local tests (all pass).
+- 2026-07-31: User first draft committed. Correct overall shape (post-order dfs, clamping each child to `max(child, 0)`) transferred without prompting. Three issues present: (1) `dfs(root)` is defined but never called before `return self.res`, so the function always returns `-inf`; (2) `sef.res` typo (`self` misspelled); (3) the deeper logic issue predicted in the rubric — `self.res` is being used for both the per-call return value and the tracked global best, so the update `self.res = max(left, right)` drops `root.val` and never considers the "bend" case (`left + right` together). Asked user to run the code first (established empirical-debugging preference) before addressing the invariant conflation.
 
 ## Agent Preparation
 
