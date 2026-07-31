@@ -18,4 +18,12 @@ class Solution:
         :type root: TreeNode
         :rtype: int
         """
-        pass
+        self.res = float("-inf")
+        def dfs(root):
+            if not root:
+                return 0
+            left = max(dfs(root.left), 0)
+            right = max(dfs(root.right), 0)
+            sef.res = max(left, right)
+            return root.val + self.res
+        return self.res
