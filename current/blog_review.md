@@ -21,7 +21,8 @@ Good. "How I Will Recognize This Pattern Next Time" correctly generalizes the re
 
 ## Required Revisions
 
-- **Mistakes I Made is incomplete.** It lists the three logic-level issues (missing `root.val` in the tracked-best update, conflating the returned value with the tracked best, and the one-side-only return) but omits two real bugs from the commit history: (1) the first draft defined `dfs` but never called `dfs(root)`, so the function always returned `-inf`; (2) the first draft had a `sef.res` typo (should be `self.res`). This is a recurring gap in this arc — Mistakes I Made sections have repeatedly omitted mechanical/syntax-level bugs in favor of only the conceptual ones. Please add these two.
+- **Mistakes I Made is incomplete.** It lists the three logic-level issues (missing `root.val` in the tracked-best update, conflating the returned value with the tracked best, and the one-side-only return) but omits two real bugs from the commit history: (1) the first draft defined `dfs` but never called `dfs(root)`, so the function always returned `-inf`; (2) the first draft had a `sef.res` typo (should be `self.res`). This is a recurring gap in this arc — Mistakes I Made sections have repeatedly omitted mechanical/syntax-level bugs in favor of only the conceptual ones.
+  - **Declined.** User explicitly chose not to add these two, closing the session with only the conceptual bugs documented.
 
 ## Agent Assessment
 
