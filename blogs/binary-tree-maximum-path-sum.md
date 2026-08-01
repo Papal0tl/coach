@@ -12,15 +12,15 @@ exactly one node (go up one child, then down the other).
 
 ## My Initial Intuition
 
-_Write in your own words._
+The path could go through a node and use both its left and right sides. Could use recursion to calculate the best path from each node.
 
 ## Brute Force
 
-_Write in your own words._
+Try different paths and calculate their sums, but there are too many possible paths. This would be inefficient for a large tree.
 
 ## Key Insight
 
-_Write in your own words._
+At each node, the answer can use both left and right branches, but when returning to the parent, it can only choose one branch. Negative branches should be ignored.
 
 ## Final Algorithm
 
@@ -37,7 +37,7 @@ parent can only extend one branch. The final answer is the maximum value
 
 ## Correctness Argument
 
-_Write in your own words._
+For each node, gain(node) returns the best path starting from that node and going down through only one child. At the same time, self.res checks the path using both children and the current node. Since every node is checked once, the maximum value found is the maximum path sum.
 
 ## Complexity
 
@@ -57,8 +57,11 @@ _Write in your own words._
 
 ## Mistakes I Made
 
-_Write in your own words._
+- Updated self.res with max(left, right) instead of the full path root.val + left + right.
+- Returned root.val + self.res, but self.res is the overall answer, not the path that should be passed to the parent.
+- Did not understand why return root.val + max(left, right) only uses one side.
+- Thought the returned path should include both the left and right branches.
 
 ## How I Will Recognize This Pattern Next Time
 
-_Write in your own words._
+When a tree path can go through both children, should separate the value used for the answer from the value returned to the parent. The answer can use both sides, while the returned path can only use one side.
