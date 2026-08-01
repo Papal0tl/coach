@@ -26,4 +26,4 @@
 
 ## Closeout Assessment
 
-pending
+Sixteenth tree session and first Hard-difficulty tree problem. Tests the same return-vs-tracked-best invariant family as diameter-of-binary-tree (2026-07-17), now compounded with negative-value branch clamping. The clamp transferred with zero prompting. The invariant-conflation bug reappeared but resolved with clearly less scaffolding than its first exposure: three self-driven edits and one trace prompt (missing `dfs(root)` call, self-diagnosed; `sef.res` typo, self-corrected; missing `root.val` in the tracked-best update, found via a `[1]` single-node trace), versus diameter-of-binary-tree's four drafts, two guided-question rounds, and an explicit scoping/`nonlocal` explanation. No scoping confusion at all this time. All 8 tests pass. Declined a combined invariant/complexity question, moving straight to the blog — third complexity-adjacent decline in the arc. Blog review requested one revision (Mistakes Made omitted two real mechanical bugs); declined outright. Treat the return-vs-tracked-best invariant family as consolidated going forward.
