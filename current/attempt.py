@@ -24,7 +24,7 @@ class Solution:
                 return 0
             left = max(dfs(root.left), 0)
             right = max(dfs(root.right), 0)
-            self.res = max(left, right)
-            return root.val + self.res
+            self.res = max(self.res, left + right)
+            return root.val + max(left, right)
         dfs(root)
         return self.res
