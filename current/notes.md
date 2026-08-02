@@ -25,7 +25,11 @@ Scan every cell in row-major order. Whenever a `'1'` is found, increment the isl
 
 ## User-Facing Takeaways
 
-TBD after coaching.
+First graph/connected-components session. First attempt independently wrote a correct recursive DFS flood-fill (base cases, in-place marking, count increment) with zero prompting on the algorithm itself — the pattern transferred cleanly from tree traversal. One bug: the inner loop reused `i` instead of `j` (`for i in range(n)`), which shadowed the outer loop variable and left `j` undefined, causing an immediate `NameError` before any logic could run. Self-diagnosed correctly and unprompted after being shown the traceback and asked what it implied about the two loops — did not need the fix spelled out, only the question "what does this error tell you about the loops." When asked (unprompted intuition check) what would happen with a large winding island given the 300x300 constraint, correctly and immediately named recursion-limit crash risk (`RecursionError`) without being told the mechanism first. Declined the offered hands-on iterative-conversion follow-up, choosing to move to the blog instead — consistent with the established pattern of deriving/reasoning through space or robustness optimizations verbally rather than implementing them (LC 141, LC 105, LC 114, LC 437, LC 236).
+
+## Recursion-depth risk, named unprompted
+
+Distinct from the established pattern-recognition strengths: this is the first session where a *robustness/scale* concern (not a complexity-analysis or space-optimization question) was posed as an open-ended "what might happen" question and answered correctly and specifically (`RecursionError`, not just "it would be slow") without any scaffolding beyond restating the constraint (300x300 grid, single winding island). Single data point; worth checking for recurrence on future problems with recursion-depth-sensitive constraints.
 
 ## Follow-Up Candidates
 
