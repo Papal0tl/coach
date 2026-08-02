@@ -6,7 +6,7 @@
 - Coaching mode: hint-only
 - Started: 2026-08-02
 - Archive path: `archives/2026-08-02-number-of-islands/`
-- Status: `active`
+- Status: `complete`
 
 ## Goal
 
@@ -17,8 +17,8 @@ Count the number of islands (connected groups of horizontally/vertically adjacen
 - Agent reference solution: `complete`
 - User attempt: `complete, 9/9 tests passing`
 - Tests: `complete, 9/9 passing`
-- Blog: `scaffolded, awaiting user-filled sections`
-- Blog review: `pending`
+- Blog: `complete`
+- Blog review: `complete, one revision declined by user`
 
 ## Session Files
 
