@@ -35,4 +35,4 @@ Strong session: correct DFS flood-fill algorithm transferred from tree-traversal
 
 ## Review Status
 
-Revision requested: replace "Mistakes I Made: N/A" with the loop-variable bug described above.
+Revision requested; declined by user ("mistake made is ok"). "Mistakes I Made: N/A" remains in the published blog despite the git-verified loop-variable bug (`13218e8` -> `f6200cd`). Session otherwise complete.
