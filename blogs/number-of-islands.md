@@ -11,15 +11,15 @@ horizontally or vertically (not diagonally).
 
 ## My Initial Intuition
 
-User-filled. What did the grid remind you of when you first read the problem — what kind of structure or prior problem did you connect it to?
+A matrix where need to check each cell and look at its neighbors.
 
 ## Brute Force
 
-User-filled. Is there a slower approach you considered before settling on flood fill (even if you didn't write it), or was flood fill the immediate approach? Why would a naive approach (e.g. checking every cell against every other cell) not make sense here?
+Checking every land cell and its neighbors. A naive approach that repeatedly checks the same cells would do unnecessary work, so flood fill makes more sense.
 
 ## Key Insight
 
-User-filled. What is the one idea that lets a single scan-and-flood-fill correctly count islands without ever double-counting a cell?
+When find a '1', count one island and use DFS to turn the whole connected island into '0'. This prevents from counting the same island again.
 
 ## Final Algorithm
 
@@ -27,7 +27,7 @@ Scan every cell of the grid in row-major order (`for i in range(m): for j in ran
 
 ## Correctness Argument
 
-User-filled, with agent prompts if needed. Why is it enough to mark a cell as `'0'` once visited — what would go wrong if `dfs` did not do this?
+Marking each visited cell as '0' makes sure DFS does not visit the same land cell again. Without this, the same island could be counted multiple times.
 
 ## Complexity
 
@@ -47,8 +47,8 @@ Agent-filled as a checklist; user should add any cases they personally missed.
 
 ## Mistakes I Made
 
-User-filled.
+N/A
 
 ## How I Will Recognize This Pattern Next Time
 
-User-filled. When you see a grid of `'1'`/`'0'` (or similar) and are asked to count/label connected regions, what should that immediately suggest as the approach?
+See a grid and need to count connected groups, should think of DFS or BFS flood fill. Find one unvisited cell, count it, and explore the whole connected region.
