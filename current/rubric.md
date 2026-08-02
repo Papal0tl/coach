@@ -7,15 +7,15 @@
 
 | Skill | Target | Evidence | Status |
 | --- | --- | --- | --- |
-| Problem restatement | {{target}} | {{evidence}} | {{status}} |
-| Constraint analysis | {{target}} | {{evidence}} | {{status}} |
-| Brute-force construction | {{target}} | {{evidence}} | {{status}} |
-| Pattern recognition | {{target}} | {{evidence}} | {{status}} |
-| Invariant formulation | {{target}} | {{evidence}} | {{status}} |
-| Complexity analysis | {{target}} | {{evidence}} | {{status}} |
-| Edge-case design | {{target}} | {{evidence}} | {{status}} |
-| Debugging discipline | {{target}} | {{evidence}} | {{status}} |
-| Communication | {{target}} | {{evidence}} | {{status}} |
+| Problem restatement | Observe if restated unprompted | | pending |
+| Constraint analysis | Observe if 300x300 bound / recursion-depth risk is raised unprompted | | pending |
+| Brute-force construction | N/A for this problem (flood fill is the natural first approach) | | pending |
+| Pattern recognition | First graph/connected-components problem: does BFS/DFS-for-connectivity transfer from tree-traversal experience without heavy prompting? | | pending |
+| Invariant formulation | Can state precisely: a cell is never recounted once visited/marked | | pending |
+| Complexity analysis | O(rows*cols) time; space tradeoff between in-place marking and a visited set | | pending |
+| Edge-case design | Diagonal-not-connected, empty grid, all-water/all-land, non-square grid | | pending |
+| Debugging discipline | Track bug count and whether self-caught vs. hint-driven | | pending |
+| Communication | Terse but accurate correctness argument | | pending |
 
 ## Intervention Count
 

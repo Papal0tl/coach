@@ -14,9 +14,9 @@ Count the number of islands (connected groups of horizontally/vertically adjacen
 
 ## Current State
 
-- Agent reference solution: `pending`
+- Agent reference solution: `complete`
 - User attempt: `pending`
-- Tests: `pending`
+- Tests: `complete, 9/9 passing`
 - Blog: `pending`
 - Blog review: `pending`
 
