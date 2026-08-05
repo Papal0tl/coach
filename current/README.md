@@ -14,9 +14,9 @@ Solve LC 994 (Rotting Oranges), a multi-source BFS grid problem. First grid sess
 
 ## Current State
 
-- Agent reference solution: `pending`
+- Agent reference solution: `complete`
 - User attempt: `pending`
-- Tests: `pending`
+- Tests: `complete (8/8 passing)`
 - Blog: `pending`
 - Blog review: `pending`
 
