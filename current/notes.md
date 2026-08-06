@@ -28,7 +28,14 @@ Two-pass approach:
 
 ## User-Facing Takeaways
 
-Pending — to be filled in after the user attempt and blog.
+- Independently structured the level-by-level BFS shape (`size = len(queue)`, drain exactly that many before incrementing the minute counter) without being told — this is the core invariant of the pattern and it was self-generated.
+- Four real bugs this session, all logic/invariant-level rather than syntax:
+  1. `queue.append(rows)` — pushed the row count instead of the `(r, c)` coordinate tuple. Self-diagnosed correctly in one sentence once asked to trace it ("oh it's just pushing the number of rows, not the coordinates"), but did not apply the fix until asked a second time in a later round.
+  2. Off-by-one bounds check, `0 < nr < rows` instead of `0 <= nr < rows` — excluded row/col index 0 from ever being treated as a valid neighbor. Self-corrected after being asked to trace a neighbor at index 0.
+  3. Missing value check on the neighbor before rotting it (`grid[nr][nc] == 1`) — without it, the code rotted *any* in-bounds neighbor regardless of value, silently corrupting empty (`0`) cells into rotten (`2`) ones and decrementing `fresh` for non-fresh cells. This one was subtle: all 8 of the agent's original tests passed despite the bug, because none of them had an empty cell physically between a rotten and a fresh orange. Only surfaced by constructing a new counterexample (`[[2, 0, 1]]`, expected `-1`) and asking the user to run it themselves.
+  4. Missing `fresh == 0` guard on the final return — returned `min` unconditionally instead of `-1` when unreachable fresh oranges remained. Fixed in the same edit as bug 3, without a separate prompt — likely inferred from constructing the fix for bug 3.
+- Two consecutive rounds this session where the user asked "check the code" with **no actual diff** — once immediately after being asked a conceptual question rather than making an edit. Treated gently as a possible workflow/mechanical mixup (confirmed via `git status`) rather than assumed intent; worth watching if this recurs.
+- Bug 3 is a good teaching moment for test-coverage thinking: passing all existing tests did not mean the code was correct, and the fix required *adding* a test rather than re-running old ones. Flag for the blog's Mistakes Made section.
 
 ## Follow-Up Candidates
 

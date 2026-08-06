@@ -54,6 +54,14 @@ def test_multi_source_faster_than_single_source():
     assert solution.orangesRotting(grid) == 2
 
 
+def test_fresh_orange_blocked_by_empty_cell():
+    solution = Solution()
+    # The fresh orange is separated from the rotten one by an empty cell,
+    # so it can never rot even though it is adjacent-by-index.
+    grid = [[2, 0, 1]]
+    assert solution.orangesRotting(grid) == -1
+
+
 if __name__ == "__main__":
     test_example_1()
     test_example_2_unreachable()
@@ -63,4 +71,5 @@ if __name__ == "__main__":
     test_single_rotten()
     test_all_rotten_already()
     test_multi_source_faster_than_single_source()
+    test_fresh_orange_blocked_by_empty_cell()
     print("All tests passed.")
