@@ -21,7 +21,7 @@ class Solution:
         for r in range(rows):
             for c in range(cols):
                 if grid[r][c] == 2:
-                    queue.append(rows)
+                    queue.append((r, c))
                 elif grid[r][c] == 1:
                     fresh += 1
 
@@ -29,6 +29,13 @@ class Solution:
             size = len(queue)
             for i in range(size):
                 r, c = queue.popleft()
+                for dr, dc in dir:
+                    nr = r + dr
+                    nc = c + dc
+                    if (0 < nr < rows and 0 < nc < cols):
+                        grid[nr][nc] = 2
+                        fresh -= 1
+                        queue.append((nr, nc))
             min += 1
         return min
 
