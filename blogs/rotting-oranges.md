@@ -13,15 +13,15 @@ rot.
 
 ## My Initial Intuition
 
-User-filled. What did this problem remind you of when you first read it — a grid you'd seen before, or something new? Was it obvious from the start that this needed to spread from *multiple* starting points at once, rather than just one?
+Rotten oranges can spread to nearby fresh oranges, and multiple rotten oranges can spread at the same time. use grid BFS
 
 ## Brute Force
 
-User-filled. Is there a slower approach you considered — for example, repeatedly scanning the whole grid minute-by-minute and rotting any fresh orange next to a rotten one, until nothing changes? Why is that more expensive than the BFS approach you wrote?
+Repeatedly scan the whole grid every minute and rot fresh oranges next to rotten ones. This would keep scanning cells that were already processed, so it is less efficient than BFS.
 
 ## Key Insight
 
-User-filled. What is the one idea that lets you compute the answer in a single pass instead of repeatedly rescanning the whole grid minute-by-minute?
+The key is to put all rotten oranges into the queue at the beginning and use level-order BFS. Each BFS level represents one minute.
 
 ## Final Algorithm
 
@@ -29,7 +29,7 @@ Scan the grid once to seed a queue with the coordinates of every already-rotten 
 
 ## Correctness Argument
 
-User-filled, with agent prompts if needed. Why does draining the queue exactly `size` cells at a time (rather than popping and pushing in the same unbounded loop) guarantee that the minute counter equals the true number of elapsed minutes? What would go wrong if you incremented the minute counter once per popped cell instead of once per fully-drained level?
+size = len(queue) records all rotten oranges that exist at the start of the current minute. Any oranges that become rotten during this level are added to the queue, but they are not processed until the next level. Therefore, each BFS level represents exactly one minute. If we increased minutes for every popped cell, the time would depend on how many oranges were processed, instead of how many minutes actually passed.
 
 ## Complexity
 
@@ -48,8 +48,8 @@ Agent-filled as a checklist; user should add any cases they personally missed.
 
 ## Mistakes I Made
 
-User-filled.
+- I initially allowed rot to spread through empty cells (0), instead of only spreading to directly adjacent fresh oranges (1). This caused oranges that should stay fresh to become rotten.
 
 ## How I Will Recognize This Pattern Next Time
 
-User-filled. When you see a grid where something spreads outward simultaneously from more than one starting point, and you need to know how long the spread takes, what should that immediately suggest as the approach?
+If something spreads from multiple starting points at the same time and I need to find how long it takes, I should think of multi-source BFS.
