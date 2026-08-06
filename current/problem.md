@@ -3,7 +3,7 @@
 - Name: Rotting Oranges
 - Slug: `rotting-oranges`
 - Source: https://leetcode.cn/problems/rotting-oranges/description/?envType=study-plan-v2&envId=top-100-liked (LeetCode 994)
-- Archive path: `archives/2026-08-05-rotting-oranges/`
+- Archive path: `archives/2026-08-06-rotting-oranges/`
 
 ## Statement
 

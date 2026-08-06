@@ -4,8 +4,8 @@
 - Source: https://leetcode.cn/problems/rotting-oranges/description/?envType=study-plan-v2&envId=top-100-liked
 - Language: Python
 - Coaching mode: hint-only
-- Started: 2026-08-05
-- Archive path: `archives/2026-08-05-rotting-oranges/`
+- Started: 2026-08-06
+- Archive path: `archives/2026-08-06-rotting-oranges/`
 - Status: `active`
 
 ## Goal

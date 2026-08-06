@@ -1,7 +1,7 @@
 # Rubric
 
 - Problem slug: `rotting-oranges`
-- Archive path: `archives/2026-08-05-rotting-oranges/`
+- Archive path: `archives/2026-08-06-rotting-oranges/`
 
 ## Target Skills
 
