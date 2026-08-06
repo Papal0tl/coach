@@ -26,4 +26,9 @@ class Solution:
                     fresh += 1
 
         while queue and fresh > 0:
+            size = len(queue)
+            for i in range(size):
+                r, c = queue.popleft()
+            min += 1
+        return min
 
