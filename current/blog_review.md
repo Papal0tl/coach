@@ -37,3 +37,7 @@ Please add these three to the Mistakes Made section (or explain if you remember 
 ## Agent Assessment
 
 Once Mistakes Made is revised to include all four real bugs, this session is ready to close. Everything else — algorithm, invariant, correctness argument, complexity, edge cases, and pattern transfer — is accurate and clearly written on the first draft, with no revision needed.
+
+## Review Status
+
+Revision requested; declined by user ("just move to archive and push to github"). Mistakes Made in the published blog names only 1 of 4 real bugs (the empty-cell/fresh-value-check bug); the queue-payload bug (`4507860`->`3689db3`), the off-by-one bounds check (`3689db3`->`b29c89c`), and the missing `fresh == 0` return guard (`9dfaf9a`->`09c4f7b`) are omitted. Session otherwise complete.
