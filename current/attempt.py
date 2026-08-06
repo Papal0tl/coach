@@ -32,7 +32,7 @@ class Solution:
                 for dr, dc in dir:
                     nr = r + dr
                     nc = c + dc
-                    if (0 < nr < rows and 0 < nc < cols):
+                    if (0 <= nr < rows and 0 <= nc < cols):
                         grid[nr][nc] = 2
                         fresh -= 1
                         queue.append((nr, nc))
